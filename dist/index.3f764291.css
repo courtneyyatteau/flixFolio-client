@@ -1,0 +1,34 @@
+.movie-card {
+  margin: 50px;
+}
+.back-btn {
+  background-color: #443a97;
+  color: white;
+  border-radius: 7px;
+  font-size: 19px;
+}
+
+.movie-img {
+  width: 175px;
+}
+
+.movie-title,
+.movie-description,
+.movie-genre,
+.movie-director {
+  margin: 10px;
+  font-size: 22px;
+}
+
+.movie-view {
+  margin-top: 50px;
+  max-width: 750px;
+  margin: 50px auto;
+}
+.flix-folio {
+  color: #1c6b37;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 100px;
+}
+/*# sourceMappingURL=index.3f764291.css.map */
