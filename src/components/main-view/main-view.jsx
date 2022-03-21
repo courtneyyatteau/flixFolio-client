@@ -1,59 +1,75 @@
 import React from "react";
+import axios from "axios";
+import "./main-view.scss";
+
+import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import dKImage from "../../imgs/darkKnight.jpg";
-import screamImg from "../../imgs/scream.webp";
-import hangoverImg from "../../imgs/hangover.jpg";
+import { RegistrationView } from "../registration-view/registration-view";
 
 export class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-        {
-          _id: 1,
-          Title: "Dark Knight",
-          Description:
-            "When half of Harvey Dent's face gets burned in an explosion, the Joker brings him over to the dark side, encouraging him to seek vengeance for Rachel's death.",
-          Genre: "Action",
-          Director: "Christopher Nolan",
-          ImagePath: dKImage,
-        },
-        {
-          _id: 2,
-          Title: "Scream",
-          Description:
-            "25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past.",
-          Genre: "Horror",
-          Director: "Matt Bettinelli-Oplin",
-          ImagePath: screamImg,
-        },
-        {
-          _id: 3,
-          Title: "The Hangover",
-          Description:
-            "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.",
-          Genre: "Comedy",
-          Director: "Todd Phillips",
-          ImagePath: hangoverImg,
-        },
-      ],
+      movies: [],
       selectedMovie: null,
+      user: null,
     };
   }
+
+  componentDidMount() {
+    axios
+      .get("https://flixfolio.herokuapp.com/movies")
+      .then((response) => {
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie,
     });
   }
-  render() {
-    const { movies, selectedMovie } = this.state;
 
-    if (movies.length === 0)
-      return <div className="main-view">No movies exist!</div>;
+  onRegistration(registration) {
+    this.setState({
+      registration,
+    });
+  }
+
+  onLoggedIn(user) {
+    this.setState({
+      user,
+    });
+  }
+
+  render() {
+    const { movies, selectedMovie, user, registration } = this.state;
+
+    if (!registration)
+      return (
+        <RegistrationView
+          onRegistration={(registration) => this.onRegistration(registration)}
+        />
+      );
+
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user)
+      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+
+    if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <div className="main-view">
+        <div>
+          <span>Need an account? </span>
+          <button>Register here!</button>
+        </div>
         {selectedMovie ? (
           <MovieView
             movie={selectedMovie}
@@ -66,8 +82,8 @@ export class MainView extends React.Component {
             <MovieCard
               key={movie._id}
               movie={movie}
-              onMovieClick={(movie) => {
-                this.setSelectedMovie(movie);
+              onMovieClick={(newSelectedMovie) => {
+                this.setSelectedMovie(newSelectedMovie);
               }}
             />
           ))
