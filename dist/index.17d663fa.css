@@ -1,4 +1,6 @@
-
+.d-flex {
+  float: right;
+}
 .btn {
   background-color: #640505;
   color: white;
@@ -34,7 +36,6 @@
 .flix-folio {
   color: #1c6b37;
   text-align: center;
-  font-size: 30px;
-  margin-top: 100px;
+  font-size: 25px;
 }
 /*# sourceMappingURL=index.17d663fa.css.map */
