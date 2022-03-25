@@ -1,10 +1,6 @@
 .d-flex {
   float: right;
 }
-.btn {
-  background-color: #640505;
-  color: white;
-}
 .movie-card {
   margin: 50px;
 }
@@ -32,6 +28,7 @@
   max-width: 750px;
   margin: 50px auto;
 }
+
 
 .flix-folio {
   color: #1c6b37;

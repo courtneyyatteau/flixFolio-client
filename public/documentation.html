@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/scripts.css" />
+    <title>flixFolio</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      <span class="filmEmoji">🎬</span> flixFolio
+      <span class="filmEmoji">🎬</span>
+    </h1>
+    <div style="text-align: center">
+      Description: This API returns descriptions of movies including genre and
+      director.
+    </div>
+    <br />
+    <table class="styled-table">
+      <th>Request</th>
+      <th>URL Endpoint</th>
+      <th>HTTP Method</th>
+      <th>Query Parameters</th>
+      <th>Response body data format</th>
+      <th>Request body data format</th>
+      <tr>
+        <td>Return a list of ALL movies to the user</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data about all the movies.</td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>
+          Return data (description, genre, director, image URL, whether it’s
+          featured or not) about a single movie by title to the user
+        </td>
+        <td>/movies/movie/:title</td>
+        <td>GET</td>
+        <td>title</td>
+        <td>
+          A JSON object hodling data about a single movie. <br />
+          Example:
+          <pre><code>
+            {
+              genre: {
+                name: '',
+                description: ''
+              },
+              director: {
+                name: '',
+                bio: '',
+                birthdate: ''
+              },
+              id: '',
+              title: '',
+              description: '',
+              imagepath: '',
+              featured: '',
+              year: ''
+            }
+          </code></pre>
+        </td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>
+          Return data about a genre (description) by name/title (e.g.,
+          “Thriller”)
+        </td>
+        <td>/movies/genres/:genre</td>
+        <td>GET</td>
+        <td>genre</td>
+        <td>
+          A JSON object holding data about a genre. <br />
+          Example:
+          <pre><code>
+            {
+              description: ''
+            }
+          </code></pre>
+        </td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>
+          Return data about a director (bio, birth year, death year) by name
+        </td>
+        <td>/movies/directors/:name</td>
+        <td>GET</td>
+        <td>director</td>
+        <td>
+          A JSON object holding data about a director. <br />
+          Example:
+          <pre><code>
+            {
+              name: '',
+              bio: '',
+              birthdate: ''
+            }
+          </code></pre>
+        </td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>Return a list of all movies with one genre type</td>
+        <td>/movies/:genre</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>
+          A JSON object holding data about all the movies in one specific genre.
+        </td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>Return a list of all movies with one release year</td>
+        <td>/movies/releaseYear/:year</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>
+          A JSON object holding data about all the movies in one specific year.
+        </td>
+        <td>NONE</td>
+      </tr>
+
+      <tr>
+        <td>Return a list of ALL the users.</td>
+        <td>/users</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data about all the users.</td>
+        <td>NONE</td>
+      </tr>
+
+      <tr>
+        <td>Return data about a single user by username.</td>
+        <td>/users/:username</td>
+        <td>GET</td>
+        <td>username</td>
+        <td>
+          A JSON object holding data about the user.
+          <pre><code>
+            {
+              "id": '',
+              "userName": '',
+              "password": '',
+              "email": '',
+              "birthdate": '',
+              "FavoriteMovies": [
+                '',
+                ''
+              ]
+            }
+          </code></pre>
+        </td>
+        <td>NONE</td>
+      </tr>
+
+      <tr>
+        <td>Allow new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>NONE</td>
+        <td>
+          A JSON object holding data about new user that was added. <br />
+          Example:
+          <pre><code>
+            {
+              "id": '',
+              "userName": '',
+              "password": '',
+              "email": '',
+              "birthdate": '',
+              "FavoriteMovies": [
+                '',
+                ''
+              ]
+            }
+          </code></pre>
+        </td>
+        <td>
+          A JSON object with user info. <br />
+          Example:
+          <pre><code>
+            {
+              "userName": '',
+              "password": '',
+              "email": '',
+              "birthdate": '',
+              "FavoriteMovies": [
+                '',
+                ''
+              ]
+            }
+          </code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Allow users to update their user info (username, password, email,
+          and/or birthdate)
+        </td>
+        <td>/users/:Username</td>
+        <td>PUT</td>
+        <td>username</td>
+        <td>
+          A JSON object holding data about user's new info. <br />
+          Example:
+          <pre><code>
+            {
+              "id": '',
+              "userName": '',
+              "password": '',
+              "email": '',
+              "birthdate": '',
+              "FavoriteMovies": [
+                '',
+                ''
+              ]
+            }
+          </code></pre>
+        </td>
+        <td>
+          A JSON object holding data about a user's changed info. <br />
+          Example:
+          <pre><code>
+            {
+              "userName": '',
+              "password": '',
+              "email": '',
+              "birthdate": '',
+              "FavoriteMovies": [
+                '',
+                ''
+              ]
+            }
+          </code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their list of favorites</td>
+        <td>/users/:Username/:MovieID</td>
+        <td>POST</td>
+        <td>username, movieid</td>
+        <td>
+          A message stating the movie was added successfully (or not, if
+          unsuccessful)
+        </td>
+        <td>
+          A JSON object with movie info. <br />Example:
+          <pre><code>
+            {
+              genre: {
+                name: '',
+                description: ''
+              },
+              director: {
+                name: '',
+                bio: '',
+                birthdate: ''
+              },
+              id: '',
+              title: '',
+              description: '',
+              imagepath: '',
+              featured: ''
+            }
+          </code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their list of favorites</td>
+        <td>/users/:Username/:MovieID</td>
+        <td>DELETE</td>
+        <td>username, movieid</td>
+        <td>
+          A message stating the user's movie has been deleted (or not, if
+          unsuccessful)
+        </td>
+        <td>NONE</td>
+      </tr>
+      <tr>
+        <td>Allow existing users to deregister</td>
+        <td>/users/:Username</td>
+        <td>DELETE</td>
+        <td>NONE</td>
+        <td>
+          A message stating the user has been deleted (or not, if unsuccessful)
+        </td>
+        <td>NONE</td>
+      </tr>
+    </table>
+  </body>
+</html>

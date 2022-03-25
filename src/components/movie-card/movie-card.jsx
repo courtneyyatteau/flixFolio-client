@@ -9,25 +9,16 @@ export class MovieCard extends React.Component {
 
     return (
       <div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card>
+          <Card.Img variant="top" src={movie.ImagePath} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Card.Title>{movie.Title}</Card.Title>
+            <Card.Text>{movie.Description}</Card.Text>
+            <Button onClick={() => onMovieClick(movie)} variant="link">
+              Open
+            </Button>
           </Card.Body>
         </Card>
-        <div
-          className="movie-card"
-          onClick={() => {
-            onMovieClick(movie);
-          }}
-        >
-          {movie.Title}
-        </div>
       </div>
     );
   }
