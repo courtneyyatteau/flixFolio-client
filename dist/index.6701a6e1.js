@@ -24468,7 +24468,11 @@ parcelHelpers.export(exports, "LoginView", ()=>LoginView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -24476,9 +24480,15 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password);
-        // Send a request to the server for authentication, then call props.onLoggedIn(username)
-        props.onLoggedIn(username);
+        _axiosDefault.default.post("https://flixfolio.herokuapp.com/login", {
+            Username: username,
+            Password: password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data);
+        }).catch((e1)=>{
+            console.log("no such user exists");
+        });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
         children: [
@@ -24488,7 +24498,7 @@ function LoginView(props) {
                 expand: "lg",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 18
+                    lineNumber: 29
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
@@ -24496,7 +24506,7 @@ function LoginView(props) {
                     id: "logo",
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 19
+                        lineNumber: 30
                     },
                     __self: this,
                     children: "FlixFolio"
@@ -24505,14 +24515,14 @@ function LoginView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 23
+                    lineNumber: 34
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                     id: "form",
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 24
+                        lineNumber: 35
                     },
                     __self: this,
                     children: [
@@ -24521,14 +24531,14 @@ function LoginView(props) {
                             id: "form-field",
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 25
+                                lineNumber: 36
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 26
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: "Username:"
@@ -24539,7 +24549,7 @@ function LoginView(props) {
                                     ,
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 27
+                                        lineNumber: 38
                                     },
                                     __self: this
                                 })
@@ -24550,14 +24560,14 @@ function LoginView(props) {
                             id: "form-field",
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 33
+                                lineNumber: 44
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 34
+                                        lineNumber: 45
                                     },
                                     __self: this,
                                     children: "Password:"
@@ -24568,7 +24578,7 @@ function LoginView(props) {
                                     ,
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 35
+                                        lineNumber: 46
                                     },
                                     __self: this
                                 })
@@ -24581,7 +24591,7 @@ function LoginView(props) {
                             onClick: handleSubmit,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 40
+                                lineNumber: 51
                             },
                             __self: this,
                             children: "Submit"
@@ -24594,6 +24604,9 @@ function LoginView(props) {
 }
 _s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
 _c = LoginView;
+LoginView.PropTypes = {
+    onLogin: _propTypesDefault.default.func.isRequired
+};
 var _c;
 $RefreshReg$(_c, "LoginView");
 
@@ -24602,7 +24615,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"FPBxe","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l8BAX"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"FPBxe","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l8BAX","prop-types":"1tgq3"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
