@@ -7,7 +7,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { NavigationView } from "../navbar-view/navbar-view";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 
 export class MainView extends React.Component {
   constructor() {
@@ -68,10 +68,6 @@ export class MainView extends React.Component {
     return (
       <div className="main-view">
         <NavigationView />
-        <div>
-          <span>Need an account? </span>
-          <button>Register here!</button>
-        </div>
         <Row className="main-view justify-content-md-center">
           {selectedMovie ? (
             <Col md={8}>

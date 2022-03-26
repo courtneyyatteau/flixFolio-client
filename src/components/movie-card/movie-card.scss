@@ -1,4 +1,27 @@
-.movie-card {
-  margin: 50px;
+$background-color: #d5f3fe;
+$main-color: #2565ae;
+
+#movie-card {
+  margin: 20px;
+  height: 350px;
+  background-color: white;
 }
 
+p {
+  font-size: 30px;
+}
+
+.movie-desc {
+  font-size: 23px;
+}
+
+.movie-img {
+  height: 20px;
+}
+
+#open-btn {
+  background-color: $main-color;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}

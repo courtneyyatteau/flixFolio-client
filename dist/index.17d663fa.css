@@ -1,14 +1,48 @@
 .d-flex {
   float: right;
 }
-.movie-card {
-  margin: 50px;
+
+.main-view {
+  text-align: center;
+  background-color: #d5f3fe;
+  color: hwb(212 15% 32%);
 }
-.back-btn {
-  background-color: #443a97;
+
+#id {
+  float: right;
+}
+#movie-card {
+  margin: 20px;
+  height: 350px;
+  background-color: white;
+}
+
+p {
+  font-size: 30px;
+}
+
+.movie-desc {
+  font-size: 23px;
+}
+
+.movie-img {
+  height: 20px;
+}
+
+#open-btn {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
   color: white;
-  border-radius: 7px;
+}
+#back-btn {
+  background-color: #2565ae;
+  color: white;
+  border-radius: 5px;
   font-size: 19px;
+  width: 10%;
+  margin: 10px auto;
+  border: none;
 }
 
 .movie-img {
@@ -16,11 +50,15 @@
 }
 
 .movie-title,
-.movie-description,
 .movie-genre,
 .movie-director {
   margin: 10px;
   font-size: 22px;
+}
+
+.movie-description {
+  font-size: 20px;
+  padding: 0 30px;
 }
 
 .movie-view {
@@ -28,11 +66,47 @@
   max-width: 750px;
   margin: 50px auto;
 }
-
-
-.flix-folio {
-  color: #1c6b37;
-  text-align: center;
-  font-size: 25px;
+#btn {
+  background-color: #2565ae;
+  color: white;
+  margin: 20px 0;
+  float: right;
 }
+
+#form {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+#form-field {
+  margin-top: 15px;
+  font-size: 20px;
+}
+.userIcon {
+  margin-left: 20px;
+}
+
+#logo {
+  color: #2565ae;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#btn {
+  background-color: #2565ae;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-left: 15px;
+}
+
+#nav-link {
+  font-size: 15px;
+  color: #2565ae;
+}
+
+#search {
+  margin: 17px 0;
+}
+
 /*# sourceMappingURL=index.17d663fa.css.map */

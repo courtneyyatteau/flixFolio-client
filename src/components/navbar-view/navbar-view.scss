@@ -1,0 +1,28 @@
+$main-color: #2565ae;
+
+.userIcon {
+  margin-left: 20px;
+}
+
+#logo {
+  color: $main-color;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#btn {
+  background-color: $main-color;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-left: 15px;
+}
+
+#nav-link {
+  font-size: 15px;
+  color: $main-color;
+}
+
+#search {
+  margin: 17px 0;
+}

@@ -1,0 +1,19 @@
+$main-color: #2565ae;
+$background-color: #d5f3fe;
+
+#btn {
+  background-color: $main-color;
+  color: white;
+  margin: 20px 0;
+  float: right;
+}
+
+#form {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+#form-field {
+  margin-top: 15px;
+  font-size: 20px;
+}

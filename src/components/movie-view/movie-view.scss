@@ -1,8 +1,13 @@
-.back-btn {
-  background-color: rgb(68, 58, 151);
+$main-color: #2565ae;
+
+#back-btn {
+  background-color: $main-color;
   color: white;
-  border-radius: 7px;
+  border-radius: 5px;
   font-size: 19px;
+  width: 10%;
+  margin: 10px auto;
+  border: none;
 }
 
 .movie-img {
@@ -10,11 +15,15 @@
 }
 
 .movie-title,
-.movie-description,
 .movie-genre,
 .movie-director {
   margin: 10px;
   font-size: 22px;
+}
+
+.movie-description {
+  font-size: 20px;
+  padding: 0 30px;
 }
 
 .movie-view {
