@@ -8,11 +8,49 @@ export function RegistrationView(props) {
   const [password, setPassword] = useState("");
   const [birthday, setBirthday] = useState("");
   const [email, setEmail] = useState("");
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
+  const [birthdayErr, setBirthdayErr] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr("Username is required");
+      isReq = false;
+    } else if (username.length < 2) {
+      setUsernameErr("Username must be at least 2 characters long");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password is required");
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr("Password must be at least 6 charcaters long");
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr("Email is required");
+      isReq = false;
+    } else if (email.indexOf("@") === -1) {
+      setEmailErr("Email address doesn't contain an @ symbol");
+      isReq = false;
+    }
+    if (!birthday) {
+      setBirthdayErr("Birthday is required");
+      isReq = false;
+    }
+
+    return isReq;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, birthday, email);
-    props.onRegistration(username);
+    const isReq = validate();
+    if (isReq) {
+      console.log(username, password, birthday, email);
+      props.onRegistration(username);
+    }
   };
 
   return (
@@ -24,20 +62,28 @@ export function RegistrationView(props) {
       </Navbar>
       <Container>
         <Form id="form">
-          <Form.Group controlId="formUsername" id="form-field">
+          <Form.Group controlId="formUsername">
             <Form.Label>Username:</Form.Label>
             <Form.Control
               type="text"
+              placeholder="Enter username"
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
+            {/* code added here to display validation error */}
+            {usernameErr && <p>{usernameErr}</p>}
           </Form.Group>
 
-          <Form.Group controlId="formPassword" id="form-field">
-            <Form.Label>Password:</Form.Label>
+          <Form.Group controlId="formPassword">
+            <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
+              placeholder="Password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {/* code added here to display validation error */}
+            {passwordErr && <p>{passwordErr}</p>}
           </Form.Group>
 
           <Form.Group controlId="formBday" id="form-field">
@@ -46,6 +92,8 @@ export function RegistrationView(props) {
               type="date"
               onChange={(e) => setBirthday(e.target.value)}
             />
+            {/* code added here to display validation error */}
+            {birthdayErr && <p>{birthdayErr}</p>}
           </Form.Group>
 
           <Form.Group controlId="formEmail" id="form-field">
@@ -54,6 +102,8 @@ export function RegistrationView(props) {
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             />
+            {/* code added here to display validation error */}
+            {emailErr && <p>{emailErr}</p>}
           </Form.Group>
           <Button
             id="btn"

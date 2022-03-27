@@ -22,9 +22,7 @@ export class MovieView extends React.Component {
         <Card.Title className="movie-title">
           <p>{movie.Title}</p>
         </Card.Title>
-        <Card.Text className="movie-description">
-        {movie.Description}
-        </Card.Text>
+        <Card.Text className="movie-description">{movie.Description}</Card.Text>
         <Card.Text>Genre: {movie.Genre.Name}</Card.Text>
         <Card.Text>Director: {movie.Director.Name}</Card.Text>
         <Card.Text>Year: {movie.Year}</Card.Text>
@@ -42,6 +40,5 @@ export class MovieView extends React.Component {
 }
 
 MovieView.propTypes = {
-  movie: PropTypes.shape.isRequired,
   onBackClick: PropTypes.func.isRequired,
 };

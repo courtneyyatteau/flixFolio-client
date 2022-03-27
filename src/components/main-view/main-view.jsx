@@ -7,7 +7,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { NavigationView } from "../navbar-view/navbar-view";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 export class MainView extends React.Component {
   constructor() {
@@ -19,17 +19,29 @@ export class MainView extends React.Component {
     };
   }
 
-  componentDidMount() {
+  getMovies(token) {
     axios
-      .get("https://flixfolio.herokuapp.com/movies")
+      .get("https://flixfolio.herokuapp.com/movies", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
+        // Assign the result to the state
         this.setState({
           movies: response.data,
         });
       })
-      .catch((error) => {
+      .catch(function (error) {
         console.log(error);
       });
+  }
+  componentDidMount() {
+    let accessToken = localStorage.getItem("token");
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem("user"),
+      });
+      this.getMovies(accessToken);
+    }
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -44,9 +56,22 @@ export class MainView extends React.Component {
     });
   }
 
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user,
+      user: authData.user.Username,
+    });
+
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    this.setState({
+      user: null,
     });
   }
 
@@ -67,7 +92,7 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
-        <NavigationView />
+        <NavigationView onLoggedOut={() => this.onLoggedOut()} />
         <Row className="main-view justify-content-md-center">
           {selectedMovie ? (
             <Col md={8}>

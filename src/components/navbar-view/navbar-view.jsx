@@ -12,7 +12,10 @@ import {
   Image,
 } from "react-bootstrap";
 
-export function NavigationView() {
+export function NavigationView(props) {
+  const handleSubmit = () => {
+    props.onLoggedOut();
+  };
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Container fluid>
@@ -50,7 +53,9 @@ export function NavigationView() {
             id="search"
             aria-label="Search"
           />
-          <Button id="btn" variant="outline-success">Search</Button>
+          <Button id="btn" variant="outline-success">
+            Search
+          </Button>
         </Form>
         <NavDropdown
           title={<Image className="userIcon" src={image} rounded width={30} />}
@@ -58,9 +63,10 @@ export function NavigationView() {
         >
           <NavDropdown.Item href="#">Profile</NavDropdown.Item>
           <NavDropdown.Item href="#">My Favorites</NavDropdown.Item>
-          <NavDropdown.Item href="#">Sign out</NavDropdown.Item>
+          <NavDropdown.Item onClick={handleSubmit} href="#">
+            Sign out
+          </NavDropdown.Item>
         </NavDropdown>
-        <Button id="btn">Register here!</Button>
       </Container>
     </Navbar>
   );
