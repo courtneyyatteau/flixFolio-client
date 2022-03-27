@@ -22818,21 +22818,12 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , selectedMovie , user , registration  } = this.state;
-        if (!registration) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-            onRegistration: (registration1)=>this.onRegistration(registration1)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 82
-            },
-            __self: this
-        }));
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
             onLoggedIn: (user1)=>this.onLoggedIn(user1)
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 89
+                lineNumber: 84
             },
             __self: this
         }));
@@ -22840,7 +22831,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 91
+                lineNumber: 86
             },
             __self: this
         }));
@@ -22848,7 +22839,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 94
+                lineNumber: 89
             },
             __self: this,
             children: [
@@ -22857,7 +22848,7 @@ class MainView extends _reactDefault.default.Component {
                     ,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 95
+                        lineNumber: 90
                     },
                     __self: this
                 }),
@@ -22865,14 +22856,14 @@ class MainView extends _reactDefault.default.Component {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 96
+                        lineNumber: 91
                     },
                     __self: this,
                     children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         md: 8,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 98
+                            lineNumber: 93
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22882,7 +22873,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 99
+                                lineNumber: 94
                             },
                             __self: this
                         })
@@ -22890,7 +22881,7 @@ class MainView extends _reactDefault.default.Component {
                             md: 4,
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 108
+                                lineNumber: 103
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22900,7 +22891,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 109
+                                    lineNumber: 104
                                 },
                                 __self: this
                             }, movie._id)
@@ -37356,7 +37347,7 @@ var _movieCardScss = require("./movie-card.scss");
 var _reactBootstrap = require("react-bootstrap");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
@@ -37410,23 +37401,17 @@ class MovieCard extends _reactDefault.default.Component {
                                     children: movie.Title
                                 })
                             }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(Link, {
-                                to: `/movies/${movie._id}`,
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                id: "open-btn",
+                                onClick: ()=>onMovieClick(movie)
+                                ,
+                                variant: "link",
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
                                     lineNumber: 24
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    id: "open-btn",
-                                    variant: "link",
-                                    __source: {
-                                        fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 25
-                                    },
-                                    __self: this,
-                                    children: "Open"
-                                })
+                                children: "Open"
                             })
                         ]
                     })
@@ -37449,7 +37434,8 @@ MovieCard.propTypes = {
             Bio: _propTypesDefault.default.string.isRequired,
             Birth: _propTypesDefault.default.string.isRequired
         })
-    })
+    }).isRequired,
+    onMovieClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$4249.postlude(module);

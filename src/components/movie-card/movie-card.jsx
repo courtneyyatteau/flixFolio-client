@@ -5,7 +5,7 @@ import { Card, Button } from "react-bootstrap";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie } = this.props;
+    const { movie, onMovieClick } = this.props;
 
     return (
       <div>
@@ -21,11 +21,13 @@ export class MovieCard extends React.Component {
             <Card.Title>
               <p>{movie.Title}</p>
             </Card.Title>
-            <Link to={`/movies/${movie._id}`}>
-              <Button id="open-btn" variant="link">
-                Open
-              </Button>
-            </Link>
+            <Button
+              id="open-btn"
+              onClick={() => onMovieClick(movie)}
+              variant="link"
+            >
+              Open
+            </Button>
           </Card.Body>
         </Card>
       </div>
@@ -47,5 +49,6 @@ MovieCard.propTypes = {
       Bio: PropTypes.string.isRequired,
       Birth: PropTypes.string.isRequired,
     }),
-  }),
+  }).isRequired,
+  onMovieClick: PropTypes.func.isRequired,
 };
