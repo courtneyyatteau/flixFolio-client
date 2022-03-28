@@ -7,30 +7,48 @@ export function LoginView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const validate = () => {
+    let isReq = true;
+
+    if (!username) {
+      setUsernameErr("Username required");
+      isReq = false;
+    } else if (username.length < 2) {
+      setUsernameErr("Username must be at least 2 characters long");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password required");
+      isReq = false;
+    } else if (password.length < 6) {
+      setPassword("Password must be at least 6 characters long");
+      isReq = false;
+    }
+
+    return isReq;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("https://flixfolio.herokuapp.com/login", {
-        Username: username,
-        Password: password,
-      })
-      .then((response) => {
-        const data = response.data;
-        props.onLoggedIn(data);
-      })
-      .catch((e) => {
-        console.log("no such user exists");
-      });
+    const isReq = validate();
+    if (isReq) {
+      axios
+        .post("https://flixfolio.herokuapp.com/login", {
+          Username: username,
+          Password: password,
+        })
+        .then((response) => {
+          const data = response.data;
+          props.onLoggedIn(data);
+        })
+        .catch((e) => {
+          console.log("no such user exists");
+        });
+    }
   };
 
   return (
     <>
-      {" "}
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home" id="logo">
-          FlixFolio
-        </Navbar.Brand>
-      </Navbar>
       <Container>
         <Form id="form">
           <Form.Group controlId="formUsername" id="form-field">

@@ -55,11 +55,6 @@ export function RegistrationView(props) {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home" id="logo">
-          FlixFolio
-        </Navbar.Brand>
-      </Navbar>
       <Container>
         <Form id="form">
           <Form.Group controlId="formUsername">

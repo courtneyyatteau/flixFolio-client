@@ -19,13 +19,13 @@ export function NavigationView(props) {
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Container fluid>
-        <Navbar.Brand href="#home" id="logo">
+        <Navbar.Brand href="/" id="logo">
           FlixFolio
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link id="nav-link" href="#home">
+            <Nav.Link id="nav-link" href="/">
               Home
             </Nav.Link>
             <NavDropdown title="Genres" id="nav-link">
