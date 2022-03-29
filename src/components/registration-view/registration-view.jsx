@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
 import "./registration-view.scss";
 import { Button, Form, Navbar, Container } from "react-bootstrap";
@@ -48,8 +49,21 @@ export function RegistrationView(props) {
     e.preventDefault();
     const isReq = validate();
     if (isReq) {
-      console.log(username, password, birthday, email);
-      props.onRegistration(username);
+      axios
+        .post("https://flixfolio.herokuapp.com/users", {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday,
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log(data);
+          window.open("/", "_self");
+        })
+        .catch((e) => {
+          console.log("error registering the user");
+        });
     }
   };
 

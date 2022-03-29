@@ -10,7 +10,8 @@ $main-color: #2565ae;
 }
 
 .movie-img {
-  width: 175px;
+  max-width: 250px;
+  margin: 10px auto;
 }
 
 .movie-title,

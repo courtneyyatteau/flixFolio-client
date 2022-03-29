@@ -47,6 +47,10 @@ export function LoginView(props) {
     }
   };
 
+  const onSignUp = () => {
+    window.open("/register", "_self");
+  };
+
   return (
     <>
       <Container>
@@ -73,6 +77,14 @@ export function LoginView(props) {
             onClick={handleSubmit}
           >
             Submit
+          </Button>
+          <p>Need an account? </p>
+          <Button
+            onClick={() => {
+              onSignUp();
+            }}
+          >
+            Sign Up Here
           </Button>
         </Form>
       </Container>
