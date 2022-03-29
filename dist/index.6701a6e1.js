@@ -40860,7 +40860,8 @@ function FooterView() {
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                     id: "link",
-                    href: "/",
+                    href: "https://github.com/courtneyyatteau/movie_api",
+                    target: "_blank",
                     __source: {
                         fileName: "src/components/footer-view/footer-view.jsx",
                         lineNumber: 18
@@ -40872,15 +40873,16 @@ function FooterView() {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Item, {
                 __source: {
                     fileName: "src/components/footer-view/footer-view.jsx",
-                    lineNumber: 22
+                    lineNumber: 26
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                     id: "link",
-                    href: "/",
+                    href: "https://yatteau-movie-api-doc.netlify.app/",
+                    target: "_blank",
                     __source: {
                         fileName: "src/components/footer-view/footer-view.jsx",
-                        lineNumber: 23
+                        lineNumber: 27
                     },
                     __self: this,
                     children: "API Documentation"

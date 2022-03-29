@@ -15,12 +15,20 @@ export function FooterView() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link id="link" href="/">
+        <Nav.Link
+          id="link"
+          href="https://github.com/courtneyyatteau/movie_api"
+          target="_blank"
+        >
           Github (API)
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link id="link" href="/">
+        <Nav.Link
+          id="link"
+          href="https://yatteau-movie-api-doc.netlify.app/"
+          target="_blank"
+        >
           API Documentation
         </Nav.Link>
       </Nav.Item>
