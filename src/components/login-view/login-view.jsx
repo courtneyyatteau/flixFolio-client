@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Navbar, Container } from "react-bootstrap";
+import { Form, Button, Navbar, Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
 
   const validate = () => {
     let isReq = true;
@@ -55,37 +58,48 @@ export function LoginView(props) {
     <>
       <Container>
         <Form id="form">
-          <Form.Group controlId="formUsername" id="form-field">
-            <Form.Label>Username:</Form.Label>
+          <Form.Group id="form-field">
+            <Form.Label id="form-label">Username:</Form.Label>
             <Form.Control
               type="text"
               onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username"
             />
+            {usernameErr && <p>{usernameErr}</p>}
           </Form.Group>
 
-          <Form.Group controlId="formPassword" id="form-field">
-            <Form.Label>Password:</Form.Label>
+          <Form.Group id="form-field">
+            <Form.Label id="form-label">Password:</Form.Label>
             <Form.Control
               type="password"
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
             />
+            {passwordErr && <p>{passwordErr}</p>}
           </Form.Group>
-          <Button
-            id="btn"
-            variant="primary"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-          <p>Need an account? </p>
-          <Button
-            onClick={() => {
-              onSignUp();
-            }}
-          >
-            Sign Up Here
-          </Button>
+          <Row>
+            <Button
+              id="btn"
+              variant="primary"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              Need an account?
+              <Button
+                id="btn"
+                onClick={() => {
+                  onSignUp();
+                }}
+              >
+                Sign Up Here
+              </Button>
+            </Col>
+          </Row>
         </Form>
       </Container>
     </>

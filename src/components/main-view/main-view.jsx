@@ -15,6 +15,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
+import { ProfileView } from "../profile-view/profile-view";
 import { NavigationView } from "../navbar-view/navbar-view";
 import { Row, Col, Container } from "react-bootstrap";
 import { FooterView } from "../footer-view/footer-view";
@@ -95,7 +96,10 @@ export class MainView extends React.Component {
 
                 return (
                   <>
-                    <NavigationView onLoggedOut={() => this.onLoggedOut()} />
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => this.onLoggedOut()}
+                    />
                     <Container fluid>
                       <Row>
                         {movies.map((movie) => (
@@ -118,7 +122,10 @@ export class MainView extends React.Component {
                 }
 
                 return (
-                  <LoginView onLoggedIn={(data) => this.onLoggedIn(data)} />
+                  <LoginView
+                    user={user}
+                    onLoggedIn={(data) => this.onLoggedIn(data)}
+                  />
                 );
               }}
             />
@@ -141,7 +148,13 @@ export class MainView extends React.Component {
               render={({ match, history }) => {
                 return (
                   <>
-                    <NavigationView onLoggedOut={() => this.onLoggedOut()} />
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
                     <Col md={8}>
                       <MovieView
                         movie={movies.find(
@@ -160,7 +173,13 @@ export class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
                 return (
                   <>
-                    <NavigationView onLoggedOut={() => this.onLoggedOut()} />
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
                     <Container>
                       <Row>
                         <Col md={8}>
@@ -185,7 +204,13 @@ export class MainView extends React.Component {
                 if (movies.length === 0) return <div className="main-view" />;
                 return (
                   <>
-                    <NavigationView onLoggedOut={() => this.onLoggedOut()} />
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
                     <Col md={8}>
                       <GenreView
                         genre={
@@ -202,6 +227,18 @@ export class MainView extends React.Component {
                 );
               }}
             />
+            <Route path="/users/:user">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <ProfileView user={user} />
+              </>
+            </Route>
           </Row>
         </Router>
       </div>

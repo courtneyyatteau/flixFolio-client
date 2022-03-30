@@ -3,7 +3,6 @@
 }
 
 .main-view {
-  text-align: center;
   background-color: #d5f3fe;
   color: hwb(212 15% 32%);
 }
@@ -17,6 +16,7 @@
   z-index: 0;
   background-color: transparent;
   border: none;
+  text-align: center;
 }
 
 p {
@@ -47,25 +47,23 @@ p {
   color: white;
   border-radius: 5px;
   font-size: 19px;
-  margin: 10px auto;
   border: none;
+  float: right;
+  margin: 10px;
+}
+
+.movie-info {
+  margin: 10px;
+}
+
+#movie-title {
+  font-size: 30px;
+  text-align: center;
 }
 
 .movie-img {
   max-width: 250px;
-  margin: 10px auto;
-}
-
-.movie-title,
-.movie-genre,
-.movie-director {
-  margin: 10px;
-  font-size: 22px;
-}
-
-.movie-description {
-  font-size: 20px;
-  padding: 0 30px;
+  margin: 20px;
 }
 
 .movie-view {
@@ -74,7 +72,7 @@ p {
   margin: 50px auto;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   #back-btn {
     font-size: 14px;
   }
@@ -148,5 +146,6 @@ p {
 #link:hover {
   color: #d5f3fe;
 }
+
 
 /*# sourceMappingURL=index.17d663fa.css.map */
