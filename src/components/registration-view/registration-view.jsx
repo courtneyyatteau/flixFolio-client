@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import "./registration-view.scss";
-import { Button, Form, Navbar, Container } from "react-bootstrap";
+import { Button, Form, Navbar, Container, Row, Col } from "react-bootstrap";
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -19,8 +19,8 @@ export function RegistrationView(props) {
     if (!username) {
       setUsernameErr("Username is required");
       isReq = false;
-    } else if (username.length < 2) {
-      setUsernameErr("Username must be at least 2 characters long");
+    } else if (username.length < 4) {
+      setUsernameErr("Username must be at least 4 characters long");
       isReq = false;
     }
     if (!password) {
@@ -43,6 +43,10 @@ export function RegistrationView(props) {
     }
 
     return isReq;
+  };
+
+  const onLogin = () => {
+    window.open("/login", "_self");
   };
 
   const handleSubmit = (e) => {
@@ -124,6 +128,19 @@ export function RegistrationView(props) {
           </Button>
         </Form>
       </Container>
+      <Row>
+        <Col sm={12}>
+          Already have an account?
+          <Button
+            id="btn"
+            onClick={() => {
+              onLogin();
+            }}
+          >
+            Login Here
+          </Button>
+        </Col>
+      </Row>
     </>
   );
 }

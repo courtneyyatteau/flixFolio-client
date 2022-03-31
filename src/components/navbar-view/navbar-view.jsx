@@ -61,7 +61,7 @@ export class NavigationView extends React.Component {
           title={<Image className="userIcon" src={image} rounded width={30} />}
           id="basic-nav-dropdown"
         >
-          <Link to={`/users/${user}`}>Profile</Link>
+          <Link to={`/profile`}>Profile</Link>
           <NavDropdown.Item href="#">My Favorites</NavDropdown.Item>
           <NavDropdown.Item
             onClick={() => {

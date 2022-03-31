@@ -221,7 +221,7 @@ export class MainView extends React.Component {
                 );
               }}
             />
-            <Route path="/users/:user">
+            <Route path="/profile">
               <>
                 <NavigationView
                   user={user}
@@ -230,9 +230,7 @@ export class MainView extends React.Component {
                     window.open("/", "_self");
                   }}
                 />
-                <ProfileView
-                  user={user}
-                />
+                <ProfileView user={user} movies={movies} />
               </>
             </Route>
           </Row>

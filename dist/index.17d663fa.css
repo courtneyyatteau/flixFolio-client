@@ -98,6 +98,16 @@ p {
 .profile-image {
   width: 100%;
 }
+
+#btn {
+  background-color: #2565ae;
+  color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border: none;
+  float: right;
+  margin: 10px;
+}
 #nav-bar {
   width: 100%;
   position: sticky;
