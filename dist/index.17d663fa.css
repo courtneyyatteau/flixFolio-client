@@ -95,6 +95,9 @@ p {
 }
 
 
+.profile-image {
+  width: 100%;
+}
 #nav-bar {
   width: 100%;
   position: sticky;
@@ -146,6 +149,5 @@ p {
 #link:hover {
   color: #d5f3fe;
 }
-
 
 /*# sourceMappingURL=index.17d663fa.css.map */

@@ -54,12 +54,6 @@ export class MainView extends React.Component {
     }
   }
 
-  onRegistration(registration) {
-    this.setState({
-      registration,
-    });
-  }
-
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -80,7 +74,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user, registration } = this.state;
+    const { movies, user } = this.state;
 
     return (
       <div className="main-view">
@@ -236,7 +230,9 @@ export class MainView extends React.Component {
                     window.open("/", "_self");
                   }}
                 />
-                <ProfileView user={user} />
+                <ProfileView
+                  user={user}
+                />
               </>
             </Route>
           </Row>
