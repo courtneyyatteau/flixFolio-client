@@ -52,6 +52,15 @@ p {
   margin: 10px;
 }
 
+#fav-btn {
+  background-color: #2565ae;
+  color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border: none;
+  margin: 10px 0;
+}
+
 .movie-info {
   margin: 10px;
 }
@@ -141,6 +150,14 @@ p {
 
 #search {
   margin: 17px 0;
+}
+
+.nav-item {
+  color: #2565ae;
+}
+
+.nav-item:hover {
+  text-decoration: none;
 }
 #footer {
   background-color: #2565ae;

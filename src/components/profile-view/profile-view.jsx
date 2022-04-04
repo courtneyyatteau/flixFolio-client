@@ -103,6 +103,32 @@ export class ProfileView extends React.Component {
       });
   };
 
+  onFavRemove = (e, movie) => {
+    e.preventDefault();
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    axios
+      .delete(
+        `https://flixFolio.herokuapp.com/users/${Username}/${movie._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        alert("Favorite movie has been removed.");
+        window.location.reload(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  refreshPage = () => {
+    window.location.reload(false);
+  };
+
   setUsername(value) {
     this.setState({
       Username: value,
@@ -194,7 +220,11 @@ export class ProfileView extends React.Component {
               </Button>
             </Form>
           </Tab>
-          <Tab eventKey="movie-favs" title="Favorite Movies">
+          <Link
+            to="/profile/favorites"
+            eventKey="movie-favs"
+            title="Favorite Movies"
+          >
             <Card.Body>
               {FavoriteMovies.length === 0 && (
                 <div className="text-center">No Favorite Movies</div>
@@ -227,7 +257,7 @@ export class ProfileView extends React.Component {
                   })}
               </Row>
             </Card.Body>
-          </Tab>
+          </Link>
           <Tab eventKey="manage-account" title="Account Management">
             <Button onClick={() => this.onDeleteAccount()}>
               Delete my Account

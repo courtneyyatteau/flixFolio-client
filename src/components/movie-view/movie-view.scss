@@ -10,6 +10,15 @@ $main-color: #2565ae;
   margin: 10px;
 }
 
+#fav-btn {
+  background-color: $main-color;
+  color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border: none;
+  margin: 10px 0;
+}
+
 .movie-info {
   margin: 10px;
 }
