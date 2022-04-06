@@ -7,13 +7,64 @@ import "./movie-view.scss";
 import axios from "axios";
 
 export class MovieView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Username: null,
+      Password: null,
+      FavoriteMovies: [],
+    };
+  }
+
+  componentDidMount() {
+    const accessToken = localStorage.getItem("token");
+    this.getUserInfo(accessToken);
+    document.addEventListener("keypress", this.keypressCallback);
+  }
+
+  getUserInfo = (token) => {
+    const Username = localStorage.getItem("user");
+    axios
+      .get(`https://flixfolio.herokuapp.com/users/${Username}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.setState({
+          Username: response.data.Username,
+          Password: response.data.Password,
+          FavoriteMovies: response.data.FavoriteMovies,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   keypressCallback(event) {
     console.log(event.key);
   }
 
-  componentDidMount() {
-    document.addEventListener("keypress", this.keypressCallback);
-  }
+  onFavAdd = (e, movie) => {
+    e.preventDefault();
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    axios
+      .post(
+        `https://flixfolio.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        alert("Favorite movie has been added.");
+        window.location.reload(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   render() {
     const { movie, onBackClick } = this.props;
@@ -40,7 +91,12 @@ export class MovieView extends React.Component {
               </Link>
             </Card.Text>
             <Card.Text>Year: {movie.Year}</Card.Text>
-            <Button id="fav-btn" type="submit" onClick={this.onFavAdd}>
+            <Button
+              id="fav-btn"
+              type="submit"
+              value={movie._id}
+              onClick={(e) => this.onFavAdd(e, movie)}
+            >
               Favorite ❤
             </Button>
             <Button

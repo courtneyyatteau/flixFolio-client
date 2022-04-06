@@ -39925,25 +39925,67 @@ var _movieViewScss = require("./movie-view.scss");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 class MovieView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            Username: null,
+            Password: null,
+            FavoriteMovies: []
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem("token");
+        this.getUserInfo(accessToken);
+        document.addEventListener("keypress", this.keypressCallback);
+    }
+    getUserInfo = (token)=>{
+        const Username = localStorage.getItem("user");
+        _axiosDefault.default.get(`https://flixfolio.herokuapp.com/users/${Username}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                Username: response.data.Username,
+                Password: response.data.Password,
+                FavoriteMovies: response.data.FavoriteMovies
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     keypressCallback(event) {
         console.log(event.key);
     }
-    componentDidMount() {
-        document.addEventListener("keypress", this.keypressCallback);
-    }
+    onFavAdd = (e, movie)=>{
+        e.preventDefault();
+        const Username = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+        _axiosDefault.default.post(`https://flixfolio.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            console.log(response);
+            alert("Favorite movie has been added.");
+            window.location.reload(false);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    };
     render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 22
+                lineNumber: 73
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 23
+                    lineNumber: 74
                 },
                 __self: this,
                 children: [
@@ -39951,7 +39993,7 @@ class MovieView extends _reactDefault.default.Component {
                         sm: 5,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 24
+                            lineNumber: 75
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
@@ -39959,7 +40001,7 @@ class MovieView extends _reactDefault.default.Component {
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 25
+                                lineNumber: 76
                             },
                             __self: this
                         })
@@ -39968,7 +40010,7 @@ class MovieView extends _reactDefault.default.Component {
                         className: "movie-info",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 27
+                            lineNumber: 78
                         },
                         __self: this,
                         children: [
@@ -39976,7 +40018,7 @@ class MovieView extends _reactDefault.default.Component {
                                 id: "movie-title",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 28
+                                    lineNumber: 79
                                 },
                                 __self: this,
                                 children: movie.Title
@@ -39985,7 +40027,7 @@ class MovieView extends _reactDefault.default.Component {
                                 className: "movie-description",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 29
+                                    lineNumber: 80
                                 },
                                 __self: this,
                                 children: movie.Description
@@ -39993,7 +40035,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 32
+                                    lineNumber: 83
                                 },
                                 __self: this,
                                 children: [
@@ -40003,7 +40045,7 @@ class MovieView extends _reactDefault.default.Component {
                                         to: `/genres/${movie.Genre.Name}`,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 34
+                                            lineNumber: 85
                                         },
                                         __self: this,
                                         children: movie.Genre.Name
@@ -40013,7 +40055,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 36
+                                    lineNumber: 87
                                 },
                                 __self: this,
                                 children: [
@@ -40023,7 +40065,7 @@ class MovieView extends _reactDefault.default.Component {
                                         to: `/directors/${movie.Director.Name}`,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 38
+                                            lineNumber: 89
                                         },
                                         __self: this,
                                         children: movie.Director.Name
@@ -40033,7 +40075,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 42
+                                    lineNumber: 93
                                 },
                                 __self: this,
                                 children: [
@@ -40044,10 +40086,12 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 id: "fav-btn",
                                 type: "submit",
-                                onClick: this.onFavAdd,
+                                value: movie._id,
+                                onClick: (e)=>this.onFavAdd(e, movie)
+                                ,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 94
                                 },
                                 __self: this,
                                 children: "Favorite ❤"
@@ -40059,7 +40103,7 @@ class MovieView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 46
+                                    lineNumber: 102
                                 },
                                 __self: this,
                                 children: "Back"
@@ -40080,7 +40124,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"FPBxe","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l8BAX","axios":"iYoWk"}],"kvL93":[function() {},{}],"aP2YV":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./movie-view.scss":"kvL93","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"FPBxe","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l8BAX"}],"kvL93":[function() {},{}],"aP2YV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40146,7 +40190,7 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const isReq = validate();
-        if (isReq) _axiosDefault.default.post("https://flixfolio.herokuapp.com/users", {
+        if (isReq) _axiosDefault.default.post("https://flixFolio.herokuapp.com/users", {
             Username: username,
             Password: password,
             Email: email,
@@ -40620,7 +40664,7 @@ class ProfileView extends _reactDefault.default.Component {
     }
     getUserInfo = (token)=>{
         const Username = localStorage.getItem("user");
-        _axiosDefault.default.get(`https://flixFolio.herokuapp.com/users/${Username}`, {
+        _axiosDefault.default.get(`https://flixfolio.herokuapp.com/users/${Username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40640,7 +40684,7 @@ class ProfileView extends _reactDefault.default.Component {
         e.preventDefault();
         const Username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        _axiosDefault.default.put(`https://flixFolio.herokuapp.com/users/${Username}`, {
+        _axiosDefault.default.put(`https://flixfolio.herokuapp.com/users/${Username}`, {
             Username: this.state.Username,
             Password: this.state.Password,
             Email: this.state.Email,
@@ -40664,7 +40708,7 @@ class ProfileView extends _reactDefault.default.Component {
     onDeleteAccount = ()=>{
         const Username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        _axiosDefault.default.delete(`https://flixFolio.herokuapp.com/users/${Username}`, {
+        _axiosDefault.default.delete(`https://flixfolio.herokuapp.com/users/${Username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -40681,7 +40725,7 @@ class ProfileView extends _reactDefault.default.Component {
         e.preventDefault();
         const Username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        _axiosDefault.default.delete(`https://flixFolio.herokuapp.com/users/${Username}/${movie._id}`, {
+        _axiosDefault.default.delete(`https://flixfolio.herokuapp.com/users/${Username}/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

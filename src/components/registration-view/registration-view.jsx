@@ -54,7 +54,7 @@ export function RegistrationView(props) {
     const isReq = validate();
     if (isReq) {
       axios
-        .post("https://flixfolio.herokuapp.com/users", {
+        .post("https://flixFolio.herokuapp.com/users", {
           Username: username,
           Password: password,
           Email: email,
