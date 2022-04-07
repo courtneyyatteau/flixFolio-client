@@ -41110,39 +41110,39 @@ class NavigationView extends _reactDefault.default.Component {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
-                    href: "/",
-                    id: "logo",
-                    __source: {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 24
-                    },
-                    __self: this,
-                    children: "FlixFolio"
-                }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
                     "aria-controls": "basic-navbar-nav",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 27
+                        lineNumber: 24
                     },
                     __self: this
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
-                    id: "basic-navbar-nav",
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav, {
+                    className: "nav-stuff mr-auto",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 28
+                        lineNumber: 25
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
-                        className: "nav-stuff ml-auto",
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Collapse, {
+                        id: "basic-navbar-nav",
                         __source: {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 26
                         },
                         __self: this,
                         children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                                href: "/",
+                                id: "logo",
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 27
+                                },
+                                __self: this,
+                                children: "FlixFolio"
+                            }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                                 id: "nav-link",
                                 href: "/",
@@ -41314,67 +41314,67 @@ class NavigationView extends _reactDefault.default.Component {
                                         children: "Search"
                                     })
                                 ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavDropdown, {
-                                title: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Image, {
-                                    className: "userIcon nav-stuff-4",
-                                    src: _userPngDefault.default,
-                                    rounded: true,
-                                    width: 30
-                                }),
-                                id: "basic-nav-dropdown",
+                            })
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavDropdown, {
+                    title: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Image, {
+                        className: "userIcon nav-stuff-4",
+                        src: _userPngDefault.default,
+                        rounded: true,
+                        width: 30
+                    }),
+                    id: "basic-nav-dropdown",
+                    __source: {
+                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        lineNumber: 62
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                        __source: {
+                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                            lineNumber: 73
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 60
+                                    lineNumber: 74
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/profile`,
+                                    className: "nav-item",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 71
+                                        lineNumber: 75
+                                    },
+                                    __self: this,
+                                    children: "Profile"
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                __source: {
+                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    lineNumber: 79
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
+                                    to: "#",
+                                    className: "nav-item",
+                                    onClick: ()=>{
+                                        onLoggedOut();
+                                    },
+                                    __source: {
+                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                        lineNumber: 80
                                     },
                                     __self: this,
                                     children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                            __source: {
-                                                fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                lineNumber: 72
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                                to: `/profile`,
-                                                className: "nav-item",
-                                                __source: {
-                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                    lineNumber: 73
-                                                },
-                                                __self: this,
-                                                children: "Profile"
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                            __source: {
-                                                fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                lineNumber: 77
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
-                                                to: "#",
-                                                className: "nav-item",
-                                                onClick: ()=>{
-                                                    onLoggedOut();
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                    lineNumber: 78
-                                                },
-                                                __self: this,
-                                                children: [
-                                                    " ",
-                                                    "Sign out"
-                                                ]
-                                            })
-                                        })
+                                        " ",
+                                        "Sign out"
                                     ]
                                 })
                             })

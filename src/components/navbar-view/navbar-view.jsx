@@ -21,12 +21,12 @@ export class NavigationView extends React.Component {
 
     return (
       <Navbar bg="light" expand="md" id="nav-bar">
-        <Navbar.Brand href="/" id="logo">
-          FlixFolio
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="nav-stuff ml-auto">
+        <Nav className="nav-stuff mr-auto">
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Brand href="/" id="logo">
+              FlixFolio
+            </Navbar.Brand>
             <Nav.Link id="nav-link" href="/" className="nav-stuff-1">
               Home
             </Nav.Link>
@@ -57,39 +57,39 @@ export class NavigationView extends React.Component {
                 Search
               </Button>
             </Form>
-            <NavDropdown
-              title={
-                <Image
-                  className="userIcon nav-stuff-4"
-                  src={image}
-                  rounded
-                  width={30}
-                />
-              }
-              id="basic-nav-dropdown"
-            >
-              <Container>
-                <Row>
-                  <Link to={`/profile`} className="nav-item">
-                    Profile
-                  </Link>
-                </Row>
-                <Row>
-                  <Link
-                    to="#"
-                    className="nav-item"
-                    onClick={() => {
-                      onLoggedOut();
-                    }}
-                  >
-                    {" "}
-                    Sign out
-                  </Link>
-                </Row>
-              </Container>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+          </Navbar.Collapse>
+        </Nav>
+        <NavDropdown
+          title={
+            <Image
+              className="userIcon nav-stuff-4"
+              src={image}
+              rounded
+              width={30}
+            />
+          }
+          id="basic-nav-dropdown"
+        >
+          <Container>
+            <Row>
+              <Link to={`/profile`} className="nav-item">
+                Profile
+              </Link>
+            </Row>
+            <Row>
+              <Link
+                to="#"
+                className="nav-item"
+                onClick={() => {
+                  onLoggedOut();
+                }}
+              >
+                {" "}
+                Sign out
+              </Link>
+            </Row>
+          </Container>
+        </NavDropdown>
       </Navbar>
     );
   }
