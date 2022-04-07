@@ -108,14 +108,14 @@ p {
   width: 100%;
 }
 
-#btn {
+#btn1,
+#btn2 {
   background-color: #2565ae;
   color: white;
   border-radius: 5px;
   font-size: 19px;
   border: none;
   float: right;
-  margin: 10px;
 }
 #nav-bar {
   width: 100%;
@@ -126,12 +126,12 @@ p {
 }
 
 .userIcon {
-  margin-left: 20px;
+  margin: 15px 0 0 40px;
 }
 
 #logo {
   color: #2565ae;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 900;
 }
 
@@ -140,24 +140,39 @@ p {
   border: none;
   border-radius: 5px;
   color: white;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 #nav-link {
-  font-size: 15px;
+  font-size: 17px;
   color: #2565ae;
+  margin-top: 15px;
 }
 
 #search {
-  margin: 17px 0;
+  margin: 18px 0;
 }
 
 .nav-item {
   color: #2565ae;
+  width: 140px;
+  text-align: center;
 }
 
 .nav-item:hover {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-stuff-1,
+.nav-stuff-2 {
+    text-align: left;
+  }
+
+  .nav-stuff-4 {
+    float: left;
+    margin: 0;
+  }
 }
 #footer {
   background-color: #2565ae;

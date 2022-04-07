@@ -9,12 +9,12 @@ $main-color: #2565ae;
 }
 
 .userIcon {
-  margin-left: 20px;
+  margin: 15px 0 0 40px;
 }
 
 #logo {
   color: $main-color;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 900;
 }
 
@@ -23,22 +23,36 @@ $main-color: #2565ae;
   border: none;
   border-radius: 5px;
   color: white;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 #nav-link {
-  font-size: 15px;
+  font-size: 17px;
   color: $main-color;
+  margin-top: 15px;
 }
 
 #search {
-  margin: 17px 0;
+  margin: 18px 0;
 }
 
 .nav-item {
   color: $main-color;
+  width: 140px;
+  text-align: center;
 }
 
 .nav-item:hover {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-stuff-1,
+  .nav-stuff-2 {
+    text-align: left;
+  }
+  .nav-stuff-4 {
+    float: left;
+    margin: 0;
+  }
 }

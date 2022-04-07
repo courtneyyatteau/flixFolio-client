@@ -4,12 +4,12 @@ $main-color: #2565ae;
   width: 100%;
 }
 
-#btn {
+#btn1,
+#btn2 {
   background-color: $main-color;
   color: white;
   border-radius: 5px;
   font-size: 19px;
   border: none;
   float: right;
-  margin: 10px;
 }

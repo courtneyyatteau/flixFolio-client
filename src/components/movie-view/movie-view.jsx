@@ -7,11 +7,9 @@ import "./movie-view.scss";
 import axios from "axios";
 
 export class MovieView extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      Username: null,
-      Password: null,
       FavoriteMovies: [],
     };
   }
@@ -30,8 +28,6 @@ export class MovieView extends React.Component {
       })
       .then((response) => {
         this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
           FavoriteMovies: response.data.FavoriteMovies,
         });
       })
@@ -44,30 +40,32 @@ export class MovieView extends React.Component {
     console.log(event.key);
   }
 
-  onFavAdd = (e, movie) => {
+  onFavAdd = (e, movie, user) => {
     e.preventDefault();
-    const Username = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
-
-    axios
-      .post(
-        `https://flixfolio.herokuapp.com/users/${Username}/movies/${movie._id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        alert("Favorite movie has been added.");
-        window.location.reload(false);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    let token = localStorage.getItem("token");
+    if (movie._id === this.state.FavoriteMovies.find((fav) => fav === movie._id)) {
+      alert("Movie already a favorite!");
+    } else {
+      axios
+        .post(
+          `https://flixfolio.herokuapp.com/users/${user}/movies/${movie._id}`,
+          "",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+          alert("Favorite movie has been added.");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
 
   render() {
-    const { movie, onBackClick } = this.props;
+    const { user, movie, onBackClick } = this.props;
 
     return (
       <Card className="movie-view">
@@ -95,7 +93,7 @@ export class MovieView extends React.Component {
               id="fav-btn"
               type="submit"
               value={movie._id}
-              onClick={(e) => this.onFavAdd(e, movie)}
+              onClick={(e) => this.onFavAdd(e, movie, user)}
             >
               Favorite ❤
             </Button>

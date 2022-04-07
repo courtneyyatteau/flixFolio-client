@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./profile-view.scss";
 import {
   Form,
@@ -16,20 +16,26 @@ import axios from "axios";
 import image from "../../../public/imgs/image-placeholder.jpg";
 
 export class ProfileView extends React.Component {
+  _isMounted = false;
   constructor() {
     super();
     this.state = {
-      Username: null,
-      Password: null,
-      Email: null,
-      Birthday: null,
+      Username: "",
+      Password: "",
+      Email: "",
+      Birthday: "",
       FavoriteMovies: [],
     };
   }
 
   componentDidMount() {
+    this._isMounted = true;
     const accessToken = localStorage.getItem("token");
     this.getUserInfo(accessToken);
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   getUserInfo = (token) => {
@@ -164,11 +170,7 @@ export class ProfileView extends React.Component {
     const { Username, Password, Email, Birthday, FavoriteMovies } = this.state;
     return (
       <>
-        <Tabs
-          defaultActiveKey="profile"
-          id="uncontrolled-tab-example"
-          className="mb-3"
-        >
+        <Tabs>
           <Tab eventKey="profile" title="Profile">
             <Form
               onSubmit={(e) =>
@@ -215,16 +217,12 @@ export class ProfileView extends React.Component {
                   ></Form.Control>
                 </Col>
               </Row>
-              <Button id="btn" type="submit" onClick={this.onChangeUserInfo}>
+              <Button id="btn1" type="submit" onClick={this.onChangeUserInfo}>
                 Save Changes
               </Button>
             </Form>
           </Tab>
-          <Link
-            to="/profile/favorites"
-            eventKey="movie-favs"
-            title="Favorite Movies"
-          >
+          <Tab eventKey="movie-favs" title="Favorite Movies">
             <Card.Body>
               {FavoriteMovies.length === 0 && (
                 <div className="text-center">No Favorite Movies</div>
@@ -237,31 +235,35 @@ export class ProfileView extends React.Component {
                       FavoriteMovies.find((favorite) => favorite === movie._id)
                     ) {
                       return (
-                        <Card className="fav-movie" key={movie._id}>
-                          <Card.Img
-                            className="fav-movie-image"
-                            src={movie.ImagePath}
-                          />
-                          <Card.Body>
-                            <Button
-                              id="btn"
-                              value={movie._id}
-                              onClick={(e) => this.onFavRemove(e, movie)}
-                            >
-                              Remove
-                            </Button>
-                          </Card.Body>
-                        </Card>
+                        <Col sm={6} md={4} lg={3} xl={2}>
+                          <Card className="fav-movie" key={movie._id}>
+                            <Card.Img
+                              className="fav-movie-image"
+                              src={movie.ImagePath}
+                            />
+                            <Card.Body>
+                              <Button
+                                id="btn2"
+                                value={movie._id}
+                                onClick={(e) => this.onFavRemove(e, movie)}
+                              >
+                                Remove
+                              </Button>
+                            </Card.Body>
+                          </Card>
+                        </Col>
                       );
                     }
                   })}
               </Row>
             </Card.Body>
-          </Link>
+          </Tab>
           <Tab eventKey="manage-account" title="Account Management">
-            <Button onClick={() => this.onDeleteAccount()}>
-              Delete my Account
-            </Button>
+            <Card>
+              <Button onClick={() => this.onDeleteAccount()}>
+                Delete my Account
+              </Button>
+            </Card>
           </Tab>
         </Tabs>
       </>
