@@ -18,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/courtneyyatteau/flixFolio-client/issues"
   },
-  "homepage": "https://github.com/courtneyyatteau/flixFolio-client#readme",
   "dependencies": {
     "axios": "^0.26.1",
     "prop-types": "^15.8.1",
