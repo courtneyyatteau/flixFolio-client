@@ -40727,7 +40727,7 @@ class ProfileView extends _reactDefault.default.Component {
         }).then((response)=>{
             console.log(response);
             alert("Favorite movie has been removed.");
-            window.open(`/profile`, "_self");
+            window.open(`/`, "_self");
         }).catch(function(error) {
             console.log(error);
         });
