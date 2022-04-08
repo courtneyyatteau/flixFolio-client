@@ -25739,7 +25739,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SET_MOVIES", ()=>SET_MOVIES
 );
-parcelHelpers.export(exports, "SET_SEARCH", ()=>SET_SEARCH
+parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
 parcelHelpers.export(exports, "SET_GENRE", ()=>SET_GENRE
 );
@@ -25747,14 +25747,14 @@ parcelHelpers.export(exports, "SET_USER", ()=>SET_USER
 );
 parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
-parcelHelpers.export(exports, "setSearch", ()=>setSearch
+parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
 parcelHelpers.export(exports, "setGenre", ()=>setGenre
 );
 parcelHelpers.export(exports, "setUser", ()=>setUser
 );
 const SET_MOVIES = "SET_MOVIES"; //sets the list of movies
-const SET_SEARCH = "SET_SEARCH"; //sets the search filter
+const SET_FILTER = "SET_FILTER"; //sets search filter
 const SET_GENRE = "SET_GENRE"; //sets the genre filter
 const SET_USER = "SET_USER"; //sets the user locator
 function setMovies(value) {
@@ -25763,9 +25763,9 @@ function setMovies(value) {
         value
     };
 }
-function setSearch(value) {
+function setFilter(value) {
     return {
-        type: SET_SEARCH,
+        type: SET_FILTER,
         value
     };
 }
@@ -43342,38 +43342,6 @@ class NavigationView extends _reactDefault.default.Component {
                                         children: "Western"
                                     })
                                 ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
-                                className: "d-flex",
-                                __source: {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 48
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.FormControl, {
-                                        type: "search",
-                                        placeholder: "Search people, title, etc.",
-                                        className: "me-auto",
-                                        id: "search",
-                                        "aria-label": "Search",
-                                        __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 49
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                        id: "btn",
-                                        variant: "outline-success",
-                                        __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 56
-                                        },
-                                        __self: this,
-                                        children: "Search"
-                                    })
-                                ]
                             })
                         ]
                     })
@@ -43388,20 +43356,20 @@ class NavigationView extends _reactDefault.default.Component {
                     id: "basic-nav-dropdown",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 62
+                        lineNumber: 51
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 73
+                            lineNumber: 62
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 74
+                                    lineNumber: 63
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -43409,7 +43377,7 @@ class NavigationView extends _reactDefault.default.Component {
                                     className: "nav-item",
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 75
+                                        lineNumber: 64
                                     },
                                     __self: this,
                                     children: "Profile"
@@ -43418,7 +43386,7 @@ class NavigationView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 79
+                                    lineNumber: 68
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
@@ -43429,7 +43397,7 @@ class NavigationView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 80
+                                        lineNumber: 69
                                     },
                                     __self: this,
                                     children: [
@@ -43658,15 +43626,17 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
+var _reactBootstrap = require("react-bootstrap");
 var _actions = require("../../actions/actions");
 function VisibilityFilterInput(props) {
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+        type: "search",
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
-        placeholder: "filter",
+        placeholder: "Search by title",
+        className: "search-bar",
+        "aria-label": "Search",
         __source: {
             fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
             lineNumber: 10
@@ -43686,7 +43656,7 @@ $RefreshReg$(_c, "VisibilityFilterInput");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"8GWVf":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd"}],"8GWVf":[function(require,module,exports) {
 'use strict';
 var compose = require('redux').compose;
 exports.__esModule = true;

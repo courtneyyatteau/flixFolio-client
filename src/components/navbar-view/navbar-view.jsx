@@ -45,18 +45,7 @@ export class NavigationView extends React.Component {
               <NavDropdown.Item href="#">Sci-Fi</NavDropdown.Item>
               <NavDropdown.Item href="#">Western</NavDropdown.Item>
             </NavDropdown>
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Search people, title, etc."
-                className="me-auto"
-                id="search"
-                aria-label="Search"
-              />
-              <Button id="btn" variant="outline-success">
-                Search
-              </Button>
-            </Form>
+            
           </Navbar.Collapse>
         </Nav>
         <NavDropdown
