@@ -27,7 +27,7 @@ $main-color: #2565ae;
 }
 
 #nav-link {
-  font-size: 17px;
+  font-size: 25px;
   color: $main-color;
   margin-top: 15px;
 }
@@ -39,23 +39,10 @@ $main-color: #2565ae;
 .nav-item {
   color: $main-color;
   width: 140px;
-  text-align: center;
+  margin: 0 15px;
+  font-size: 20px;
 }
 
 .nav-item:hover {
   text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .nav-stuff-1,
-  .nav-stuff-2 {
-    text-align: left;
-  }
-  .nav-stuff-4 {
-    float: left;
-    margin: 0;
-  }
-  #nav-bar {
-    padding: 15px 0 15px 25px;
-  }
 }

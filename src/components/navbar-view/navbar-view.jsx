@@ -31,27 +31,52 @@ export class NavigationView extends React.Component {
               Home
             </Nav.Link>
             <NavDropdown title="Genres" id="nav-link" className="nav-stuff-2">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Adventure</NavDropdown.Item>
-              <NavDropdown.Item href="#">Comedy</NavDropdown.Item>
-              <NavDropdown.Item href="#">Drama</NavDropdown.Item>
-              <NavDropdown.Item href="#">Documentary</NavDropdown.Item>
-              <NavDropdown.Item href="#">Family</NavDropdown.Item>
-              <NavDropdown.Item href="#">Fantasy</NavDropdown.Item>
-              <NavDropdown.Item href="#">Horror/Thriller</NavDropdown.Item>
-              <NavDropdown.Item href="#">Musical</NavDropdown.Item>
-              <NavDropdown.Item href="#">Mystery</NavDropdown.Item>
-              <NavDropdown.Item href="#">Romance</NavDropdown.Item>
-              <NavDropdown.Item href="#">Sci-Fi</NavDropdown.Item>
-              <NavDropdown.Item href="#">Western</NavDropdown.Item>
+              <Link to={`/action`} className="nav-item">
+                Action
+              </Link>
+              <Link to={`/adventure`} className="nav-item">
+                Adventure
+              </Link>
+              <Link to={`/comedy`} className="nav-item">
+                Comedy
+              </Link>{" "}
+              <Link to={`/documentary`} className="nav-item">
+                Documentary
+              </Link>{" "}
+              <Link to={`/drama`} className="nav-item">
+                Drama
+              </Link>{" "}
+              <Link to={`/family`} className="nav-item">
+                Family
+              </Link>{" "}
+              <Link to={`/fantasy`} className="nav-item">
+                Fantasy
+              </Link>{" "}
+              <Link to={`/horror`} className="nav-item">
+                Horror
+              </Link>{" "}
+              <Link to={`/musical`} className="nav-item">
+                Musical
+              </Link>{" "}
+              <Link to={`/mystery`} className="nav-item">
+                Mystery
+              </Link>{" "}
+              <Link to={`/romance`} className="nav-item">
+                Romance
+              </Link>{" "}
+              <Link to={`/scifi`} className="nav-item">
+                Sci-Fi
+              </Link>{" "}
+              <Link to={`/western`} className="nav-item">
+                Western
+              </Link>{" "}
             </NavDropdown>
-            
           </Navbar.Collapse>
         </Nav>
         <NavDropdown
           title={
             <Image
-              className="userIcon nav-stuff-4"
+              className="userIcon nav-stuff-3"
               src={image}
               rounded
               width={30}

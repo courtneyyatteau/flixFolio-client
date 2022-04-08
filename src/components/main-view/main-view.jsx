@@ -11,7 +11,6 @@ import {
 import "./main-view.scss";
 
 import { LoginView } from "../login-view/login-view";
-import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { DirectorView } from "../director-view/director-view";
@@ -22,6 +21,9 @@ import { Row, Col, Container } from "react-bootstrap";
 import { FooterView } from "../footer-view/footer-view";
 import { setMovies } from "../../actions/actions";
 import MoviesList from "../movies-list/movies-list";
+import { ActionView } from "../genre-views/action-view";
+import { AdventureView } from "../genre-views/adventure-view";
+import { ComedyView } from "../genre-views/comedy-view";
 
 class MainView extends React.Component {
   constructor() {
@@ -95,7 +97,7 @@ class MainView extends React.Component {
                       user={user}
                       onLoggedOut={() => this.onLoggedOut()}
                     />
-                        <MoviesList movies={movies} />
+                    <MoviesList movies={movies} />
                     <FooterView />
                   </>
                 );
@@ -225,6 +227,42 @@ class MainView extends React.Component {
                   }}
                 />
                 <ProfileView user={user} movies={movies} />
+              </>
+            </Route>
+            <Route path="/action">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <ActionView movies={movies} />
+              </>
+            </Route>
+            <Route path="/adventure">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <AdventureView movies={movies} />
+              </>
+            </Route>
+            <Route path="/comedy">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <ComedyView movies={movies} />
               </>
             </Route>
           </Row>
