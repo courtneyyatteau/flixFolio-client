@@ -966,19 +966,12 @@ class FlixFolioApplication extends _reactDefault.default.Component {
                 lineNumber: 18
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
                 __source: {
                     fileName: "src/index.jsx",
                     lineNumber: 19
                 },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
-                    __source: {
-                        fileName: "src/index.jsx",
-                        lineNumber: 20
-                    },
-                    __self: this
-                })
+                __self: this
             })
         }));
     }
