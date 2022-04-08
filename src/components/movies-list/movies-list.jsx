@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { connect } from "react-redux";
-
+import Grid from "@material-ui/core/Grid";
+import "./movies-list.scss";
 import VisibilityFilterInput from "../visibility-filter-input/visibility-filter-input";
 import { MovieCard } from "../movie-card/movie-card";
 
@@ -24,18 +25,16 @@ function MoviesList(props) {
 
   return (
     <>
-      <Row>
-        <Col>
-          <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-        </Col>
-      </Row>
-      <Row>
+      <div>
+        <VisibilityFilterInput visibilityFilter={visibilityFilter} />
+      </div>
+      <Grid container justifyContent="center">
         {filteredMovies.map((m) => (
-          <Col sm={6} md={4} lg={3} xl={2} key={m._id}>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={2} key={m._id}>
             <MovieCard movie={m} />
-          </Col>
+          </Grid>
         ))}
-      </Row>
+      </Grid>
     </>
   );
 }

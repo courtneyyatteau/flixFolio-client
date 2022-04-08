@@ -18,6 +18,7 @@
     "url": "https://github.com/courtneyyatteau/flixFolio-client/issues"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "axios": "^0.26.1",
     "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.8.1",

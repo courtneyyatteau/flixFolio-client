@@ -21,7 +21,7 @@ import { NavigationView } from "../navbar-view/navbar-view";
 import { Row, Col, Container } from "react-bootstrap";
 import { FooterView } from "../footer-view/footer-view";
 import { setMovies } from "../../actions/actions";
-import MoviesList from '../movies-list/movies-list';
+import MoviesList from "../movies-list/movies-list";
 
 class MainView extends React.Component {
   constructor() {
@@ -95,11 +95,7 @@ class MainView extends React.Component {
                       user={user}
                       onLoggedOut={() => this.onLoggedOut()}
                     />
-                    <Container fluid>
-                      <Row>
                         <MoviesList movies={movies} />
-                      </Row>
-                    </Container>
                     <FooterView />
                   </>
                 );
