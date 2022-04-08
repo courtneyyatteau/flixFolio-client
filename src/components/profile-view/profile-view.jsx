@@ -124,7 +124,7 @@ export class ProfileView extends React.Component {
       .then((response) => {
         console.log(response);
         alert("Favorite movie has been removed.");
-        window.open(`/`, "_self");
+        window.open(`/profile`, "_self");
       })
       .catch(function (error) {
         console.log(error);
