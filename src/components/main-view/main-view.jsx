@@ -1,77 +1,241 @@
 import React from "react";
+import axios from "axios";
+import "./main-view.scss";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  useHistory,
+  Redirect,
+} from "react-router-dom";
+
+import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import dKImage from "../../imgs/darkKnight.jpg";
-import screamImg from "../../imgs/scream.webp";
-import hangoverImg from "../../imgs/hangover.jpg";
+import { RegistrationView } from "../registration-view/registration-view";
+import { DirectorView } from "../director-view/director-view";
+import { GenreView } from "../genre-view/genre-view";
+import { ProfileView } from "../profile-view/profile-view";
+import { NavigationView } from "../navbar-view/navbar-view";
+import { Row, Col, Container } from "react-bootstrap";
+import { FooterView } from "../footer-view/footer-view";
 
 export class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-        {
-          _id: 1,
-          Title: "Dark Knight",
-          Description:
-            "When half of Harvey Dent's face gets burned in an explosion, the Joker brings him over to the dark side, encouraging him to seek vengeance for Rachel's death.",
-          Genre: "Action",
-          Director: "Christopher Nolan",
-          ImagePath: dKImage,
-        },
-        {
-          _id: 2,
-          Title: "Scream",
-          Description:
-            "25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past.",
-          Genre: "Horror",
-          Director: "Matt Bettinelli-Oplin",
-          ImagePath: screamImg,
-        },
-        {
-          _id: 3,
-          Title: "The Hangover",
-          Description:
-            "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.",
-          Genre: "Comedy",
-          Director: "Todd Phillips",
-          ImagePath: hangoverImg,
-        },
-      ],
-      selectedMovie: null,
+      movies: [],
+      user: null,
     };
   }
-  setSelectedMovie(newSelectedMovie) {
+
+  getMovies(token) {
+    axios
+      .get("https://flixfolio.herokuapp.com/movies", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  componentDidMount() {
+    let accessToken = localStorage.getItem("token");
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem("user"),
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      selectedMovie: newSelectedMovie,
+      user: authData.user.Username,
+    });
+
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    this.setState({
+      user: null,
     });
   }
-  render() {
-    const { movies, selectedMovie } = this.state;
 
-    if (movies.length === 0)
-      return <div className="main-view">No movies exist!</div>;
+  render() {
+    const { movies, user } = this.state;
 
     return (
       <div className="main-view">
-        {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={(newSelectedMovie) => {
-              this.setSelectedMovie(newSelectedMovie);
-            }}
-          />
-        ) : (
-          movies.map((movie) => (
-            <MovieCard
-              key={movie._id}
-              movie={movie}
-              onMovieClick={(movie) => {
-                this.setSelectedMovie(movie);
+        <Router>
+          <Row className="main-view justify-content-md-center">
+            <Route
+              exact
+              path="/"
+              render={() => {
+                if (!user) {
+                  return <Redirect to="/login" />;
+                }
+
+                return (
+                  <>
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => this.onLoggedOut()}
+                    />
+                    <Container fluid>
+                      <Row>
+                        {movies.map((movie) => (
+                          <Col sm={6} md={4} lg={3} xl={2} key={movie._id}>
+                            <MovieCard movie={movie} onMovieClick={() => {}} />
+                          </Col>
+                        ))}
+                      </Row>
+                    </Container>
+                    <FooterView />
+                  </>
+                );
               }}
             />
-          ))
-        )}
+            <Route
+              path="/login"
+              render={() => {
+                if (user) {
+                  return <Redirect to="/" />;
+                }
+
+                return (
+                  <LoginView
+                    user={user}
+                    onLoggedIn={(data) => this.onLoggedIn(data)}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/register"
+              render={() => {
+                if (user) {
+                  return <Redirect to="/" />;
+                }
+
+                return (
+                  <Col>
+                    <RegistrationView />
+                  </Col>
+                );
+              }}
+            />
+            <Route
+              path="/movies/:movieId"
+              render={({ match, history }) => {
+                return (
+                  <>
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
+                    <Col md={8}>
+                      <MovieView
+                        user={user}
+                        movie={movies.find(
+                          (m) => m._id === match.params.movieId
+                        )}
+                        onBackClick={() => history.goBack()}
+                      />
+                    </Col>
+                  </>
+                );
+              }}
+            />
+            <Route
+              path="/directors/:name"
+              render={({ match, history }) => {
+                if (movies.length === 0) return <div className="main-view" />;
+                return (
+                  <>
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
+                    <Container>
+                      <Row>
+                        <Col md={8}>
+                          <DirectorView
+                            director={
+                              movies.find(
+                                (m) => m.Director.Name === match.params.name
+                              ).Director
+                            }
+                            onBackClick={() => history.goBack()}
+                          />
+                        </Col>
+                      </Row>
+                    </Container>
+                  </>
+                );
+              }}
+            />
+            <Route
+              path="/genres/:name"
+              render={({ match, history }) => {
+                if (movies.length === 0) return <div className="main-view" />;
+                return (
+                  <>
+                    <NavigationView
+                      user={user}
+                      onLoggedOut={() => {
+                        localStorage.clear();
+                        window.open("/", "_self");
+                      }}
+                    />
+                    <Col md={8}>
+                      <GenreView
+                        genre={
+                          movies.find((m) => m.Genre.Name === match.params.name)
+                            .Genre
+                        }
+                        onBackClick={() => history.goBack()}
+                        movies={movies.filter(
+                          (movie) => movie.Genre.Name === match.params.name
+                        )}
+                      />
+                    </Col>
+                  </>
+                );
+              }}
+            />
+            <Route path="/profile">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <ProfileView user={user} movies={movies} />
+              </>
+            </Route>
+          </Row>
+        </Router>
       </div>
     );
   }

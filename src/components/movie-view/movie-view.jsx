@@ -1,41 +1,117 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { Card, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./movie-view.scss";
+import axios from "axios";
 
 export class MovieView extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      FavoriteMovies: [],
+    };
+  }
+
+  componentDidMount() {
+    const accessToken = localStorage.getItem("token");
+    this.getUserInfo(accessToken);
+    document.addEventListener("keypress", this.keypressCallback);
+  }
+
+  getUserInfo = (token) => {
+    const Username = localStorage.getItem("user");
+    axios
+      .get(`https://flixfolio.herokuapp.com/users/${Username}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.setState({
+          FavoriteMovies: response.data.FavoriteMovies,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  keypressCallback(event) {
+    console.log(event.key);
+  }
+
+  onFavAdd = (e, movie, user) => {
+    e.preventDefault();
+    let token = localStorage.getItem("token");
+    if (movie._id === this.state.FavoriteMovies.find((fav) => fav === movie._id)) {
+      alert("Movie already a favorite!");
+    } else {
+      axios
+        .post(
+          `https://flixfolio.herokuapp.com/users/${user}/movies/${movie._id}`,
+          "",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
+        .then((response) => {
+          console.log(response);
+          alert("Favorite movie has been added.");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  };
+
   render() {
-    const { movie, onBackClick } = this.props;
+    const { user, movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img className="movie-img" src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <div className="movie-genre">
-          <span className="label">Genre: </span>
-          <span className="value">{movie.Genre}</span>
-        </div>
-        <div className="movie-director">
-          <span className="label">Director: </span>
-          <span className="value">{movie.Director}</span>
-        </div>
-        <button
-          className="back-btn"
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </button>
-      </div>
+      <Card className="movie-view">
+        <Row>
+          <Col sm={5}>
+            <Card.Img className="movie-img" src={movie.ImagePath} />
+          </Col>
+          <Col className="movie-info">
+            <Card.Title id="movie-title">{movie.Title}</Card.Title>
+            <Card.Text className="movie-description">
+              {movie.Description}
+            </Card.Text>
+            <Card.Text>
+              Genre:{" "}
+              <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
+            </Card.Text>
+            <Card.Text>
+              Director:{" "}
+              <Link to={`/directors/${movie.Director.Name}`}>
+                {movie.Director.Name}
+              </Link>
+            </Card.Text>
+            <Card.Text>Year: {movie.Year}</Card.Text>
+            <Button
+              id="fav-btn"
+              type="submit"
+              value={movie._id}
+              onClick={(e) => this.onFavAdd(e, movie, user)}
+            >
+              Favorite ❤
+            </Button>
+            <Button
+              id="back-btn"
+              onClick={() => {
+                onBackClick();
+              }}
+            >
+              Back
+            </Button>
+          </Col>
+        </Row>
+      </Card>
     );
   }
 }
+
+MovieView.propTypes = {
+  onBackClick: PropTypes.func.isRequired,
+};

@@ -1,24 +1,46 @@
-.back-btn {
-  background-color: rgb(68, 58, 151);
+$main-color: #2565ae;
+
+#back-btn {
+  background-color: $main-color;
   color: white;
-  border-radius: 7px;
+  border-radius: 5px;
   font-size: 19px;
+  border: none;
+  float: right;
+  margin: 10px;
+}
+
+#fav-btn {
+  background-color: $main-color;
+  color: white;
+  border-radius: 5px;
+  font-size: 19px;
+  border: none;
+  margin: 10px 0;
+}
+
+.movie-info {
+  margin: 10px;
+}
+
+#movie-title {
+  font-size: 30px;
+  text-align: center;
 }
 
 .movie-img {
-  width: 175px;
-}
-
-.movie-title,
-.movie-description,
-.movie-genre,
-.movie-director {
-  margin: 10px;
-  font-size: 22px;
+  max-width: 250px;
+  margin: 20px;
 }
 
 .movie-view {
   margin-top: 50px;
   max-width: 750px;
   margin: 50px auto;
+}
+
+@media (max-width: 1000px) {
+  #back-btn {
+    font-size: 14px;
+  }
 }

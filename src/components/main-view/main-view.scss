@@ -1,0 +1,15 @@
+$main-color: hwb(212 15% 32%);
+$background-color: #d5f3fe;
+
+.d-flex {
+  float: right;
+}
+
+.main-view {
+  background-color: $background-color;
+  color: $main-color;
+}
+
+#id {
+  float: right;
+}
