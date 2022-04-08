@@ -1,13 +1,14 @@
 import React from "react";
 import axios from "axios";
-import "./main-view.scss";
-
+import { connect } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
   useHistory,
   Redirect,
 } from "react-router-dom";
+
+import "./main-view.scss";
 
 import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
@@ -19,12 +20,13 @@ import { ProfileView } from "../profile-view/profile-view";
 import { NavigationView } from "../navbar-view/navbar-view";
 import { Row, Col, Container } from "react-bootstrap";
 import { FooterView } from "../footer-view/footer-view";
+import { setMovies } from "../../actions/actions";
+import MoviesList from '../movies-list/movies-list';
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
       user: null,
     };
   }
@@ -36,9 +38,7 @@ export class MainView extends React.Component {
       })
       .then((response) => {
         // Assign the result to the state
-        this.setState({
-          movies: response.data,
-        });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -74,7 +74,8 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.state;
+    let { movies } = this.props;
+    const { user } = this.state;
 
     return (
       <div className="main-view">
@@ -96,11 +97,7 @@ export class MainView extends React.Component {
                     />
                     <Container fluid>
                       <Row>
-                        {movies.map((movie) => (
-                          <Col sm={6} md={4} lg={3} xl={2} key={movie._id}>
-                            <MovieCard movie={movie} onMovieClick={() => {}} />
-                          </Col>
-                        ))}
+                        <MoviesList movies={movies} />
                       </Row>
                     </Container>
                     <FooterView />
@@ -240,3 +237,9 @@ export class MainView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { setMovies })(MainView);
