@@ -20,13 +20,10 @@ export class NavigationView extends React.Component {
     const { user, onLoggedOut } = this.props;
 
     return (
-      <Navbar bg="light" expand="md" id="nav-bar">
+      <Navbar expand="lg" id="nav-bar">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav className="nav-stuff mr-auto">
           <Navbar.Collapse id="basic-navbar-nav">
-            <Navbar.Brand href="/" id="logo">
-              FlixFolio
-            </Navbar.Brand>
             <Nav.Link id="nav-link" href="/" className="nav-stuff-1">
               Home
             </Nav.Link>
@@ -34,76 +31,92 @@ export class NavigationView extends React.Component {
               <Link to={`/action`} className="nav-item">
                 Action
               </Link>
+              <br />
               <Link to={`/adventure`} className="nav-item">
                 Adventure
               </Link>
+              <br />
               <Link to={`/comedy`} className="nav-item">
                 Comedy
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/documentary`} className="nav-item">
                 Documentary
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/drama`} className="nav-item">
                 Drama
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/family`} className="nav-item">
                 Family
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/fantasy`} className="nav-item">
                 Fantasy
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/horror`} className="nav-item">
                 Horror
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/musical`} className="nav-item">
                 Musical
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/mystery`} className="nav-item">
                 Mystery
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/romance`} className="nav-item">
                 Romance
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/scifi`} className="nav-item">
                 Sci-Fi
-              </Link>{" "}
+              </Link>
+              <br />
               <Link to={`/western`} className="nav-item">
                 Western
-              </Link>{" "}
+              </Link>
+              <br />
+            </NavDropdown>
+            <NavDropdown
+              title={
+                <Image
+                  className="userIcon nav-stuff-3"
+                  src={image}
+                  rounded
+                  width={30}
+                />
+              }
+              id="basic-nav-dropdown"
+            >
+              <Container>
+                <Row>
+                  <Link to={`/profile`} className="nav-item">
+                    Profile
+                  </Link>
+                </Row>
+                <Row>
+                  <Link
+                    to="#"
+                    className="nav-item"
+                    onClick={() => {
+                      onLoggedOut();
+                    }}
+                  >
+                    {" "}
+                    Sign out
+                  </Link>
+                </Row>
+              </Container>
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <NavDropdown
-          title={
-            <Image
-              className="userIcon nav-stuff-3"
-              src={image}
-              rounded
-              width={30}
-            />
-          }
-          id="basic-nav-dropdown"
-        >
-          <Container>
-            <Row>
-              <Link to={`/profile`} className="nav-item">
-                Profile
-              </Link>
-            </Row>
-            <Row>
-              <Link
-                to="#"
-                className="nav-item"
-                onClick={() => {
-                  onLoggedOut();
-                }}
-              >
-                {" "}
-                Sign out
-              </Link>
-            </Row>
-          </Container>
-        </NavDropdown>
+        <Navbar.Brand href="/" id="logo" className="brand">
+          FlixFolio
+        </Navbar.Brand>
       </Navbar>
     );
   }

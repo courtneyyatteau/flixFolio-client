@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import { connect } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import "./movies-list.scss";
@@ -21,21 +21,27 @@ function MoviesList(props) {
     );
   }
 
+  let moviesFeatured = movies.filter((m) => m.Featured === true);
+
   if (!movies) return <div className="main-view" />;
 
   return (
-    <>
-      <div>
+    <Container fluid className="container-list">
+      <Row>
         <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-      </div>
-      <Grid container justifyContent="center">
-        {filteredMovies.map((m) => (
-          <Grid item xs={6} sm={4} md={3} lg={2} xl={2} key={m._id}>
+      </Row>
+      <h1>Featured Movies</h1>
+      <Row>
+        {moviesFeatured.map((m) => (
+          <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
             <MovieCard movie={m} />
-          </Grid>
+          </Col>
         ))}
-      </Grid>
-    </>
+      </Row>
+      <Row>
+        
+      </Row>
+    </Container>
   );
 }
 

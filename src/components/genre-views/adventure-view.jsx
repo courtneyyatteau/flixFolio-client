@@ -13,7 +13,7 @@ export class AdventureView extends React.Component {
         <h2>Feat Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
-            <Col xs={6} md={4} lg={3}>
+            <Col xs={6} md={4} lg={3} key={m._id}>
               <Link to={`/movies/${m._id}`}>
                 <img className="movie-image" src={m.ImagePath}></img>
               </Link>

@@ -24,6 +24,17 @@ import MoviesList from "../movies-list/movies-list";
 import { ActionView } from "../genre-views/action-view";
 import { AdventureView } from "../genre-views/adventure-view";
 import { ComedyView } from "../genre-views/comedy-view";
+import { DocumentaryView } from "../genre-views/documentary-view";
+import { DramaView } from "../genre-views/drama-view";
+import { FamilyView } from "../genre-views/family-view";
+import { FantasyView } from "../genre-views/fantasy-flix";
+import { HorrorView } from "../genre-views/horror-view";
+import { MusicalView } from "../genre-views/musical-view";
+import { MysteryView } from "../genre-views/mystery-view";
+import { RomanceView } from "../genre-views/romance-view";
+import { SciFiView } from "../genre-views/scifi-view";
+import { WesternView } from "../genre-views/western-view";
+import { FrontOverlay } from "../front-overlay-view/front-overlay-view";
 
 class MainView extends React.Component {
   constructor() {
@@ -97,6 +108,7 @@ class MainView extends React.Component {
                       user={user}
                       onLoggedOut={() => this.onLoggedOut()}
                     />
+                    <FrontOverlay />
                     <MoviesList movies={movies} />
                     <FooterView />
                   </>
@@ -144,7 +156,7 @@ class MainView extends React.Component {
                         window.open("/", "_self");
                       }}
                     />
-                    <Col md={8}>
+                    <Col>
                       <MovieView
                         user={user}
                         movie={movies.find(
@@ -263,6 +275,126 @@ class MainView extends React.Component {
                   }}
                 />
                 <ComedyView movies={movies} />
+              </>
+            </Route>
+            <Route path="/documentary">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <DocumentaryView movies={movies} />
+              </>
+            </Route>
+            <Route path="/drama">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <DramaView movies={movies} />
+              </>
+            </Route>
+            <Route path="/family">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <FamilyView movies={movies} />
+              </>
+            </Route>
+            <Route path="/fantasy">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <FantasyView movies={movies} />
+              </>
+            </Route>
+            <Route path="/horror">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <HorrorView movies={movies} />
+              </>
+            </Route>
+            <Route path="/musical">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <MusicalView movies={movies} />
+              </>
+            </Route>
+            <Route path="/mystery">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <MysteryView movies={movies} />
+              </>
+            </Route>
+            <Route path="/romance">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <RomanceView movies={movies} />
+              </>
+            </Route>
+            <Route path="/scifi">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <SciFiView movies={movies} />
+              </>
+            </Route>
+            <Route path="/western">
+              <>
+                <NavigationView
+                  user={user}
+                  onLoggedOut={() => {
+                    localStorage.clear();
+                    window.open("/", "_self");
+                  }}
+                />
+                <WesternView movies={movies} />
               </>
             </Route>
           </Row>

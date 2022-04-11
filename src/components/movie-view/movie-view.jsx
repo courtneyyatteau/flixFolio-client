@@ -43,7 +43,9 @@ export class MovieView extends React.Component {
   onFavAdd = (e, movie, user) => {
     e.preventDefault();
     let token = localStorage.getItem("token");
-    if (movie._id === this.state.FavoriteMovies.find((fav) => fav === movie._id)) {
+    if (
+      movie._id === this.state.FavoriteMovies.find((fav) => fav === movie._id)
+    ) {
       alert("Movie already a favorite!");
     } else {
       axios
@@ -68,10 +70,12 @@ export class MovieView extends React.Component {
     const { user, movie, onBackClick } = this.props;
 
     return (
-      <Card className="movie-view">
+      <div
+        className="movie-view"
+      >
         <Row>
           <Col sm={5}>
-            <Card.Img className="movie-img" src={movie.ImagePath} />
+            <img className="movie-img" src={movie.ImagePath} />
           </Col>
           <Col className="movie-info">
             <Card.Title id="movie-title">{movie.Title}</Card.Title>
@@ -107,7 +111,7 @@ export class MovieView extends React.Component {
             </Button>
           </Col>
         </Row>
-      </Card>
+      </div>
     );
   }
 }

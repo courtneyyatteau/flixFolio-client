@@ -1,0 +1,33 @@
+.myDiv {
+  position: relative;
+  z-index: 1;
+  height: 150px;
+  width: 100%;
+}
+
+.myDiv:before {
+  background-image: url("../../../public/imgs/background-image.jpg");
+  content: "";
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  object-fit: cover;
+}
+
+.front-title {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 900px) {
+  .front-title {
+    font-size: 30px;
+  }
+}

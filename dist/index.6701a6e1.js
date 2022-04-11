@@ -25814,6 +25814,17 @@ var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 var _actionView = require("../genre-views/action-view");
 var _adventureView = require("../genre-views/adventure-view");
 var _comedyView = require("../genre-views/comedy-view");
+var _documentaryView = require("../genre-views/documentary-view");
+var _dramaView = require("../genre-views/drama-view");
+var _familyView = require("../genre-views/family-view");
+var _fantasyFlix = require("../genre-views/fantasy-flix");
+var _horrorView = require("../genre-views/horror-view");
+var _musicalView = require("../genre-views/musical-view");
+var _mysteryView = require("../genre-views/mystery-view");
+var _romanceView = require("../genre-views/romance-view");
+var _scifiView = require("../genre-views/scifi-view");
+var _westernView = require("../genre-views/western-view");
+var _frontOverlayView = require("../front-overlay-view/front-overlay-view");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -25865,20 +25876,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 83
+                lineNumber: 94
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 84
+                    lineNumber: 95
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 85
+                        lineNumber: 96
                     },
                     __self: this,
                     children: [
@@ -25895,6 +25906,8 @@ class MainView extends _reactDefault.default.Component {
                                             user: user,
                                             onLoggedOut: ()=>this.onLoggedOut()
                                         }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_frontOverlayView.FrontOverlay, {
+                                        }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                             movies: movies
                                         }),
@@ -25905,7 +25918,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 86
+                                lineNumber: 97
                             },
                             __self: this
                         }),
@@ -25922,7 +25935,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 106
+                                lineNumber: 118
                             },
                             __self: this
                         }),
@@ -25939,7 +25952,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 121
+                                lineNumber: 133
                             },
                             __self: this
                         }),
@@ -25956,7 +25969,6 @@ class MainView extends _reactDefault.default.Component {
                                             }
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                            md: 8,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                                 user: user,
                                                 movie: movies.find((m)=>m._id === match.params.movieId
@@ -25969,7 +25981,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 135
+                                lineNumber: 147
                             },
                             __self: this
                         }),
@@ -26005,7 +26017,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 160
+                                lineNumber: 172
                             },
                             __self: this
                         }),
@@ -26040,45 +26052,12 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 191
+                                lineNumber: 203
                             },
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                             path: "/profile",
-                            __source: {
-                                fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 220
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
-                                        user: user,
-                                        onLoggedOut: ()=>{
-                                            localStorage.clear();
-                                            window.open("/", "_self");
-                                        },
-                                        __source: {
-                                            fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 222
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
-                                        user: user,
-                                        movies: movies,
-                                        __source: {
-                                            fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 229
-                                        },
-                                        __self: this
-                                    })
-                                ]
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                            path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 232
@@ -26098,7 +26077,8 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __self: this
                                     }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_actionView.ActionView, {
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                        user: user,
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
@@ -26110,7 +26090,7 @@ class MainView extends _reactDefault.default.Component {
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                            path: "/adventure",
+                            path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 244
@@ -26130,7 +26110,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __self: this
                                     }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_adventureView.AdventureView, {
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_actionView.ActionView, {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
@@ -26142,7 +26122,7 @@ class MainView extends _reactDefault.default.Component {
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                            path: "/comedy",
+                            path: "/adventure",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 256
@@ -26162,11 +26142,363 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __self: this
                                     }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_comedyView.ComedyView, {
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_adventureView.AdventureView, {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
                                             lineNumber: 265
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/comedy",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 268
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 270
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_comedyView.ComedyView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 277
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/documentary",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 280
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 282
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_documentaryView.DocumentaryView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 289
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/drama",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 292
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 294
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_dramaView.DramaView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 301
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/family",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 304
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 306
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_familyView.FamilyView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 313
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/fantasy",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 316
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 318
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_fantasyFlix.FantasyView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 325
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/horror",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 328
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 330
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_horrorView.HorrorView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 337
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/musical",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 340
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 342
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_musicalView.MusicalView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 349
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/mystery",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 352
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 354
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_mysteryView.MysteryView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 361
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/romance",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 364
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 366
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_romanceView.RomanceView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 373
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/scifi",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 376
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 378
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_scifiView.SciFiView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 385
+                                        },
+                                        __self: this
+                                    })
+                                ]
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                            path: "/western",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 388
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
+                                        user: user,
+                                        onLoggedOut: ()=>{
+                                            localStorage.clear();
+                                            window.open("/", "_self");
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 390
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_westernView.WesternView, {
+                                        movies: movies,
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 397
                                         },
                                         __self: this
                                     })
@@ -26193,7 +26525,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../genre-views/documentary-view":"1iRay","../genre-views/drama-view":"7xlHJ","../genre-views/family-view":"7SwA7","../genre-views/fantasy-flix":"eXaXZ","../genre-views/horror-view":"9HBvp","../genre-views/musical-view":"jcUcY","../genre-views/mystery-view":"7G5Lo","../genre-views/romance-view":"4Fujk","../genre-views/scifi-view":"fEEES","../genre-views/western-view":"6UJX5","../front-overlay-view/front-overlay-view":"lcI16"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -42039,17 +42371,17 @@ class MovieView extends _reactDefault.default.Component {
     };
     render() {
         const { user , movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 71
+                lineNumber: 73
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 72
+                    lineNumber: 76
                 },
                 __self: this,
                 children: [
@@ -42057,15 +42389,15 @@ class MovieView extends _reactDefault.default.Component {
                         sm: 5,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 73
+                            lineNumber: 77
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                             className: "movie-img",
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 74
+                                lineNumber: 78
                             },
                             __self: this
                         })
@@ -42074,7 +42406,7 @@ class MovieView extends _reactDefault.default.Component {
                         className: "movie-info",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 76
+                            lineNumber: 80
                         },
                         __self: this,
                         children: [
@@ -42082,7 +42414,7 @@ class MovieView extends _reactDefault.default.Component {
                                 id: "movie-title",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 77
+                                    lineNumber: 81
                                 },
                                 __self: this,
                                 children: movie.Title
@@ -42091,7 +42423,7 @@ class MovieView extends _reactDefault.default.Component {
                                 className: "movie-description",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 78
+                                    lineNumber: 82
                                 },
                                 __self: this,
                                 children: movie.Description
@@ -42099,7 +42431,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 81
+                                    lineNumber: 85
                                 },
                                 __self: this,
                                 children: [
@@ -42109,7 +42441,7 @@ class MovieView extends _reactDefault.default.Component {
                                         to: `/genres/${movie.Genre.Name}`,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 83
+                                            lineNumber: 87
                                         },
                                         __self: this,
                                         children: movie.Genre.Name
@@ -42119,7 +42451,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 85
+                                    lineNumber: 89
                                 },
                                 __self: this,
                                 children: [
@@ -42129,7 +42461,7 @@ class MovieView extends _reactDefault.default.Component {
                                         to: `/directors/${movie.Director.Name}`,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 87
+                                            lineNumber: 91
                                         },
                                         __self: this,
                                         children: movie.Director.Name
@@ -42139,7 +42471,7 @@ class MovieView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 91
+                                    lineNumber: 95
                                 },
                                 __self: this,
                                 children: [
@@ -42155,7 +42487,7 @@ class MovieView extends _reactDefault.default.Component {
                                 ,
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 96
                                 },
                                 __self: this,
                                 children: "Favorite ❤"
@@ -42167,7 +42499,7 @@ class MovieView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 100
+                                    lineNumber: 104
                                 },
                                 __self: this,
                                 children: "Back"
@@ -43175,8 +43507,7 @@ class NavigationView extends _reactDefault.default.Component {
     render() {
         const { user , onLoggedOut  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar, {
-            bg: "light",
-            expand: "md",
+            expand: "lg",
             id: "nav-bar",
             __source: {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -43207,23 +43538,13 @@ class NavigationView extends _reactDefault.default.Component {
                         },
                         __self: this,
                         children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
-                                href: "/",
-                                id: "logo",
-                                __source: {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 27
-                                },
-                                __self: this,
-                                children: "FlixFolio"
-                            }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                                 id: "nav-link",
                                 href: "/",
                                 className: "nav-stuff-1",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 30
+                                    lineNumber: 27
                                 },
                                 __self: this,
                                 children: "Home"
@@ -43234,7 +43555,7 @@ class NavigationView extends _reactDefault.default.Component {
                                 className: "nav-stuff-2",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 33
+                                    lineNumber: 30
                                 },
                                 __self: this,
                                 children: [
@@ -43243,32 +43564,52 @@ class NavigationView extends _reactDefault.default.Component {
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 34
+                                            lineNumber: 31
                                         },
                                         __self: this,
                                         children: "Action"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 34
+                                        },
+                                        __self: this
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/adventure`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 37
+                                            lineNumber: 35
                                         },
                                         __self: this,
                                         children: "Adventure"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 38
+                                        },
+                                        __self: this
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/comedy`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 40
+                                            lineNumber: 39
                                         },
                                         __self: this,
                                         children: "Comedy"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 42
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/documentary`,
                                         className: "nav-item",
@@ -43279,173 +43620,244 @@ class NavigationView extends _reactDefault.default.Component {
                                         __self: this,
                                         children: "Documentary"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 46
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/drama`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 46
+                                            lineNumber: 47
                                         },
                                         __self: this,
                                         children: "Drama"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 50
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/family`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 49
+                                            lineNumber: 51
                                         },
                                         __self: this,
                                         children: "Family"
                                     }),
-                                    " ",
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/fantasy`,
-                                        className: "nav-item",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 52
+                                            lineNumber: 54
                                         },
-                                        __self: this,
-                                        children: "Fantasy"
+                                        __self: this
                                     }),
-                                    " ",
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/horror`,
+                                        to: `/fantasy`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
                                             lineNumber: 55
                                         },
                                         __self: this,
+                                        children: "Fantasy"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 58
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/horror`,
+                                        className: "nav-item",
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 59
+                                        },
+                                        __self: this,
                                         children: "Horror"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 62
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/musical`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 58
+                                            lineNumber: 63
                                         },
                                         __self: this,
                                         children: "Musical"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 66
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/mystery`,
-                                        className: "nav-item",
-                                        __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 61
-                                        },
-                                        __self: this,
-                                        children: "Mystery"
-                                    }),
-                                    " ",
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/romance`,
-                                        className: "nav-item",
-                                        __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 64
-                                        },
-                                        __self: this,
-                                        children: "Romance"
-                                    }),
-                                    " ",
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/scifi`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
                                             lineNumber: 67
                                         },
                                         __self: this,
+                                        children: "Mystery"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 70
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/romance`,
+                                        className: "nav-item",
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 71
+                                        },
+                                        __self: this,
+                                        children: "Romance"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 74
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/scifi`,
+                                        className: "nav-item",
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 75
+                                        },
+                                        __self: this,
                                         children: "Sci-Fi"
                                     }),
-                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 78
+                                        },
+                                        __self: this
+                                    }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                         to: `/western`,
                                         className: "nav-item",
                                         __source: {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 70
+                                            lineNumber: 79
                                         },
                                         __self: this,
                                         children: "Western"
                                     }),
-                                    " "
+                                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                        __source: {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 82
+                                        },
+                                        __self: this
+                                    })
                                 ]
-                            })
-                        ]
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavDropdown, {
-                    title: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Image, {
-                        className: "userIcon nav-stuff-3",
-                        src: _userPngDefault.default,
-                        rounded: true,
-                        width: 30
-                    }),
-                    id: "basic-nav-dropdown",
-                    __source: {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 76
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
-                        __source: {
-                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 87
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                __source: {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 88
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                    to: `/profile`,
-                                    className: "nav-item",
-                                    __source: {
-                                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 89
-                                    },
-                                    __self: this,
-                                    children: "Profile"
-                                })
                             }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.NavDropdown, {
+                                title: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Image, {
+                                    className: "userIcon nav-stuff-3",
+                                    src: _userPngDefault.default,
+                                    rounded: true,
+                                    width: 30
+                                }),
+                                id: "basic-nav-dropdown",
                                 __source: {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 93
+                                    lineNumber: 84
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
-                                    to: "#",
-                                    className: "nav-item",
-                                    onClick: ()=>{
-                                        onLoggedOut();
-                                    },
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                                     __source: {
                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                        lineNumber: 94
+                                        lineNumber: 95
                                     },
                                     __self: this,
                                     children: [
-                                        " ",
-                                        "Sign out"
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                            __source: {
+                                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                lineNumber: 96
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                                to: `/profile`,
+                                                className: "nav-item",
+                                                __source: {
+                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                    lineNumber: 97
+                                                },
+                                                __self: this,
+                                                children: "Profile"
+                                            })
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                            __source: {
+                                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                lineNumber: 101
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
+                                                to: "#",
+                                                className: "nav-item",
+                                                onClick: ()=>{
+                                                    onLoggedOut();
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                    lineNumber: 102
+                                                },
+                                                __self: this,
+                                                children: [
+                                                    " ",
+                                                    "Sign out"
+                                                ]
+                                            })
+                                        })
                                     ]
                                 })
                             })
                         ]
                     })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    href: "/",
+                    id: "logo",
+                    className: "brand",
+                    __source: {
+                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        lineNumber: 117
+                    },
+                    __self: this,
+                    children: "FlixFolio"
                 })
             ]
         }));
@@ -43582,61 +43994,81 @@ function MoviesList(props) {
     let filteredMovies = movies;
     if (visibilityFilter !== "") filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    let moviesFeatured = movies.filter((m)=>m.Featured === true
+    );
     if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 24
+            lineNumber: 26
         },
         __self: this
     }));
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+        fluid: true,
+        className: "container-list",
+        __source: {
+            fileName: "src/components/movies-list/movies-list.jsx",
+            lineNumber: 29
+        },
+        __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 28
+                    lineNumber: 30
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 29
+                        lineNumber: 31
                     },
                     __self: this
                 })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_gridDefault.default, {
-                container: true,
-                justifyContent: "center",
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 31
+                    lineNumber: 33
                 },
                 __self: this,
-                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_gridDefault.default, {
-                        item: true,
+                children: "Featured Movies"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                __source: {
+                    fileName: "src/components/movies-list/movies-list.jsx",
+                    lineNumber: 34
+                },
+                __self: this,
+                children: moviesFeatured.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         xs: 6,
-                        sm: 4,
-                        md: 3,
-                        lg: 2,
-                        xl: 2,
+                        sm: 6,
+                        md: 4,
+                        lg: 3,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 33
+                            lineNumber: 36
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                             movie: m,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 34
+                                lineNumber: 37
                             },
                             __self: this
                         })
                     }, m._id)
                 )
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                __source: {
+                    fileName: "src/components/movies-list/movies-list.jsx",
+                    lineNumber: 41
+                },
+                __self: this
             })
         ]
     }));
@@ -50687,7 +51119,7 @@ class ActionView extends _reactDefault.default.Component {
                                 }),
                                 " "
                             ]
-                        })
+                        }, m._id)
                     )
                 })
             ]
@@ -50700,7 +51132,7 @@ class ActionView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW"}],"6QQ1r":[function() {},{}],"jWYYM":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"jWYYM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a632 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -50778,7 +51210,7 @@ class AdventureView extends _reactDefault.default.Component {
                                     __self: this
                                 })
                             })
-                        })
+                        }, m._id)
                     )
                 })
             ]
@@ -50791,7 +51223,7 @@ class AdventureView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"6QQ1r":[function() {},{}],"fWpHs":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"fWpHs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6858 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -50869,7 +51301,7 @@ class ComedyView extends _reactDefault.default.Component {
                                     __self: this
                                 })
                             })
-                        })
+                        }, m._id)
                     )
                 })
             ]
@@ -50882,7 +51314,1008 @@ class ComedyView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"6QQ1r":[function() {},{}],"8GWVf":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"1iRay":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1644 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1644.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DocumentaryView", ()=>DocumentaryView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class DocumentaryView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Documentary"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "documentary-view",
+            __source: {
+                fileName: "src/components/genre-views/documentary-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/documentary-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Documentary"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/documentary-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Factual Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/documentary-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/documentary-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/documentary-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/documentary-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$1644.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"7xlHJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4110 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4110.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DramaView", ()=>DramaView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class DramaView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Drama"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "drama-view",
+            __source: {
+                fileName: "src/components/genre-views/drama-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/drama-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Drama"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/drama-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Fascinating Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/drama-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/drama-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/drama-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/drama-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$4110.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"7SwA7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b9eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b9eb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FamilyView", ()=>FamilyView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class FamilyView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Family"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "family-view",
+            __source: {
+                fileName: "src/components/genre-views/family-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/family-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Family"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/family-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Friendly Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/family-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/family-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/family-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/family-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$b9eb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"eXaXZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9462 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9462.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FantasyView", ()=>FantasyView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class FantasyView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Fantasy"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "fantasy-view",
+            __source: {
+                fileName: "src/components/genre-views/fantasy-flix.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/fantasy-flix.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Fantasy"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/fantasy-flix.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Fantastical Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/fantasy-flix.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/fantasy-flix.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/fantasy-flix.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/fantasy-flix.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$9462.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"9HBvp":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$934a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$934a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HorrorView", ()=>HorrorView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class HorrorView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Horror"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "horror-view",
+            __source: {
+                fileName: "src/components/genre-views/horror-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/horror-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Horror"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/horror-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Frightening Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/horror-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/horror-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/horror-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/horror-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$934a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"jcUcY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3709 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3709.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MusicalView", ()=>MusicalView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class MusicalView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Musical"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "musical-view",
+            __source: {
+                fileName: "src/components/genre-views/musical-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/musical-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Musical"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/musical-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Flowy Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/musical-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/musical-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/musical-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/musical-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$3709.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"7G5Lo":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3b23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3b23.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MysteryView", ()=>MysteryView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class MysteryView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Mystery"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "Mystery-view",
+            __source: {
+                fileName: "src/components/genre-views/mystery-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/mystery-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Mystery"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/mystery-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Furtive Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/mystery-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/mystery-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/mystery-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/mystery-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$3b23.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"4Fujk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5ef8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5ef8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RomanceView", ()=>RomanceView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class RomanceView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Romance"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "romance-view",
+            __source: {
+                fileName: "src/components/genre-views/romance-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/romance-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Romance"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/romance-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Fondness Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/romance-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/romance-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/romance-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/romance-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$5ef8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"fEEES":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7887 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7887.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SciFiView", ()=>SciFiView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class SciFiView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "SciFi"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "sciFi-view",
+            __source: {
+                fileName: "src/components/genre-views/scifi-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/scifi-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "SciFi"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/scifi-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Ficticious Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/scifi-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/scifi-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/scifi-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/scifi-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$7887.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"6UJX5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2628 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2628.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "WesternView", ()=>WesternView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _genresViewScss = require("./genres-view.scss");
+var _reactRouterDom = require("react-router-dom");
+class WesternView extends _reactDefault.default.Component {
+    render() {
+        const { movies  } = this.props;
+        const filteredMovies = movies.filter((m)=>m.Genre.Name === "Western"
+        );
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            className: "western-view",
+            __source: {
+                fileName: "src/components/genre-views/western-view.jsx",
+                lineNumber: 11
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    __source: {
+                        fileName: "src/components/genre-views/western-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: "Western"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    __source: {
+                        fileName: "src/components/genre-views/western-view.jsx",
+                        lineNumber: 13
+                    },
+                    __self: this,
+                    children: "Frontier Flix"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/genre-views/western-view.jsx",
+                        lineNumber: 14
+                    },
+                    __self: this,
+                    children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            xs: 6,
+                            sm: 6,
+                            md: 4,
+                            lg: 3,
+                            __source: {
+                                fileName: "src/components/genre-views/western-view.jsx",
+                                lineNumber: 16
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                    to: `/movies/${m._id}`,
+                                    __source: {
+                                        fileName: "src/components/genre-views/western-view.jsx",
+                                        lineNumber: 17
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-image",
+                                        src: m.ImagePath,
+                                        __source: {
+                                            fileName: "src/components/genre-views/western-view.jsx",
+                                            lineNumber: 18
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                " "
+                            ]
+                        }, m._id)
+                    )
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$2628.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"lcI16":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8300 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8300.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FrontOverlay", ()=>FrontOverlay
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _frontOverlayViewScss = require("./front-overlay-view.scss");
+var _reactBootstrap = require("react-bootstrap");
+class FrontOverlay extends _reactDefault.default.Component {
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "myDiv",
+            __source: {
+                fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
+                lineNumber: 8
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+                    __source: {
+                        fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
+                        lineNumber: 9
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "front-title",
+                        __source: {
+                            fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
+                            lineNumber: 10
+                        },
+                        __self: this,
+                        children: "Tons of Movies to Explore Now!"
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "background",
+                    __source: {
+                        fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$8300.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./front-overlay-view.scss":"4rWg9","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4rWg9":[function() {},{}],"8GWVf":[function(require,module,exports) {
 'use strict';
 var compose = require('redux').compose;
 exports.__esModule = true;

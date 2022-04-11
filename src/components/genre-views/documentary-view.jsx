@@ -3,14 +3,14 @@ import { Row, Col, Container } from "react-bootstrap";
 import "./genres-view.scss";
 import { Link } from "react-router-dom";
 
-export class ActionView extends React.Component {
+export class DocumentaryView extends React.Component {
   render() {
     const { movies } = this.props;
-    const filteredMovies = movies.filter((m) => m.Genre.Name === "Action");
+    const filteredMovies = movies.filter((m) => m.Genre.Name === "Documentary");
     return (
-      <Container className="action-view">
-        <h1>Action</h1>
-        <h2>Force Flix</h2>
+      <Container className="documentary-view">
+        <h1>Documentary</h1>
+        <h2>Factual Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
             <Col xs={6} md={4} lg={3} key={m._id}>
