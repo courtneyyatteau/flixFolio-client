@@ -17,3 +17,20 @@ $background-color: #d5f3fe;
   margin-top: 15px;
   font-size: 20px;
 }
+
+#btn-1,
+#btn-2 {
+  background-color: $main-color;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+#btn-1 {
+  margin: 10px 0;
+}
+
+#acct {
+  margin-left: 500px;
+}

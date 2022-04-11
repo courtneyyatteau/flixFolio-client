@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Form, Button, Navbar, Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
+import "./login-view.scss";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -79,7 +80,7 @@ export function LoginView(props) {
           </Form.Group>
           <Row>
             <Button
-              id="btn"
+              id="bttn-1"
               variant="primary"
               type="submit"
               onClick={handleSubmit}
@@ -88,10 +89,10 @@ export function LoginView(props) {
             </Button>
           </Row>
           <Row>
-            <Col sm={12}>
+            <Col id="acctt">
               Need an account?
               <Button
-                id="btn"
+                id="btn-2"
                 onClick={() => {
                   onSignUp();
                 }}

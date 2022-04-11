@@ -119,7 +119,7 @@ export function RegistrationView(props) {
             {emailErr && <p>{emailErr}</p>}
           </Form.Group>
           <Button
-            id="btn"
+            id="btn-1"
             variant="primary"
             type="submit"
             onClick={handleSubmit}
@@ -127,20 +127,20 @@ export function RegistrationView(props) {
             Submit
           </Button>
         </Form>
+        <Row>
+          <Col id="acct">
+            Already have an account?
+            <Button
+              id="btn-2"
+              onClick={() => {
+                onLogin();
+              }}
+            >
+              Login Here
+            </Button>
+          </Col>
+        </Row>
       </Container>
-      <Row>
-        <Col sm={12}>
-          Already have an account?
-          <Button
-            id="btn"
-            onClick={() => {
-              onLogin();
-            }}
-          >
-            Login Here
-          </Button>
-        </Col>
-      </Row>
     </>
   );
 }

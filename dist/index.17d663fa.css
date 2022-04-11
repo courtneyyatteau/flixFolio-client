@@ -14,6 +14,31 @@
 html {
   background-color: #d5f3fe;
 }
+#form-field {
+  font-size: 20px;
+}
+
+#form-label {
+  text-align: left;
+}
+
+#bttn-1,
+#btn-2 {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+#bttn-1,
+#btn-2 {
+  margin: 10px 15px;
+}
+
+#acctt {
+  margin-left: 200px;
+}
 #back-btn {
   background-color: #2565ae;
   color: white;
@@ -74,6 +99,23 @@ html {
 #form-field {
   margin-top: 15px;
   font-size: 20px;
+}
+
+#btn-1,
+#btn-2 {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+#btn-1 {
+  margin: 10px 0;
+}
+
+#acct {
+  margin-left: 500px;
 }
 
 
