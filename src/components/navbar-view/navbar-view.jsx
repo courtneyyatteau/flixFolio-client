@@ -28,57 +28,84 @@ export class NavigationView extends React.Component {
               Home
             </Nav.Link>
             <NavDropdown title="Genres" id="nav-link" className="nav-stuff-2">
-              <Link to={`/action`} className="nav-item">
-                Action
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/action`} className="nav-item">
+                  Action
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/adventure`} className="nav-item">
-                Adventure
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/adventure`} className="nav-item">
+                  Adventure
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/comedy`} className="nav-item">
-                Comedy
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/comedy`} className="nav-item">
+                  Comedy
+                </Link>
+              </NavDropdown.Item>
+
               <br />
-              <Link to={`/documentary`} className="nav-item">
-                Documentary
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/documentary`} className="nav-item">
+                  Documentary
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/drama`} className="nav-item">
-                Drama
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/drama`} className="nav-item">
+                  Drama
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/family`} className="nav-item">
-                Family
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/family`} className="nav-item">
+                  Family
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/fantasy`} className="nav-item">
-                Fantasy
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/fantasy`} className="nav-item">
+                  Fantasy
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/horror`} className="nav-item">
-                Horror
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/horror`} className="nav-item">
+                  Horror
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/musical`} className="nav-item">
-                Musical
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/musical`} className="nav-item">
+                  Musical
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/mystery`} className="nav-item">
-                Mystery
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/mystery`} className="nav-item">
+                  Mystery
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/romance`} className="nav-item">
-                Romance
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/romance`} className="nav-item">
+                  Romance
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/scifi`} className="nav-item">
-                Sci-Fi
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/scifi`} className="nav-item">
+                  Sci-Fi
+                </Link>
+              </NavDropdown.Item>
               <br />
-              <Link to={`/western`} className="nav-item">
-                Western
-              </Link>
+              <NavDropdown.Item>
+                <Link to={`/western`} className="nav-item">
+                  Western
+                </Link>
+              </NavDropdown.Item>
               <br />
             </NavDropdown>
             <NavDropdown
@@ -92,7 +119,7 @@ export class NavigationView extends React.Component {
               }
               id="basic-nav-dropdown"
             >
-              <Container>
+              <NavDropdown.Item>
                 <Row>
                   <Link to={`/profile`} className="nav-item">
                     Profile
@@ -110,13 +137,15 @@ export class NavigationView extends React.Component {
                     Sign out
                   </Link>
                 </Row>
-              </Container>
+              </NavDropdown.Item>
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <Navbar.Brand href="/" id="logo" className="brand">
-          FlixFolio
-        </Navbar.Brand>
+        <Nav>
+          <Navbar.Brand href="/" id="logo" className="brand">
+            FlixFolio
+          </Navbar.Brand>
+        </Nav>
       </Navbar>
     );
   }
