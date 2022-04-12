@@ -3,20 +3,35 @@ import { Row, Col, Container } from "react-bootstrap";
 import "./genres-view.scss";
 import { Link } from "react-router-dom";
 
+import { connect } from "react-redux";
+import VisibilityFilterInput from "../visibility-filter-input/visibility-filter-input";
+import { MovieCard } from "../movie-card/movie-card";
+
 export class AdventureView extends React.Component {
   render() {
-    const { movies } = this.props;
-    const filteredMovies = movies.filter((m) => m.Genre.Name === "Adventure");
+    const { movies, visibilityFilter } = this.props;
+    let adventureMovies = movies.filter((m) => m.Genre.Name === "Adventure");
+    let filteredMovies = adventureMovies;
+
+    if (visibilityFilter !== "") {
+      filteredMovies = adventureMovies.filter((m) =>
+        m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+      );
+    }
+
     return (
-      <Container className="action-view">
+      <Container className="adventure-view">
+        <Row>
+          <VisibilityFilterInput visibilityFilter={visibilityFilter} />
+        </Row>
         <h1>Adventure</h1>
         <h2>Feat Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
             <Col xs={6} md={4} lg={3} key={m._id}>
               <Link to={`/movies/${m._id}`}>
-                <img className="movie-image" src={m.ImagePath}></img>
-              </Link>
+                <MovieCard movie={m} />
+              </Link>{" "}
             </Col>
           ))}
         </Row>
@@ -24,3 +39,10 @@ export class AdventureView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = (state) => {
+  return {
+    visibilityFilter: state.visibilityFilter,
+  };
+};
+export default connect(mapStateToProps)(AdventureView);

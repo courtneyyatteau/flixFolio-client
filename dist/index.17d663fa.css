@@ -200,9 +200,6 @@ html {
 .container-list {
   max-width: 1200px;
 }
-.search-bar {
-  margin: 10px;
-}
 #movie-card {
   margin: 0 0 20px 20px;
   padding: none;
@@ -235,6 +232,9 @@ p {
 .movie-image {
   width: 90%;
   margin: 20px;
+}
+.search-bar {
+  margin: 10px;
 }
 .myDiv {
   position: relative;

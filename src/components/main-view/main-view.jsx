@@ -1,12 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Route,
-  useHistory,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import "./main-view.scss";
 
@@ -19,31 +14,24 @@ import { ProfileView } from "../profile-view/profile-view";
 import { NavigationView } from "../navbar-view/navbar-view";
 import { Row, Col, Container } from "react-bootstrap";
 import { FooterView } from "../footer-view/footer-view";
-import { setMovies } from "../../actions/actions";
+import { setMovies, setUser } from "../../actions/actions";
 import MoviesList from "../movies-list/movies-list";
-import { ActionView } from "../genre-views/action-view";
-import { AdventureView } from "../genre-views/adventure-view";
-import { ComedyView } from "../genre-views/comedy-view";
-import { DocumentaryView } from "../genre-views/documentary-view";
-import { DramaView } from "../genre-views/drama-view";
-import { FamilyView } from "../genre-views/family-view";
-import { FantasyView } from "../genre-views/fantasy-flix";
-import { HorrorView } from "../genre-views/horror-view";
-import { MusicalView } from "../genre-views/musical-view";
-import { MysteryView } from "../genre-views/mystery-view";
-import { RomanceView } from "../genre-views/romance-view";
-import { SciFiView } from "../genre-views/scifi-view";
-import { WesternView } from "../genre-views/western-view";
+import ActionView from "../genre-views/action-view";
+import AdventureView from "../genre-views/adventure-view";
+import ComedyView from "../genre-views/comedy-view";
+import DocumentaryView from "../genre-views/documentary-view";
+import DramaView from "../genre-views/drama-view";
+import FamilyView from "../genre-views/family-view";
+import FantasyView from "../genre-views/fantasy-flix";
+import HorrorView from "../genre-views/horror-view";
+import MusicalView from "../genre-views/musical-view";
+import MysteryView from "../genre-views/mystery-view";
+import RomanceView from "../genre-views/romance-view";
+import SciFiView from "../genre-views/scifi-view";
+import WesternView from "../genre-views/western-view";
 import { FrontOverlay } from "../front-overlay-view/front-overlay-view";
 
 class MainView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      user: null,
-    };
-  }
-
   getMovies(token) {
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
@@ -60,18 +48,13 @@ class MainView extends React.Component {
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem("user"),
-      });
+      this.props.setUser(localStorage.getItem("user"));
       this.getMovies(accessToken);
     }
   }
 
   onLoggedIn(authData) {
-    console.log(authData);
-    this.setState({
-      user: authData.user.Username,
-    });
+    this.props.setUser(authData.user.Username);
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
@@ -81,14 +64,11 @@ class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.setState({
-      user: null,
-    });
+    this.props.setUser(null);
   }
 
   render() {
-    let { movies } = this.props;
-    const { user } = this.state;
+    let { movies, user } = this.props;
 
     return (
       <div className="main-view">
@@ -405,7 +385,10 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-  return { movies: state.movies };
+  return {
+    movies: state.movies,
+    user: state.user,
+  };
 };
 
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);

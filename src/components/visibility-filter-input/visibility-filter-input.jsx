@@ -13,7 +13,7 @@ function VisibilityFilterInput(props) {
         type="search"
         onChange={(e) => props.setFilter(e.target.value)}
         value={props.visibilityFilter}
-        placeholder="Search by title"
+        placeholder="Filter by title"
         className="search-bar"
         aria-label="Search"
       />
