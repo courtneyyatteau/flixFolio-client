@@ -43988,33 +43988,32 @@ function MoviesList(props) {
     const handleClick = ()=>{
         history.push(`/movies/${foundMovieId}`);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
-        fluid: true,
-        className: "container-list",
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
             lineNumber: 38
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
                     lineNumber: 39
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
-                        className: "d-flex",
-                        onSubmit: onFormSubmit,
-                        __source: {
-                            fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 40
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
+                    className: "d-flex",
+                    id: "formSearch",
+                    onSubmit: onFormSubmit,
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 40
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                             placeholder: "Search by title",
-                            className: "search-bar",
+                            id: "searchBar",
                             type: "search",
                             onChange: (e)=>setMovie(e.target.value)
                             ,
@@ -44023,89 +44022,101 @@ function MoviesList(props) {
                                 lineNumber: 41
                             },
                             __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                            id: "btnType",
+                            type: "submit",
+                            onClick: onFormSubmit,
+                            __source: {
+                                fileName: "src/components/movies-list/movies-list.jsx",
+                                lineNumber: 47
+                            },
+                            __self: this,
+                            children: "Search"
                         })
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                        type: "submit",
-                        onClick: onFormSubmit,
-                        __source: {
-                            fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 48
-                        },
-                        __self: this,
-                        children: "Search"
-                    })
-                ]
+                    ]
+                })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                fluid: true,
+                className: "container-list",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
                     lineNumber: 52
                 },
                 __self: this,
-                children: "Featured Movies"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 53
-                },
-                __self: this,
-                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        xs: 6,
-                        sm: 6,
-                        md: 4,
-                        lg: 3,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 55
+                            lineNumber: 53
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                            movie: m,
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 56
-                            },
-                            __self: this
-                        })
-                    }, m._id)
-                )
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 60
-                },
-                __self: this,
-                children: "Action Movies"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 61
-                },
-                __self: this,
-                children: filteredAction.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        xs: 6,
-                        sm: 6,
-                        md: 4,
-                        lg: 3,
+                        children: "Featured Flix"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 63
+                            lineNumber: 54
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                            movie: m,
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 64
-                            },
-                            __self: this
-                        })
-                    }, m._id)
-                )
+                        children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 6,
+                                sm: 6,
+                                md: 4,
+                                lg: 3,
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 56
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                                    movie: m,
+                                    __source: {
+                                        fileName: "src/components/movies-list/movies-list.jsx",
+                                        lineNumber: 57
+                                    },
+                                    __self: this
+                                })
+                            }, m._id)
+                        )
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 61
+                        },
+                        __self: this,
+                        children: "Force Flix (Action)"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 62
+                        },
+                        __self: this,
+                        children: filteredAction.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 6,
+                                sm: 6,
+                                md: 4,
+                                lg: 3,
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 64
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                                    movie: m,
+                                    __source: {
+                                        fileName: "src/components/movies-list/movies-list.jsx",
+                                        lineNumber: 65
+                                    },
+                                    __self: this
+                                })
+                            }, m._id)
+                        )
+                    })
+                ]
             })
         ]
     }));

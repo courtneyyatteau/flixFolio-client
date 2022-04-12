@@ -35,37 +35,39 @@ function MoviesList(props) {
   };
 
   return (
-    <Container fluid className="container-list">
+    <div>
       <Row>
-        <Form className="d-flex" onSubmit={onFormSubmit}>
+        <Form className="d-flex" id="formSearch" onSubmit={onFormSubmit}>
           <Form.Control
             placeholder="Search by title"
-            className="search-bar"
+            id="searchBar"
             type="search"
             onChange={(e) => setMovie(e.target.value)}
           />
+          <Button id="btnType" type="submit" onClick={onFormSubmit}>
+            Search
+          </Button>
         </Form>
-        <Button type="submit" onClick={onFormSubmit}>
-          Search
-        </Button>
       </Row>
-      <h1>Featured Movies</h1>
-      <Row>
-        {filteredMovies.map((m) => (
-          <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
-            <MovieCard movie={m} />
-          </Col>
-        ))}
-      </Row>
-      <h1>Action Movies</h1>
-      <Row>
-        {filteredAction.map((m) => (
-          <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
-            <MovieCard movie={m} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+      <Container fluid className="container-list">
+        <h1>Featured Flix</h1>
+        <Row>
+          {filteredMovies.map((m) => (
+            <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
+              <MovieCard movie={m} />
+            </Col>
+          ))}
+        </Row>
+        <h1>Force Flix (Action)</h1>
+        <Row>
+          {filteredAction.map((m) => (
+            <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
+              <MovieCard movie={m} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 }
 

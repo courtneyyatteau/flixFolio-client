@@ -38,9 +38,16 @@ $main-color: #2565ae;
 }
 
 .nav-item {
-  float: left;
+  font-size: 22px;
+  margin-left: 10px;
 }
 
 .nav-item:hover {
   text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  #nav-link {
+    font-size: 34px;
+  }
 }

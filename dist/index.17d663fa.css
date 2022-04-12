@@ -170,11 +170,18 @@ html {
 }
 
 .nav-item {
-  float: left;
+  font-size: 22px;
+  margin-left: 10px;
 }
 
 .nav-item:hover {
   text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  #nav-link {
+    font-size: 34px;
+  }
 }
 #footer {
   background-color: #2565ae;
@@ -199,6 +206,22 @@ html {
 
 .container-list {
   max-width: 1200px;
+}
+
+#btnType {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+#formSearch {
+  margin: 20px 0;
+}
+
+#search-bar {
+  width: 100%;
 }
 #movie-card {
   margin: 0 0 20px 20px;
