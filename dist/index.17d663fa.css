@@ -43,7 +43,7 @@ html {
   background-color: #2565ae;
   color: white;
   border-radius: 5px;
-  font-size: 19px;
+  font-size: 22px;
   border: none;
   float: right;
   margin: 10px;
@@ -53,7 +53,7 @@ html {
   background-color: #2565ae;
   color: white;
   border-radius: 5px;
-  font-size: 19px;
+  font-size: 22px;
   border: none;
   margin: 10px 0;
 }
@@ -63,25 +63,34 @@ html {
 }
 
 #movie-title {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
 }
 
 .movie-img {
-  max-width: 250px;
-  margin: 20px;
+  max-width: 320px;
+  margin-top: 25px;
+  border-radius: 15px;
+}
+
+.card-info {
+  font-size: 25px;
 }
 
 .movie-view {
-  margin-top: 50px;
-  max-width: 750px;
-  margin: 50px auto;
-  justify-content: center;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 @media (max-width: 1000px) {
-  #back-btn {
-    font-size: 14px;
+  .movie-view {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+  .movie-img {
+    max-width: 300px;
+    margin: 20px;
   }
 }
 #btn {
@@ -137,45 +146,56 @@ html {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 0 30px;
   background-color: #2565ae;
-}
-
-.userIcon {
-  margin: 15px 0 0 40px;
+  text-align: right;
 }
 
 #logo {
   color: white;
   font-size: 35px;
   font-weight: 900;
+  margin-left: 30px;
 }
 
-#btn {
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  color: white;
+.nav-item-logo {
+  text-align: right;
 }
 
 #nav-link {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
 }
 
-.nav-item {
+.nav-item,
+.nav-item-logo {
   font-size: 22px;
   margin-left: 10px;
 }
 
-.nav-item:hover {
+.nav-stuff-2 {
+  margin: 0 20px;
+}
+
+.nav-item:hover,
+.nav-item-logo:hover {
   text-decoration: none;
+}
+
+.toggle {
+  float: right;
 }
 
 @media (max-width: 1000px) {
   #nav-link,
-.nav-item {
-    font-size: 34px;
+.nav-item,
+.nav-item-logo,
+#logo {
+    font-size: 35px;
+  }
+
+  .nav-item:hover {
+    background-color: transparent;
+    text-decoration: none;
   }
 }
 #footer {
@@ -200,7 +220,7 @@ html {
 }
 
 .container-list {
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 #btnType {
@@ -215,8 +235,8 @@ html {
   margin: 20px 0;
 }
 
-#search-bar {
-  width: 100%;
+#searchBar {
+  margin-left: 50px;
 }
 #movie-card {
   margin: 0 0 20px 20px;
@@ -231,7 +251,7 @@ p {
 
 #movie-img {
   width: 100%;
-  height: 290px;
+  height: 400px;
   object-fit: contain;
 }
 
@@ -256,22 +276,25 @@ p {
 }
 .myDiv {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   height: 150px;
   width: 100%;
+  text-align: center;
 }
 
 .myDiv:before {
   background-image: url("background-image.7ce9e8aa.jpg");
   content: "";
   position: absolute;
-  z-index: -5;
+  z-index: -1;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   opacity: 0.3;
   object-fit: cover;
+  width: 100%;
+  text-align: center;
 }
 
 .front-title {
@@ -280,6 +303,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 43px;
 }
 
 @media (max-width: 900px) {

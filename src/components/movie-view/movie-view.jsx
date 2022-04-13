@@ -70,29 +70,25 @@ export class MovieView extends React.Component {
     const { user, movie, onBackClick } = this.props;
 
     return (
-      <div
-        className="movie-view"
-      >
+      <div className="movie-view">
         <Row>
           <Col sm={5}>
             <img className="movie-img" src={movie.ImagePath} />
           </Col>
           <Col className="movie-info">
             <Card.Title id="movie-title">{movie.Title}</Card.Title>
-            <Card.Text className="movie-description">
-              {movie.Description}
-            </Card.Text>
-            <Card.Text>
+            <Card.Text className="card-info">{movie.Description}</Card.Text>
+            <Card.Text className="card-info">
               Genre:{" "}
               <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
             </Card.Text>
-            <Card.Text>
+            <Card.Text className="card-info">
               Director:{" "}
               <Link to={`/directors/${movie.Director.Name}`}>
                 {movie.Director.Name}
               </Link>
             </Card.Text>
-            <Card.Text>Year: {movie.Year}</Card.Text>
+            <Card.Text className="card-info">Year: {movie.Year}</Card.Text>
             <Button
               id="fav-btn"
               type="submit"

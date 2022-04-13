@@ -5,44 +5,54 @@ $main-color: #2565ae;
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 0 30px;
   background-color: $main-color;
-}
-
-.userIcon {
-  margin: 15px 0 0 40px;
+  text-align: right;
 }
 
 #logo {
   color: white;
   font-size: 35px;
   font-weight: 900;
+  margin-left: 30px;
 }
 
-#btn {
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  color: white;
+.nav-item-logo {
+  text-align: right;
 }
 
 #nav-link {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
 }
 
-.nav-item {
+.nav-item,
+.nav-item-logo {
   font-size: 22px;
   margin-left: 10px;
 }
 
-.nav-item:hover {
+.nav-stuff-2 {
+  margin: 0 20px;
+}
+
+.nav-item:hover,
+.nav-item-logo:hover {
   text-decoration: none;
+}
+
+.toggle {
+  float: right;
 }
 
 @media (max-width: 1000px) {
   #nav-link,
-  .nav-item {
-    font-size: 34px;
+  .nav-item,
+  .nav-item-logo,
+  #logo {
+    font-size: 35px;
+  }
+  .nav-item:hover {
+    background-color: transparent;
+    text-decoration: none;
   }
 }
