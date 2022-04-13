@@ -83,7 +83,7 @@ class MainView extends React.Component {
                 }
 
                 return (
-                  <>
+                  <Container fluid>
                     <NavigationView
                       user={user}
                       onLoggedOut={() => this.onLoggedOut()}
@@ -91,7 +91,7 @@ class MainView extends React.Component {
                     <FrontOverlay />
                     <MoviesList movies={movies} />
                     <FooterView />
-                  </>
+                  </Container>
                 );
               }}
             />

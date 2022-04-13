@@ -27,7 +27,7 @@ export class ActionView extends React.Component {
         <h2>Force Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
-            <Col xs={6} md={4} lg={3} key={m._id}>
+            <Col xs={6} md={6} lg={3} key={m._id}>
               <Link to={`/movies/${m._id}`}>
                 <MovieCard movie={m} />
               </Link>{" "}

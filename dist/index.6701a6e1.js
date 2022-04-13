@@ -25737,7 +25737,8 @@ class MainView extends _reactDefault.default.Component {
                                 if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
                                     to: "/login"
                                 }));
-                                return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                                return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                                    fluid: true,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavigationView, {
                                             user: user,
@@ -43493,21 +43494,13 @@ class NavigationView extends _reactDefault.default.Component {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav, {
-                    className: "nav-stuff",
-                    __source: {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 25
-                    },
-                    __self: this
-                }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                     id: "nav-link",
                     href: "/",
                     className: "nav-stuff-1",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 27
+                        lineNumber: 25
                     },
                     __self: this,
                     children: "Home"
@@ -43518,7 +43511,7 @@ class NavigationView extends _reactDefault.default.Component {
                     className: "nav-stuff-2",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 30
+                        lineNumber: 28
                     },
                     __self: this,
                     children: [
@@ -43527,7 +43520,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 31
+                                lineNumber: 29
                             },
                             __self: this,
                             children: "Action"
@@ -43535,7 +43528,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 34
+                                lineNumber: 32
                             },
                             __self: this
                         }),
@@ -43544,7 +43537,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 35
+                                lineNumber: 33
                             },
                             __self: this,
                             children: "Adventure"
@@ -43552,7 +43545,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 38
+                                lineNumber: 36
                             },
                             __self: this
                         }),
@@ -43561,7 +43554,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 39
+                                lineNumber: 37
                             },
                             __self: this,
                             children: "Comedy"
@@ -43569,7 +43562,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 42
+                                lineNumber: 40
                             },
                             __self: this
                         }),
@@ -43578,7 +43571,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 43
+                                lineNumber: 41
                             },
                             __self: this,
                             children: "Documentary"
@@ -43586,7 +43579,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 46
+                                lineNumber: 44
                             },
                             __self: this
                         }),
@@ -43595,7 +43588,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 47
+                                lineNumber: 45
                             },
                             __self: this,
                             children: "Drama"
@@ -43603,7 +43596,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 50
+                                lineNumber: 48
                             },
                             __self: this
                         }),
@@ -43612,7 +43605,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 51
+                                lineNumber: 49
                             },
                             __self: this,
                             children: "Family"
@@ -43620,7 +43613,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 54
+                                lineNumber: 52
                             },
                             __self: this
                         }),
@@ -43629,7 +43622,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 55
+                                lineNumber: 53
                             },
                             __self: this,
                             children: "Fantasy"
@@ -43637,7 +43630,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 58
+                                lineNumber: 56
                             },
                             __self: this
                         }),
@@ -43646,7 +43639,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 59
+                                lineNumber: 57
                             },
                             __self: this,
                             children: "Horror"
@@ -43654,7 +43647,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 62
+                                lineNumber: 60
                             },
                             __self: this
                         }),
@@ -43663,7 +43656,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 63
+                                lineNumber: 61
                             },
                             __self: this,
                             children: "Musical"
@@ -43671,7 +43664,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 66
+                                lineNumber: 64
                             },
                             __self: this
                         }),
@@ -43680,7 +43673,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 67
+                                lineNumber: 65
                             },
                             __self: this,
                             children: "Mystery"
@@ -43688,7 +43681,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 70
+                                lineNumber: 68
                             },
                             __self: this
                         }),
@@ -43697,7 +43690,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 71
+                                lineNumber: 69
                             },
                             __self: this,
                             children: "Romance"
@@ -43705,7 +43698,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 74
+                                lineNumber: 72
                             },
                             __self: this
                         }),
@@ -43714,7 +43707,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 75
+                                lineNumber: 73
                             },
                             __self: this,
                             children: "Sci-Fi"
@@ -43722,7 +43715,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 78
+                                lineNumber: 76
                             },
                             __self: this
                         }),
@@ -43731,7 +43724,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 79
+                                lineNumber: 77
                             },
                             __self: this,
                             children: "Western"
@@ -43739,7 +43732,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 82
+                                lineNumber: 80
                             },
                             __self: this
                         })
@@ -43756,7 +43749,7 @@ class NavigationView extends _reactDefault.default.Component {
                     className: "user-logo",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 84
+                        lineNumber: 82
                     },
                     __self: this,
                     children: [
@@ -43765,7 +43758,7 @@ class NavigationView extends _reactDefault.default.Component {
                             className: "nav-item-logo",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 89
+                                lineNumber: 87
                             },
                             __self: this,
                             children: "Profile"
@@ -43773,7 +43766,7 @@ class NavigationView extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx("br", {
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 92
+                                lineNumber: 90
                             },
                             __self: this
                         }),
@@ -43785,7 +43778,7 @@ class NavigationView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 93
+                                lineNumber: 91
                             },
                             __self: this,
                             children: [
@@ -43801,7 +43794,7 @@ class NavigationView extends _reactDefault.default.Component {
                     className: "brand ml-auto",
                     __source: {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 104
+                        lineNumber: 102
                     },
                     __self: this,
                     children: "FlixFolio"
@@ -44261,7 +44254,7 @@ class ActionView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/action-view.jsx",
@@ -44433,7 +44426,7 @@ class AdventureView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/adventure-view.jsx",
@@ -44553,8 +44546,8 @@ class ComedyView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                            xs: 6,
-                            md: 4,
+                            sm: 6,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/comedy-view.jsx",
@@ -44675,7 +44668,7 @@ class DocumentaryView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/documentary-view.jsx",
@@ -44796,7 +44789,7 @@ class DramaView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/drama-view.jsx",
@@ -44917,7 +44910,7 @@ class FamilyView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/family-view.jsx",
@@ -45038,7 +45031,7 @@ class FantasyView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/fantasy-flix.jsx",
@@ -45159,7 +45152,7 @@ class HorrorView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/horror-view.jsx",
@@ -45280,7 +45273,7 @@ class MusicalView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/musical-view.jsx",
@@ -45401,7 +45394,7 @@ class MysteryView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/mystery-view.jsx",
@@ -45522,7 +45515,7 @@ class RomanceView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/romance-view.jsx",
@@ -45651,7 +45644,7 @@ class SciFiView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/scifi-view.jsx",
@@ -45772,7 +45765,7 @@ class WesternView extends _reactDefault.default.Component {
                     __self: this,
                     children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                             xs: 6,
-                            md: 4,
+                            md: 6,
                             lg: 3,
                             __source: {
                                 fileName: "src/components/genre-views/western-view.jsx",

@@ -22,8 +22,6 @@ export class NavigationView extends React.Component {
 
     return (
       <Navbar expand="lg" id="nav-bar">
-        <Nav className="nav-stuff" />
-
         <Nav.Link id="nav-link" href="/" className="nav-stuff-1">
           Home
         </Nav.Link>
