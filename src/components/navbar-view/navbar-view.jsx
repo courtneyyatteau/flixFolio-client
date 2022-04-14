@@ -1,19 +1,7 @@
 import React from "react";
 import "./navbar-view.scss";
 import image from "../../../public/imgs/user.png";
-import {
-  Navbar,
-  Container,
-  NavDropdown,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  Image,
-  Col,
-  Row,
-  MenuItem,
-} from "react-bootstrap";
+import { Navbar, NavDropdown, Nav, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export class NavigationView extends React.Component {

@@ -34,5 +34,6 @@ MovieCard.propTypes = {
       Bio: PropTypes.string.isRequired,
       Birth: PropTypes.string.isRequired,
     }),
+    Actors: PropTypes.array.isRequired,
   }),
 };

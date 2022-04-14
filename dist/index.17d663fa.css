@@ -124,18 +124,94 @@ html {
 }
 
 
-.profile-image {
-  width: 100%;
-}
-
-#btn1,
+#btn-1,
 #btn2 {
   background-color: #2565ae;
   color: white;
   border-radius: 5px;
-  font-size: 19px;
+  font-size: 25px;
   border: none;
   float: right;
+}
+
+#btn-1 {
+  float: right;
+}
+
+#btn-3 {
+  max-width: 300px;
+  background-color: red;
+  border: none;
+  font-size: 25px;
+  border-radius: 5px;
+  float: right;
+}
+
+.tab {
+  font-size: 25px;
+  text-align: center;
+}
+
+.tabs {
+  margin: 40px 0;
+}
+
+.fav-movie {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1100px) {
+  .form {
+    font-size: 40px;
+    margin: 50px;
+  }
+
+  .form-input {
+    font-size: 40px;
+  }
+
+  #btn-3 {
+    margin-top: -20px;
+  }
+}
+@media (min-width: 1101px) {
+  .form {
+    font-size: 25px;
+    margin: 30px 400px 0 400px;
+  }
+
+  .tabs {
+    margin-bottom: 30px;
+  }
+}
+#movie-card {
+  margin: 0 0 20px 20px;
+  padding: none;
+  background-color: transparent;
+  border: none;
+}
+
+p {
+  font-size: 20px;
+}
+
+#movie-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+#movie-img:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+#open-btn {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
 }
 #nav-bar {
   width: 100%;
@@ -233,35 +309,6 @@ html {
 
 #searchBar {
   margin-left: 50px;
-}
-#movie-card {
-  margin: 0 0 20px 20px;
-  padding: none;
-  background-color: transparent;
-  border: none;
-}
-
-p {
-  font-size: 20px;
-}
-
-#movie-img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
-}
-
-#movie-img:hover {
-  opacity: 70%;
-  cursor: pointer;
-}
-
-#open-btn {
-  background-color: #2565ae;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  text-decoration: none;
 }
 .movie-image {
   width: 90%;

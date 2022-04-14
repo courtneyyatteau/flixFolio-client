@@ -89,6 +89,9 @@ export class MovieView extends React.Component {
               </Link>
             </Card.Text>
             <Card.Text className="card-info">Year: {movie.Year}</Card.Text>
+            {/*<Card.Text className="card-info">
+              Actors: {movie.Actors.join(", ")}
+            </Card.Text>*/}
             <Button
               id="fav-btn"
               type="submit"

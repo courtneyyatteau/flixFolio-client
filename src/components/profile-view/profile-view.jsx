@@ -9,12 +9,12 @@ import {
   Tabs,
   Tab,
   Card,
+  Container,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { MovieCard } from "../movie-card/movie-card";
 
 import axios from "axios";
-import image from "../../../public/imgs/image-placeholder.jpg";
-
 export class ProfileView extends React.Component {
   _isMounted = false;
   constructor() {
@@ -169,9 +169,13 @@ export class ProfileView extends React.Component {
     const { movies } = this.props;
     const { Username, Password, Email, Birthday, FavoriteMovies } = this.state;
     return (
-      <>
-        <Tabs>
-          <Tab eventKey="profile" title="Profile">
+      <Container fluid>
+        <Tabs
+          defaultActiveKey="profile"
+          id="uncontrolled-tab-example"
+          className="tabs"
+        >
+          <Tab eventKey="profile" title="Profile" tabClassName="tab">
             <Form
               onSubmit={(e) =>
                 this.onChangeUserInfo(
@@ -182,47 +186,50 @@ export class ProfileView extends React.Component {
                   this.Birthday
                 )
               }
+              className="form"
             >
-              <Row>
-                <Col sm={5}>
-                  <Image className="profile-image" src={image}></Image>
-                </Col>
-                <Col>
-                  <Form.Label>Username:</Form.Label>
-                  <Form.Control
-                    type="username"
-                    placeholder={Username}
-                    value={Username}
-                    onChange={(e) => this.setUsername(e.target.value)}
-                  ></Form.Control>
-                  <Form.Label>Password: </Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder=""
-                    onChange={(e) => this.setPassword(e.target.value)}
-                  ></Form.Control>
-                  <Form.Label>Email: </Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder={Email}
-                    value={Email}
-                    onChange={(e) => this.setEmail(e.target.value)}
-                  ></Form.Control>
-                  <Form.Label>Birthday: </Form.Label>
-                  <Form.Control
-                    type="username"
-                    placeholder={Birthday}
-                    value={Birthday}
-                    onChange={(e) => this.setBirthday(e.target.value)}
-                  ></Form.Control>
-                </Col>
-              </Row>
-              <Button id="btn1" type="submit" onClick={this.onChangeUserInfo}>
+              <Form.Label>Username:</Form.Label>
+              <Form.Control
+                type="username"
+                placeholder={Username}
+                value={Username}
+                onChange={(e) => this.setUsername(e.target.value)}
+                style={{ fontSize: "20px", marginBottom: "40px" }}
+              ></Form.Control>
+              <Form.Label>Password: </Form.Label>
+              <Form.Control
+                type="password"
+                placeholder=""
+                onChange={(e) => this.setPassword(e.target.value)}
+                style={{ fontSize: "20px", marginBottom: "40px" }}
+              ></Form.Control>
+              <Form.Label>Email: </Form.Label>
+              <Form.Control
+                type="email"
+                placeholder={Email}
+                value={Email}
+                onChange={(e) => this.setEmail(e.target.value)}
+                style={{ fontSize: "20px", marginBottom: "40px" }}
+              ></Form.Control>
+              <Form.Label>Birthday: </Form.Label>
+              <Form.Control
+                type="username"
+                placeholder={Birthday}
+                value={Birthday}
+                onChange={(e) => this.setBirthday(e.target.value)}
+                style={{ fontSize: "20px", marginBottom: "40px" }}
+              ></Form.Control>
+              <Button id="btn-1" type="submit" onClick={this.onChangeUserInfo}>
                 Save Changes
+              </Button>
+              <br />
+              <br />
+              <Button id="btn-3" onClick={() => this.onDeleteAccount()}>
+                Delete my Account
               </Button>
             </Form>
           </Tab>
-          <Tab eventKey="movie-favs" title="Favorite Movies">
+          <Tab eventKey="movie-favs" title="Favorite Movies" tabClassName="tab">
             <Card.Body>
               {FavoriteMovies.length === 0 && (
                 <div className="text-center">No Favorite Movies</div>
@@ -235,12 +242,15 @@ export class ProfileView extends React.Component {
                       FavoriteMovies.find((favorite) => favorite === movie._id)
                     ) {
                       return (
-                        <Col sm={6} md={4} lg={3} xl={2}>
+                        <Col sm={6} md={6} lg={3} xl={2}>
                           <Card className="fav-movie" key={movie._id}>
-                            <Card.Img
-                              className="fav-movie-image"
-                              src={movie.ImagePath}
-                            />
+                            <Link to={`/movies/${movie._id}`}>
+                              <img
+                                id="movie-img"
+                                variant="top"
+                                src={movie.ImagePath}
+                              />
+                            </Link>
                             <Card.Body>
                               <Button
                                 id="btn2"
@@ -258,15 +268,8 @@ export class ProfileView extends React.Component {
               </Row>
             </Card.Body>
           </Tab>
-          <Tab eventKey="manage-account" title="Account Management">
-            <Card>
-              <Button onClick={() => this.onDeleteAccount()}>
-                Delete my Account
-              </Button>
-            </Card>
-          </Tab>
         </Tabs>
-      </>
+      </Container>
     );
   }
 }
