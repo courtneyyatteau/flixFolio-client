@@ -11,8 +11,8 @@ import {
   Card,
   Container,
 } from "react-bootstrap";
+import FavoritesView from "../favorites-view/favorites-view";
 import { Link } from "react-router-dom";
-import { MovieCard } from "../movie-card/movie-card";
 
 import axios from "axios";
 export class ProfileView extends React.Component {
@@ -124,7 +124,7 @@ export class ProfileView extends React.Component {
       .then((response) => {
         console.log(response);
         alert("Favorite movie has been removed.");
-        window.open(`/profile`, "_self");
+        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
@@ -230,43 +230,11 @@ export class ProfileView extends React.Component {
             </Form>
           </Tab>
           <Tab eventKey="movie-favs" title="Favorite Movies" tabClassName="tab">
-            <Card.Body>
-              {FavoriteMovies.length === 0 && (
-                <div className="text-center">No Favorite Movies</div>
-              )}
-              <Row className="favorite-container">
-                {FavoriteMovies.length > 0 &&
-                  movies.map((movie) => {
-                    if (
-                      movie._id ===
-                      FavoriteMovies.find((favorite) => favorite === movie._id)
-                    ) {
-                      return (
-                        <Col sm={6} md={6} lg={3} xl={2}>
-                          <Card className="fav-movie" key={movie._id}>
-                            <Link to={`/movies/${movie._id}`}>
-                              <img
-                                id="movie-img"
-                                variant="top"
-                                src={movie.ImagePath}
-                              />
-                            </Link>
-                            <Card.Body>
-                              <Button
-                                id="btn2"
-                                value={movie._id}
-                                onClick={(e) => this.onFavRemove(e, movie)}
-                              >
-                                Remove
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </Col>
-                      );
-                    }
-                  })}
-              </Row>
-            </Card.Body>
+            <FavoritesView
+              FavoriteMovies={FavoriteMovies}
+              movies={movies}
+              onFavRemove={this.onFavRemove}
+            />
           </Tab>
         </Tabs>
       </Container>

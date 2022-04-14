@@ -1,0 +1,19 @@
+$main-color: #2565ae;
+
+.center {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0px;
+}
+div.loader {
+  font-size: 300px;
+  color: $main-color;
+}
+
+.loaded {
+  font-size: 18px;
+  font-weight: bold;
+}

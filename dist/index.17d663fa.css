@@ -124,8 +124,7 @@ html {
 }
 
 
-#btn-1,
-#btn2 {
+#btn-1 {
   background-color: #2565ae;
   color: white;
   border-radius: 5px;
@@ -156,10 +155,6 @@ html {
   margin: 40px 0;
 }
 
-.fav-movie {
-  margin-bottom: 20px;
-}
-
 @media (max-width: 1100px) {
   .form {
     font-size: 40px;
@@ -184,34 +179,17 @@ html {
     margin-bottom: 30px;
   }
 }
-#movie-card {
-  margin: 0 0 20px 20px;
-  padding: none;
-  background-color: transparent;
-  border: none;
+.fav-movie {
+  margin-bottom: 20px;
 }
 
-p {
-  font-size: 20px;
-}
-
-#movie-img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
-}
-
-#movie-img:hover {
-  opacity: 70%;
-  cursor: pointer;
-}
-
-#open-btn {
+#btn2 {
   background-color: #2565ae;
-  border-radius: 5px;
-  border: none;
   color: white;
-  text-decoration: none;
+  border-radius: 5px;
+  font-size: 25px;
+  border: none;
+  float: right;
 }
 #nav-bar {
   width: 100%;
@@ -310,6 +288,35 @@ p {
 #searchBar {
   margin-left: 50px;
 }
+#movie-card {
+  margin: 0 0 20px 20px;
+  padding: none;
+  background-color: transparent;
+  border: none;
+}
+
+p {
+  font-size: 20px;
+}
+
+#movie-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+#movie-img:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+#open-btn {
+  background-color: #2565ae;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
 .movie-image {
   width: 90%;
   margin: 20px;
@@ -353,6 +360,24 @@ p {
   .front-title {
     font-size: 30px;
   }
+}
+.center {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0px;
+}
+
+div.loader {
+  font-size: 300px;
+  color: #2565ae;
+}
+
+.loaded {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.17d663fa.css.map */
