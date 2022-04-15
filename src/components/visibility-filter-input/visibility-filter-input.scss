@@ -1,3 +1,15 @@
 .search-bar {
   margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  justify-content: right;
+  border: solid gray;
+  border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  .search-bar {
+    font-size: 35px;
+    margin: 30px 0;
+  }
 }

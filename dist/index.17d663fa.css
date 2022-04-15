@@ -411,13 +411,14 @@ body.react-confirm-alert-body-element {
   }
 
   #nav-link {
-    font-size: 40px;
+    font-size: 47px;
     margin: 10px 20px;
   }
 
   .nav-item,
 .nav-item-logo {
-    font-size: 37px;
+    font-size: 38px;
+    padding: 0px;
   }
 }
 #footer {
@@ -453,13 +454,27 @@ body.react-confirm-alert-body-element {
 
 #formSearch {
   margin: 20px 20px;
-  float: right;
 }
 
 #searchBar {
   margin-left: 50px;
   padding: 20px;
   font-size: 22px;
+}
+
+@media (max-width: 1000px) {
+  #searchBar {
+    padding: 30px 20px;
+    font-size: 32px;
+  }
+
+  #btnType {
+    font-size: 30px;
+  }
+
+  .header {
+    font-size: 60px;
+  }
 }
 #movie-card {
   margin: 0 0 20px 20px;
@@ -496,6 +511,18 @@ p {
 }
 .search-bar {
   margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  justify-content: right;
+  border: solid gray;
+  border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  .search-bar {
+    font-size: 35px;
+    margin: 30px 0;
+  }
 }
 .myDiv {
   position: relative;

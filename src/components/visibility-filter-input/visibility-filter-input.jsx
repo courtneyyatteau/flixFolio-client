@@ -8,13 +8,13 @@ import { setFilter } from "../../actions/actions";
 
 function VisibilityFilterInput(props) {
   return (
-    <div>
-      <Form.Control
+    <div class="search">
+      <input
         type="search"
-        onChange={(e) => props.setFilter(e.target.value)}
-        value={props.visibilityFilter}
         placeholder="Filter by title"
         className="search-bar"
+        onChange={(e) => props.setFilter(e.target.value)}
+        value={props.visibilityFilter}
         aria-label="Search"
       />
     </div>

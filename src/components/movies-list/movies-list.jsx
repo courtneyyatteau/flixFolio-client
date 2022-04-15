@@ -54,11 +54,8 @@ function MoviesList(props) {
         </Form>
       </Row>
       <br />
-      <br />
-      <br />
-      <br />
       <Container fluid className="container-list">
-        <h1>Featured Flix</h1>
+        <h1 className="header">Featured Flix</h1>
         <Row>
           {filteredMovies.map((m) => (
             <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
@@ -66,7 +63,9 @@ function MoviesList(props) {
             </Col>
           ))}
         </Row>
-        <h1>Force Flix (Action)</h1>
+        <br/>
+        <br/>
+        <h1 className="header">Force Flix (Action)</h1>
         <Row>
           {filteredAction.map((m) => (
             <Col xs={6} sm={6} md={4} lg={3} key={m._id}>

@@ -44425,40 +44425,20 @@ function MoviesList(props) {
                 },
                 __self: this
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 57
-                },
-                __self: this
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 58
-                },
-                __self: this
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 59
-                },
-                __self: this
-            }),
             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                 fluid: true,
                 className: "container-list",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 60
+                    lineNumber: 57
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "header",
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 61
+                            lineNumber: 58
                         },
                         __self: this,
                         children: "Featured Flix"
@@ -44466,7 +44446,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 62
+                            lineNumber: 59
                         },
                         __self: this,
                         children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44476,24 +44456,39 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 64
+                                    lineNumber: 61
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 65
+                                        lineNumber: 62
                                     },
                                     __self: this
                                 })
                             }, m._id)
                         )
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 69
+                            lineNumber: 66
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 67
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "header",
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 68
                         },
                         __self: this,
                         children: "Force Flix (Action)"
@@ -44501,7 +44496,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 70
+                            lineNumber: 69
                         },
                         __self: this,
                         children: filteredAction.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44511,14 +44506,14 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 72
+                                    lineNumber: 71
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 73
+                                        lineNumber: 72
                                     },
                                     __self: this
                                 })
@@ -45746,18 +45741,19 @@ var _reactBootstrap = require("react-bootstrap");
 var _actions = require("../../actions/actions");
 function VisibilityFilterInput(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        class: "search",
         __source: {
             fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
             lineNumber: 11
         },
         __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+        children: /*#__PURE__*/ _jsxRuntime.jsx("input", {
             type: "search",
+            placeholder: "Filter by title",
+            className: "search-bar",
             onChange: (e)=>props.setFilter(e.target.value)
             ,
             value: props.visibilityFilter,
-            placeholder: "Filter by title",
-            className: "search-bar",
             "aria-label": "Search",
             __source: {
                 fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",

@@ -16,11 +16,24 @@ $main-color: #2565ae;
 
 #formSearch {
   margin: 20px 20px;
-  float: right;
 }
 
 #searchBar {
   margin-left: 50px;
   padding: 20px;
   font-size: 22px;
+}
+
+@media (max-width: 1000px) {
+  #searchBar {
+    padding: 30px 20px;
+    font-size: 32px;
+  }
+  #btnType {
+    font-size: 30px;
+  }
+
+  .header {
+    font-size: 60px;
+  }
 }
