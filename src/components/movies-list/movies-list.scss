@@ -1,9 +1,5 @@
 $main-color: #2565ae;
 
-.searchBar {
-  text-align: right;
-}
-
 .container-list {
   max-width: 1400px;
 }
@@ -14,12 +10,17 @@ $main-color: #2565ae;
   border: none;
   color: white;
   text-decoration: none;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
 #formSearch {
-  margin: 20px 0;
+  margin: 20px 20px;
+  float: right;
 }
 
 #searchBar {
   margin-left: 50px;
+  padding: 20px;
+  font-size: 22px;
 }

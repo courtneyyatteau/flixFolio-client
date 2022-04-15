@@ -26,9 +26,12 @@ function MoviesList(props) {
     foundMovieObject = movies.filter((m) =>
       m.Title.toLowerCase().includes(theMovie.toLowerCase())
     );
-    console.log(foundMovieObject);
-    foundMovieId = foundMovieObject[0]._id;
-    handleClick();
+    if (foundMovieObject.length === 0) {
+      alert("No such movie found! Please try again.");
+    } else {
+      foundMovieId = foundMovieObject[0]._id;
+      handleClick();
+    }
   };
 
   const handleClick = () => {
@@ -37,7 +40,7 @@ function MoviesList(props) {
 
   return (
     <div>
-      <Row>
+      <Row id="formSearch">
         <Form className="d-flex" id="formSearch" onSubmit={onFormSubmit}>
           <Form.Control
             placeholder="Search by title"
@@ -50,6 +53,10 @@ function MoviesList(props) {
           </Button>
         </Form>
       </Row>
+      <br />
+      <br />
+      <br />
+      <br />
       <Container fluid className="container-list">
         <h1>Featured Flix</h1>
         <Row>

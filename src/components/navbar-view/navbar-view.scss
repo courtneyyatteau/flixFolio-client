@@ -20,7 +20,8 @@ $main-color: #2565ae;
   text-align: right;
 }
 
-#nav-link {
+#nav-link,
+#nav-link-home {
   font-size: 30px;
   color: white;
 }
@@ -45,14 +46,21 @@ $main-color: #2565ae;
 }
 
 @media (max-width: 1000px) {
-  #nav-link,
-  .nav-item,
-  .nav-item-logo,
   #logo {
-    font-size: 35px;
+    font-size: 55px;
   }
   .nav-item:hover {
     background-color: transparent;
     text-decoration: none;
+  }
+
+  #nav-link {
+    font-size: 40px;
+    margin: 10px 20px;
+  }
+
+  .nav-item,
+  .nav-item-logo {
+    font-size: 37px;
   }
 }

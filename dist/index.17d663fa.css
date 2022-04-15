@@ -152,31 +152,77 @@ html {
 }
 
 .tabs {
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
-@media (max-width: 1100px) {
-  .form {
-    font-size: 40px;
-    margin: 50px;
-  }
-
-  .form-input {
-    font-size: 40px;
-  }
-
-  #btn-3 {
-    margin-top: -20px;
-  }
+.form {
+  width: 50%;
+  margin: 0 auto;
 }
-@media (min-width: 1101px) {
+
+.field1 {
+  margin-top: 35px;
+}
+
+.form-box label {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.form-box input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 0;
+  border-radius: 5px;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+
+.form-box textarea {
+  height: 15vh;
+}
+
+@media (max-width: 1000px) {
+  .form-box input {
+    padding: 0.9rem 1rem 0.9rem 1rem;
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
   .form {
-    font-size: 25px;
-    margin: 30px 400px 0 400px;
+    width: 70%;
+  }
+
+  .form-box label {
+    font-size: 32px;
+  }
+
+  .field1 {
+    margin-top: 55px;
+  }
+
+  .tab {
+    font-size: 45px;
   }
 
   .tabs {
-    margin-bottom: 30px;
+    margin: 30px 0;
+    float: right;
+  }
+
+  #btn-3,
+#btn-1 {
+    font-size: 38px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    float: right;
+    max-width: 450px;
+  }
+
+  #btn-3 {
+    margin-top: 20px;
   }
 }
 .fav-movie {
@@ -329,7 +375,8 @@ body.react-confirm-alert-body-element {
   text-align: right;
 }
 
-#nav-link {
+#nav-link,
+#nav-link-home {
   font-size: 30px;
   color: white;
 }
@@ -354,16 +401,23 @@ body.react-confirm-alert-body-element {
 }
 
 @media (max-width: 1000px) {
-  #nav-link,
-.nav-item,
-.nav-item-logo,
-#logo {
-    font-size: 35px;
+  #logo {
+    font-size: 55px;
   }
 
   .nav-item:hover {
     background-color: transparent;
     text-decoration: none;
+  }
+
+  #nav-link {
+    font-size: 40px;
+    margin: 10px 20px;
+  }
+
+  .nav-item,
+.nav-item-logo {
+    font-size: 37px;
   }
 }
 #footer {
@@ -383,10 +437,6 @@ body.react-confirm-alert-body-element {
 #link:hover {
   color: #d5f3fe;
 }
-.searchBar {
-  text-align: right;
-}
-
 .container-list {
   max-width: 1400px;
 }
@@ -397,14 +447,19 @@ body.react-confirm-alert-body-element {
   border: none;
   color: white;
   text-decoration: none;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
 #formSearch {
-  margin: 20px 0;
+  margin: 20px 20px;
+  float: right;
 }
 
 #searchBar {
   margin-left: 50px;
+  padding: 20px;
+  font-size: 22px;
 }
 #movie-card {
   margin: 0 0 20px 20px;

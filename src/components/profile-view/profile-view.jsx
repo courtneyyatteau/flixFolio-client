@@ -17,7 +17,6 @@ import FavoritesView from "../favorites-view/favorites-view";
 
 import axios from "axios";
 export class ProfileView extends React.Component {
-  _isMounted = false;
   constructor() {
     super();
     this.state = {
@@ -30,13 +29,8 @@ export class ProfileView extends React.Component {
   }
 
   componentDidMount() {
-    this._isMounted = true;
     const accessToken = localStorage.getItem("token");
     this.getUserInfo(accessToken);
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
   }
 
   getUserInfo = (token) => {
@@ -192,60 +186,81 @@ export class ProfileView extends React.Component {
           className="tabs"
         >
           <Tab eventKey="profile" title="Profile" tabClassName="tab">
-            <Form
-              onSubmit={(e) =>
-                this.onChangeUserInfo(
-                  e,
-                  this.Username,
-                  this.Password,
-                  this.Email,
-                  this.Birthday
-                )
-              }
-              className="form"
-            >
-              <Form.Label>Username:</Form.Label>
-              <Form.Control
-                type="username"
-                placeholder={Username}
-                value={Username}
-                onChange={(e) => this.setUsername(e.target.value)}
-                style={{ fontSize: "20px", marginBottom: "40px" }}
-              ></Form.Control>
-              <Form.Label>Password: </Form.Label>
-              <Form.Control
-                type="password"
-                placeholder=""
-                onChange={(e) => this.setPassword(e.target.value)}
-                style={{ fontSize: "20px", marginBottom: "40px" }}
-              ></Form.Control>
-              <Form.Label>Email: </Form.Label>
-              <Form.Control
-                type="email"
-                placeholder={Email}
-                value={Email}
-                onChange={(e) => this.setEmail(e.target.value)}
-                style={{ fontSize: "20px", marginBottom: "40px" }}
-              ></Form.Control>
-              <Form.Label>Birthday: </Form.Label>
-              <Form.Control
-                type="username"
-                placeholder={Birthday}
-                value={Birthday}
-                onChange={(e) => this.setBirthday(e.target.value)}
-                style={{ fontSize: "20px", marginBottom: "40px" }}
-              ></Form.Control>
-              <Button id="btn-1" type="submit" onClick={this.onChangeUserInfo}>
-                Save Changes
-              </Button>
-              <br />
-              <br />
-              <Button id="btn-3" onClick={() => this.onDeleteAccount()}>
-                Delete my Account
-              </Button>
-            </Form>
+            <br />
+            <br />
+            <br />
+            <div className="form-box">
+              <form
+                onSubmit={(e) =>
+                  this.onChangeUserInfo(
+                    e,
+                    this.Username,
+                    this.Password,
+                    this.Email,
+                    this.Birthday
+                  )
+                }
+                className="form"
+              >
+                <div className="field1">
+                  <label>Username:</label>
+                  <input
+                    type="username"
+                    placeholder={Username}
+                    value={Username}
+                    onChange={(e) => this.setUsername(e.target.value)}
+                  ></input>
+                  <br />
+                  <label>Password: </label>
+                  <input
+                    type="password"
+                    placeholder=""
+                    onChange={(e) => this.setPassword(e.target.value)}
+                  ></input>
+                  <br />
+                  <label>Email: </label>
+                  <input
+                    type="email"
+                    placeholder={Email}
+                    value={Email}
+                    onChange={(e) => this.setEmail(e.target.value)}
+                    rows={3}
+                  ></input>
+                  <br />
+
+                  <label>Birthday: </label>
+                  <input
+                    type="username"
+                    placeholder={Birthday}
+                    value={Birthday.substring(0, 10)}
+                    onChange={(e) => this.setBirthday(e.target.value)}
+                  ></input>
+                </div>
+                <br />
+
+                <Button
+                  id="btn-1"
+                  type="submit"
+                  onClick={this.onChangeUserInfo}
+                >
+                  Save Changes
+                </Button>
+                <br />
+                <br />
+                <br />
+                <br />
+                <Button id="btn-3" onClick={() => this.onDeleteAccount()}>
+                  Delete my Account
+                </Button>
+              </form>
+            </div>
           </Tab>
           <Tab eventKey="movie-favs" title="Favorite Movies" tabClassName="tab">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <FavoritesView
               FavoriteMovies={FavoriteMovies}
               movies={movies}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export class NavigationView extends React.Component {
   render() {
-    const { user, onLoggedOut } = this.props;
+    const { onLoggedOut } = this.props;
 
     return (
       <Navbar expand="lg" id="nav-bar">
