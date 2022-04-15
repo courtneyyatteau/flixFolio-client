@@ -25682,6 +25682,9 @@ var _favoritesView = require("../favorites-view/favorites-view");
 var _favoritesViewDefault = parcelHelpers.interopDefault(_favoritesView);
 class MainView extends _reactDefault.default.Component {
     getMovies(token) {
+        this.setState({
+            loading: true
+        });
         _axiosDefault.default.get("https://flixfolio.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -25713,16 +25716,19 @@ class MainView extends _reactDefault.default.Component {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         this.props.setUser(null);
+        this.setState({
+            loading: false
+        });
     }
     state = {
-        loading: true
+        loading: false
     };
     render() {
         let { movies , user  } = this.props;
         if (this.state.loading) return(/*#__PURE__*/ _jsxRuntime.jsx(_loaderDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 76
+                lineNumber: 78
             },
             __self: this
         }));
@@ -25730,20 +25736,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 79
+                lineNumber: 81
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80
+                    lineNumber: 82
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 81
+                        lineNumber: 83
                     },
                     __self: this,
                     children: [
@@ -25773,7 +25779,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 82
+                                lineNumber: 84
                             },
                             __self: this
                         }),
@@ -25790,7 +25796,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 103
+                                lineNumber: 105
                             },
                             __self: this
                         }),
@@ -25807,7 +25813,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 118
+                                lineNumber: 120
                             },
                             __self: this
                         }),
@@ -25836,7 +25842,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 132
+                                lineNumber: 134
                             },
                             __self: this
                         }),
@@ -25872,7 +25878,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 157
+                                lineNumber: 159
                             },
                             __self: this
                         }),
@@ -25907,7 +25913,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 188
+                                lineNumber: 190
                             },
                             __self: this
                         }),
@@ -25915,7 +25921,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/profile",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 217
+                                lineNumber: 219
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25928,7 +25934,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 219
+                                            lineNumber: 221
                                         },
                                         __self: this
                                     }),
@@ -25937,7 +25943,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 226
+                                            lineNumber: 228
                                         },
                                         __self: this
                                     })
@@ -25948,7 +25954,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 229
+                                lineNumber: 231
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25961,7 +25967,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 231
+                                            lineNumber: 233
                                         },
                                         __self: this
                                     }),
@@ -25969,7 +25975,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 238
+                                            lineNumber: 240
                                         },
                                         __self: this
                                     })
@@ -25980,7 +25986,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/adventure",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 241
+                                lineNumber: 243
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25993,7 +25999,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 243
+                                            lineNumber: 245
                                         },
                                         __self: this
                                     }),
@@ -26001,7 +26007,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 250
+                                            lineNumber: 252
                                         },
                                         __self: this
                                     })
@@ -26012,7 +26018,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/comedy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 253
+                                lineNumber: 255
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26025,7 +26031,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 255
+                                            lineNumber: 257
                                         },
                                         __self: this
                                     }),
@@ -26033,7 +26039,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 262
+                                            lineNumber: 264
                                         },
                                         __self: this
                                     })
@@ -26044,7 +26050,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/documentary",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 265
+                                lineNumber: 267
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26057,7 +26063,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 267
+                                            lineNumber: 269
                                         },
                                         __self: this
                                     }),
@@ -26065,7 +26071,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 274
+                                            lineNumber: 276
                                         },
                                         __self: this
                                     })
@@ -26076,7 +26082,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/drama",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 277
+                                lineNumber: 279
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26089,7 +26095,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 279
+                                            lineNumber: 281
                                         },
                                         __self: this
                                     }),
@@ -26097,7 +26103,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 286
+                                            lineNumber: 288
                                         },
                                         __self: this
                                     })
@@ -26108,7 +26114,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/family",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 289
+                                lineNumber: 291
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26121,7 +26127,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 291
+                                            lineNumber: 293
                                         },
                                         __self: this
                                     }),
@@ -26129,7 +26135,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 298
+                                            lineNumber: 300
                                         },
                                         __self: this
                                     })
@@ -26140,7 +26146,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/fantasy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 301
+                                lineNumber: 303
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26153,7 +26159,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 303
+                                            lineNumber: 305
                                         },
                                         __self: this
                                     }),
@@ -26161,7 +26167,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 310
+                                            lineNumber: 312
                                         },
                                         __self: this
                                     })
@@ -26172,7 +26178,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/horror",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 313
+                                lineNumber: 315
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26185,7 +26191,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 315
+                                            lineNumber: 317
                                         },
                                         __self: this
                                     }),
@@ -26193,7 +26199,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 322
+                                            lineNumber: 324
                                         },
                                         __self: this
                                     })
@@ -26204,7 +26210,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/musical",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 325
+                                lineNumber: 327
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26217,7 +26223,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 327
+                                            lineNumber: 329
                                         },
                                         __self: this
                                     }),
@@ -26225,7 +26231,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 334
+                                            lineNumber: 336
                                         },
                                         __self: this
                                     })
@@ -26236,7 +26242,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/mystery",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 337
+                                lineNumber: 339
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26249,7 +26255,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 339
+                                            lineNumber: 341
                                         },
                                         __self: this
                                     }),
@@ -26257,7 +26263,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 346
+                                            lineNumber: 348
                                         },
                                         __self: this
                                     })
@@ -26268,7 +26274,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/romance",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 349
+                                lineNumber: 351
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26281,7 +26287,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 351
+                                            lineNumber: 353
                                         },
                                         __self: this
                                     }),
@@ -26289,7 +26295,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 358
+                                            lineNumber: 360
                                         },
                                         __self: this
                                     })
@@ -26300,7 +26306,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/scifi",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 361
+                                lineNumber: 363
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26313,7 +26319,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 363
+                                            lineNumber: 365
                                         },
                                         __self: this
                                     }),
@@ -26321,7 +26327,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 370
+                                            lineNumber: 372
                                         },
                                         __self: this
                                     })
@@ -26332,7 +26338,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/western",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 373
+                                lineNumber: 375
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26345,7 +26351,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 375
+                                            lineNumber: 377
                                         },
                                         __self: this
                                     }),
@@ -26353,7 +26359,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 382
+                                            lineNumber: 384
                                         },
                                         __self: this
                                     })
@@ -26382,7 +26388,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs","../genre-views/documentary-view":"1iRay","../genre-views/drama-view":"7xlHJ","../genre-views/family-view":"7SwA7","../genre-views/fantasy-flix":"eXaXZ","../genre-views/horror-view":"9HBvp","../genre-views/musical-view":"jcUcY","../genre-views/mystery-view":"7G5Lo","../genre-views/romance-view":"4Fujk","../genre-views/scifi-view":"fEEES","../genre-views/western-view":"6UJX5","../front-overlay-view/front-overlay-view":"lcI16","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../loader/loader":"3H13H","../favorites-view/favorites-view":"jg6rA"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs","../genre-views/documentary-view":"1iRay","../genre-views/drama-view":"7xlHJ","../genre-views/family-view":"7SwA7","../genre-views/fantasy-flix":"eXaXZ","../genre-views/horror-view":"9HBvp","../genre-views/musical-view":"jcUcY","../genre-views/mystery-view":"7G5Lo","../genre-views/romance-view":"4Fujk","../genre-views/scifi-view":"fEEES","../genre-views/western-view":"6UJX5","../front-overlay-view/front-overlay-view":"lcI16","../loader/loader":"3H13H","../favorites-view/favorites-view":"jg6rA","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -43034,9 +43040,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _profileViewScss = require("./profile-view.scss");
 var _reactBootstrap = require("react-bootstrap");
+var _reactConfirmAlert = require("react-confirm-alert");
+var _reactConfirmAlertCss = require("react-confirm-alert/src/react-confirm-alert.css");
 var _favoritesView = require("../favorites-view/favorites-view");
 var _favoritesViewDefault = parcelHelpers.interopDefault(_favoritesView);
-var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 class ProfileView extends _reactDefault.default.Component {
@@ -43105,17 +43112,31 @@ class ProfileView extends _reactDefault.default.Component {
     onDeleteAccount = ()=>{
         const Username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        _axiosDefault.default.delete(`https://flixfolio.herokuapp.com/users/${Username}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            alert("User deleted");
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
-            window.open("/", "_self");
-        }).catch(function(error) {
-            console.log(error);
+        _reactConfirmAlert.confirmAlert({
+            title: "Confirm to submit",
+            message: "Are you sure to do this.",
+            buttons: [
+                {
+                    label: "Yes",
+                    onClick: ()=>{
+                        _axiosDefault.default.delete(`https://flixfolio.herokuapp.com/users/${Username}`, {
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+                        }).then((response)=>{
+                            alert("User deleted");
+                            localStorage.removeItem("user");
+                            localStorage.removeItem("token");
+                            window.open("/", "_self");
+                        }).catch(function(error) {
+                            console.log(error);
+                        });
+                    }
+                },
+                {
+                    label: "No"
+                }, 
+            ]
         });
     };
     onFavRemove = (e, movie)=>{
@@ -43169,7 +43190,7 @@ class ProfileView extends _reactDefault.default.Component {
             fluid: true,
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 172
+                lineNumber: 188
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Tabs, {
@@ -43178,7 +43199,7 @@ class ProfileView extends _reactDefault.default.Component {
                 className: "tabs",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 173
+                    lineNumber: 189
                 },
                 __self: this,
                 children: [
@@ -43188,7 +43209,7 @@ class ProfileView extends _reactDefault.default.Component {
                         tabClassName: "tab",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 178
+                            lineNumber: 194
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
@@ -43197,14 +43218,14 @@ class ProfileView extends _reactDefault.default.Component {
                             className: "form",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 179
+                                lineNumber: 195
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 191
+                                        lineNumber: 207
                                     },
                                     __self: this,
                                     children: "Username:"
@@ -43221,14 +43242,14 @@ class ProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 192
+                                        lineNumber: 208
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 199
+                                        lineNumber: 215
                                     },
                                     __self: this,
                                     children: "Password: "
@@ -43244,14 +43265,14 @@ class ProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 200
+                                        lineNumber: 216
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 206
+                                        lineNumber: 222
                                     },
                                     __self: this,
                                     children: "Email: "
@@ -43268,14 +43289,14 @@ class ProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 207
+                                        lineNumber: 223
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 214
+                                        lineNumber: 230
                                     },
                                     __self: this,
                                     children: "Birthday: "
@@ -43292,7 +43313,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 215
+                                        lineNumber: 231
                                     },
                                     __self: this
                                 }),
@@ -43302,7 +43323,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     onClick: this.onChangeUserInfo,
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 222
+                                        lineNumber: 238
                                     },
                                     __self: this,
                                     children: "Save Changes"
@@ -43310,14 +43331,14 @@ class ProfileView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 225
+                                        lineNumber: 241
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 226
+                                        lineNumber: 242
                                     },
                                     __self: this
                                 }),
@@ -43327,7 +43348,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     ,
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 227
+                                        lineNumber: 243
                                     },
                                     __self: this,
                                     children: "Delete my Account"
@@ -43341,7 +43362,7 @@ class ProfileView extends _reactDefault.default.Component {
                         tabClassName: "tab",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 232
+                            lineNumber: 248
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_favoritesViewDefault.default, {
@@ -43350,7 +43371,7 @@ class ProfileView extends _reactDefault.default.Component {
                             onFavRemove: this.onFavRemove,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 233
+                                lineNumber: 249
                             },
                             __self: this
                         })
@@ -43366,7 +43387,7 @@ class ProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./profile-view.scss":"gb0ga","react-bootstrap":"h2YVd","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../favorites-view/favorites-view":"jg6rA","react-router-dom":"cpyQW"}],"gb0ga":[function() {},{}],"jg6rA":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./profile-view.scss":"gb0ga","react-bootstrap":"h2YVd","../favorites-view/favorites-view":"jg6rA","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-confirm-alert":"xTtQq","react-confirm-alert/src/react-confirm-alert.css":"iG88z"}],"gb0ga":[function() {},{}],"jg6rA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3734 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43481,7 +43502,245 @@ $RefreshReg$(_c, "FavoritesView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./favorites-view.scss":"7to4E"}],"7to4E":[function() {},{}],"j0Dt2":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./favorites-view.scss":"7to4E","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"7to4E":[function() {},{}],"xTtQq":[function(require,module,exports) {
+'use strict';
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = undefined;
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _class, _temp2;
+exports.confirmAlert = confirmAlert;
+var _react = require('react');
+var _react2 = _interopRequireDefault(_react);
+var _propTypes = require('prop-types');
+var _propTypes2 = _interopRequireDefault(_propTypes);
+var _reactDom = require('react-dom');
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var ReactConfirmAlert1 = (_temp2 = _class = function(_Component) {
+    _inherits(ReactConfirmAlert2, _Component);
+    function ReactConfirmAlert2() {
+        var _ref;
+        var _temp, _this, _ret;
+        _classCallCheck(this, ReactConfirmAlert2);
+        for(var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReactConfirmAlert2.__proto__ || Object.getPrototypeOf(ReactConfirmAlert2)).call.apply(_ref, [
+            this
+        ].concat(args))), _this), _this.handleClickButton = function(button) {
+            if (button.onClick) button.onClick();
+            _this.close();
+        }, _this.handleClickOverlay = function(e) {
+            var _this$props = _this.props, closeOnClickOutside = _this$props.closeOnClickOutside, onClickOutside = _this$props.onClickOutside;
+            var isClickOutside = e.target === _this.overlay;
+            if (closeOnClickOutside && isClickOutside) {
+                onClickOutside();
+                _this.close();
+            }
+        }, _this.close = function() {
+            var afterClose = _this.props.afterClose;
+            removeBodyClass();
+            removeElementReconfirm();
+            removeSVGBlurReconfirm(afterClose);
+        }, _this.keyboardClose = function(event) {
+            var _this$props2 = _this.props, closeOnEscape = _this$props2.closeOnEscape, onKeypressEscape = _this$props2.onKeypressEscape, keyCodeForClose = _this$props2.keyCodeForClose;
+            var keyCode = event.keyCode;
+            var isKeyCodeEscape = keyCode === 27;
+            if (keyCodeForClose.includes(keyCode)) _this.close();
+            if (closeOnEscape && isKeyCodeEscape) {
+                onKeypressEscape(event);
+                _this.close();
+            }
+        }, _this.componentDidMount = function() {
+            document.addEventListener('keydown', _this.keyboardClose, false);
+        }, _this.componentWillUnmount = function() {
+            document.removeEventListener('keydown', _this.keyboardClose, false);
+            _this.props.willUnmount();
+        }, _this.renderCustomUI = function() {
+            var _this$props3 = _this.props, title = _this$props3.title, message = _this$props3.message, buttons = _this$props3.buttons, customUI = _this$props3.customUI;
+            var dataCustomUI = {
+                title: title,
+                message: message,
+                buttons: buttons,
+                onClose: _this.close
+            };
+            return customUI(dataCustomUI);
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+    _createClass(ReactConfirmAlert2, [
+        {
+            key: 'render',
+            value: function render() {
+                var _this2 = this;
+                var _props = this.props, title = _props.title, message = _props.message, buttons = _props.buttons, childrenElement = _props.childrenElement, customUI = _props.customUI, overlayClassName = _props.overlayClassName;
+                return _react2.default.createElement('div', {
+                    className: 'react-confirm-alert-overlay ' + overlayClassName,
+                    ref: function ref(dom) {
+                        return _this2.overlay = dom;
+                    },
+                    onClick: this.handleClickOverlay
+                }, _react2.default.createElement('div', {
+                    className: 'react-confirm-alert'
+                }, customUI ? this.renderCustomUI() : _react2.default.createElement('div', {
+                    className: 'react-confirm-alert-body'
+                }, title && _react2.default.createElement('h1', null, title), message, childrenElement(), _react2.default.createElement('div', {
+                    className: 'react-confirm-alert-button-group'
+                }, buttons.map(function(button, i) {
+                    return _react2.default.createElement('button', {
+                        key: i,
+                        onClick: function onClick() {
+                            return _this2.handleClickButton(button);
+                        },
+                        className: button.className
+                    }, button.label);
+                })))));
+            }
+        }
+    ]);
+    return ReactConfirmAlert2;
+}(_react.Component), _class.propTypes = {
+    title: _propTypes2.default.string,
+    message: _propTypes2.default.string,
+    buttons: _propTypes2.default.array.isRequired,
+    childrenElement: _propTypes2.default.func,
+    customUI: _propTypes2.default.func,
+    closeOnClickOutside: _propTypes2.default.bool,
+    closeOnEscape: _propTypes2.default.bool,
+    keyCodeForClose: _propTypes2.default.arrayOf(_propTypes2.default.number),
+    willUnmount: _propTypes2.default.func,
+    afterClose: _propTypes2.default.func,
+    onClickOutside: _propTypes2.default.func,
+    onKeypressEscape: _propTypes2.default.func,
+    overlayClassName: _propTypes2.default.string
+}, _class.defaultProps = {
+    buttons: [
+        {
+            label: 'Cancel',
+            onClick: function onClick() {
+                return null;
+            },
+            className: null
+        },
+        {
+            label: 'Confirm',
+            onClick: function onClick() {
+                return null;
+            },
+            className: null
+        }
+    ],
+    childrenElement: function childrenElement() {
+        return null;
+    },
+    closeOnClickOutside: true,
+    closeOnEscape: true,
+    keyCodeForClose: [],
+    willUnmount: function willUnmount() {
+        return null;
+    },
+    afterClose: function afterClose() {
+        return null;
+    },
+    onClickOutside: function onClickOutside() {
+        return null;
+    },
+    onKeypressEscape: function onKeypressEscape() {
+        return null;
+    }
+}, _temp2);
+exports.default = ReactConfirmAlert1;
+function createSVGBlurReconfirm() {
+    // If has svg ignore to create the svg
+    var svg = document.getElementById('react-confirm-alert-firm-svg');
+    if (svg) return;
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var feGaussianBlur = document.createElementNS(svgNS, 'feGaussianBlur');
+    feGaussianBlur.setAttribute('stdDeviation', '0.3');
+    var filter = document.createElementNS(svgNS, 'filter');
+    filter.setAttribute('id', 'gaussian-blur');
+    filter.appendChild(feGaussianBlur);
+    var svgElem = document.createElementNS(svgNS, 'svg');
+    svgElem.setAttribute('id', 'react-confirm-alert-firm-svg');
+    svgElem.setAttribute('class', 'react-confirm-alert-svg');
+    svgElem.appendChild(filter);
+    document.body.appendChild(svgElem);
+}
+function removeSVGBlurReconfirm(afterClose) {
+    var svg = document.getElementById('react-confirm-alert-firm-svg');
+    if (svg) svg.parentNode.removeChild(svg);
+    document.body.children[0].classList.remove('react-confirm-alert-blur');
+    afterClose();
+}
+function createElementReconfirm(properties) {
+    var divTarget = document.getElementById('react-confirm-alert');
+    if (divTarget) // Rerender - the mounted ReactConfirmAlert
+    _reactDom.render(_react2.default.createElement(ReactConfirmAlert1, properties), divTarget);
+    else {
+        // Mount the ReactConfirmAlert component
+        document.body.children[0].classList.add('react-confirm-alert-blur');
+        divTarget = document.createElement('div');
+        divTarget.id = 'react-confirm-alert';
+        document.body.appendChild(divTarget);
+        _reactDom.render(_react2.default.createElement(ReactConfirmAlert1, properties), divTarget);
+    }
+}
+function removeElementReconfirm() {
+    var target = document.getElementById('react-confirm-alert');
+    if (target) {
+        _reactDom.unmountComponentAtNode(target);
+        target.parentNode.removeChild(target);
+    }
+}
+function addBodyClass() {
+    document.body.classList.add('react-confirm-alert-body-element');
+}
+function removeBodyClass() {
+    document.body.classList.remove('react-confirm-alert-body-element');
+}
+function confirmAlert(properties) {
+    addBodyClass();
+    createSVGBlurReconfirm();
+    createElementReconfirm(properties);
+}
+
+},{"react":"6TuXu","prop-types":"1tgq3","react-dom":"gkWJK"}],"iG88z":[function() {},{}],"j0Dt2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$469c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43972,6 +44231,7 @@ var _reactBootstrap = require("react-bootstrap");
 var _moviesListScss = require("./movies-list.scss");
 var _movieCard = require("../movie-card/movie-card");
 var _reactRouterDom = require("react-router-dom");
+var _reactTransitionGroup = require("react-transition-group");
 var _s = $RefreshSig$();
 function MoviesList(props) {
     _s();
@@ -43990,7 +44250,7 @@ function MoviesList(props) {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 19
+            lineNumber: 20
         },
         __self: this
     }));
@@ -44009,14 +44269,14 @@ function MoviesList(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 38
+            lineNumber: 39
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 39
+                    lineNumber: 40
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
@@ -44025,7 +44285,7 @@ function MoviesList(props) {
                     onSubmit: onFormSubmit,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 40
+                        lineNumber: 41
                     },
                     __self: this,
                     children: [
@@ -44037,7 +44297,7 @@ function MoviesList(props) {
                             ,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 41
+                                lineNumber: 42
                             },
                             __self: this
                         }),
@@ -44047,7 +44307,7 @@ function MoviesList(props) {
                             onClick: onFormSubmit,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 47
+                                lineNumber: 48
                             },
                             __self: this,
                             children: "Search"
@@ -44060,14 +44320,14 @@ function MoviesList(props) {
                 className: "container-list",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 52
+                    lineNumber: 53
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 53
+                            lineNumber: 54
                         },
                         __self: this,
                         children: "Featured Flix"
@@ -44075,7 +44335,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 54
+                            lineNumber: 55
                         },
                         __self: this,
                         children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44085,14 +44345,14 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 56
+                                    lineNumber: 57
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 57
+                                        lineNumber: 58
                                     },
                                     __self: this
                                 })
@@ -44102,7 +44362,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 61
+                            lineNumber: 62
                         },
                         __self: this,
                         children: "Force Flix (Action)"
@@ -44110,7 +44370,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 62
+                            lineNumber: 63
                         },
                         __self: this,
                         children: filteredAction.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44120,14 +44380,14 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 64
+                                    lineNumber: 65
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 65
+                                        lineNumber: 66
                                     },
                                     __self: this
                                 })
@@ -44152,7 +44412,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./movies-list.scss":"9gz3w","../movie-card/movie-card":"6EiBJ","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"9gz3w":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./movies-list.scss":"9gz3w","../movie-card/movie-card":"6EiBJ","react-router-dom":"cpyQW","react-transition-group":"gQu97","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"9gz3w":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44231,7 +44491,992 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"6uv7f":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"gQu97":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CSSTransition", ()=>_csstransitionDefault.default
+);
+parcelHelpers.export(exports, "ReplaceTransition", ()=>_replaceTransitionDefault.default
+);
+parcelHelpers.export(exports, "SwitchTransition", ()=>_switchTransitionDefault.default
+);
+parcelHelpers.export(exports, "TransitionGroup", ()=>_transitionGroupDefault.default
+);
+parcelHelpers.export(exports, "Transition", ()=>_transitionDefault.default
+);
+parcelHelpers.export(exports, "config", ()=>_configDefault.default
+);
+var _csstransition = require("./CSSTransition");
+var _csstransitionDefault = parcelHelpers.interopDefault(_csstransition);
+var _replaceTransition = require("./ReplaceTransition");
+var _replaceTransitionDefault = parcelHelpers.interopDefault(_replaceTransition);
+var _switchTransition = require("./SwitchTransition");
+var _switchTransitionDefault = parcelHelpers.interopDefault(_switchTransition);
+var _transitionGroup = require("./TransitionGroup");
+var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
+var _transition = require("./Transition");
+var _transitionDefault = parcelHelpers.interopDefault(_transition);
+var _config = require("./config");
+var _configDefault = parcelHelpers.interopDefault(_config);
+
+},{"./CSSTransition":"echQq","./ReplaceTransition":"8sH79","./SwitchTransition":"2WsGH","./TransitionGroup":"lIDMU","./Transition":"6qqDo","./config":"eRNqr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"echQq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _addClass = require("dom-helpers/addClass");
+var _addClassDefault = parcelHelpers.interopDefault(_addClass);
+var _removeClass = require("dom-helpers/removeClass");
+var _removeClassDefault = parcelHelpers.interopDefault(_removeClass);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _transition = require("./Transition");
+var _transitionDefault = parcelHelpers.interopDefault(_transition);
+var _propTypes1 = require("./utils/PropTypes");
+var _addClass1 = function addClass(node, classes) {
+    return node && classes && classes.split(' ').forEach(function(c) {
+        return _addClassDefault.default(node, c);
+    });
+};
+var removeClass = function removeClass1(node, classes) {
+    return node && classes && classes.split(' ').forEach(function(c) {
+        return _removeClassDefault.default(node, c);
+    });
+};
+/**
+ * A transition component inspired by the excellent
+ * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+ * use it if you're using CSS transitions or animations. It's built upon the
+ * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
+ * component, so it inherits all of its props.
+ *
+ * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+ * and `exit` states of the transition. The first class is applied and then a
+ * second `*-active` class in order to activate the CSS transition. After the
+ * transition, matching `*-done` class names are applied to persist the
+ * transition state.
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
+ *         <div>
+ *           {"I'll receive my-node-* classes"}
+ *         </div>
+ *       </CSSTransition>
+ *       <button type="button" onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the `in` prop is set to `true`, the child component will first receive
+ * the class `example-enter`, then the `example-enter-active` will be added in
+ * the next tick. `CSSTransition` [forces a
+ * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+ * between before adding the `example-enter-active`. This is an important trick
+ * because it allows us to transition between `example-enter` and
+ * `example-enter-active` even though they were added immediately one after
+ * another. Most notably, this is what makes it possible for us to animate
+ * _appearance_.
+ *
+ * ```css
+ * .my-node-enter {
+ *   opacity: 0;
+ * }
+ * .my-node-enter-active {
+ *   opacity: 1;
+ *   transition: opacity 200ms;
+ * }
+ * .my-node-exit {
+ *   opacity: 1;
+ * }
+ * .my-node-exit-active {
+ *   opacity: 0;
+ *   transition: opacity 200ms;
+ * }
+ * ```
+ *
+ * `*-active` classes represent which styles you want to animate **to**, so it's
+ * important to add `transition` declaration only to them, otherwise transitions
+ * might not behave as intended! This might not be obvious when the transitions
+ * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+ * the example above (minus `transition`), but it becomes apparent in more
+ * complex transitions.
+ *
+ * **Note**: If you're using the
+ * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
+ * prop, make sure to define styles for `.appear-*` classes as well.
+ */ var CSSTransition1 = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(CSSTransition2, _React$Component);
+    function CSSTransition2() {
+        var _this;
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+        _this = _React$Component.call.apply(_React$Component, [
+            this
+        ].concat(args)) || this;
+        _this.appliedClasses = {
+            appear: {
+            },
+            enter: {
+            },
+            exit: {
+            }
+        };
+        _this.onEnter = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument[0], appearing = _this$resolveArgument[1];
+            _this.removeClasses(node, 'exit');
+            _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
+            if (_this.props.onEnter) _this.props.onEnter(maybeNode, maybeAppearing);
+        };
+        _this.onEntering = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument2[0], appearing = _this$resolveArgument2[1];
+            var type = appearing ? 'appear' : 'enter';
+            _this.addClass(node, type, 'active');
+            if (_this.props.onEntering) _this.props.onEntering(maybeNode, maybeAppearing);
+        };
+        _this.onEntered = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument3[0], appearing = _this$resolveArgument3[1];
+            var type = appearing ? 'appear' : 'enter';
+            _this.removeClasses(node, type);
+            _this.addClass(node, type, 'done');
+            if (_this.props.onEntered) _this.props.onEntered(maybeNode, maybeAppearing);
+        };
+        _this.onExit = function(maybeNode) {
+            var _this$resolveArgument4 = _this.resolveArguments(maybeNode), node = _this$resolveArgument4[0];
+            _this.removeClasses(node, 'appear');
+            _this.removeClasses(node, 'enter');
+            _this.addClass(node, 'exit', 'base');
+            if (_this.props.onExit) _this.props.onExit(maybeNode);
+        };
+        _this.onExiting = function(maybeNode) {
+            var _this$resolveArgument5 = _this.resolveArguments(maybeNode), node = _this$resolveArgument5[0];
+            _this.addClass(node, 'exit', 'active');
+            if (_this.props.onExiting) _this.props.onExiting(maybeNode);
+        };
+        _this.onExited = function(maybeNode) {
+            var _this$resolveArgument6 = _this.resolveArguments(maybeNode), node = _this$resolveArgument6[0];
+            _this.removeClasses(node, 'exit');
+            _this.addClass(node, 'exit', 'done');
+            if (_this.props.onExited) _this.props.onExited(maybeNode);
+        };
+        _this.resolveArguments = function(maybeNode, maybeAppearing) {
+            return _this.props.nodeRef ? [
+                _this.props.nodeRef.current,
+                maybeNode
+            ] // here `maybeNode` is actually `appearing`
+             : [
+                maybeNode,
+                maybeAppearing
+            ];
+        };
+        _this.getClassNames = function(type) {
+            var classNames = _this.props.classNames;
+            var isStringClassNames = typeof classNames === 'string';
+            var prefix = isStringClassNames && classNames ? classNames + "-" : '';
+            var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
+            var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
+            var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
+            return {
+                baseClassName: baseClassName,
+                activeClassName: activeClassName,
+                doneClassName: doneClassName
+            };
+        };
+        return _this;
+    }
+    var _proto = CSSTransition2.prototype;
+    _proto.addClass = function addClass1(node, type, phase) {
+        var className = this.getClassNames(type)[phase + "ClassName"];
+        var _this$getClassNames = this.getClassNames('enter'), doneClassName = _this$getClassNames.doneClassName;
+        if (type === 'appear' && phase === 'done' && doneClassName) className += " " + doneClassName;
+         // This is to force a repaint,
+        // which is necessary in order to transition styles when adding a class name.
+        if (phase === 'active') /* eslint-disable no-unused-expressions */ node && node.scrollTop;
+        if (className) {
+            this.appliedClasses[type][phase] = className;
+            _addClass1(node, className);
+        }
+    };
+    _proto.removeClasses = function removeClasses(node, type) {
+        var _this$appliedClasses$ = this.appliedClasses[type], baseClassName = _this$appliedClasses$.base, activeClassName = _this$appliedClasses$.active, doneClassName = _this$appliedClasses$.done;
+        this.appliedClasses[type] = {
+        };
+        if (baseClassName) removeClass(node, baseClassName);
+        if (activeClassName) removeClass(node, activeClassName);
+        if (doneClassName) removeClass(node, doneClassName);
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, _ = _this$props.classNames, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
+            "classNames"
+        ]);
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionDefault.default, _extendsDefault.default({
+        }, props, {
+            onEnter: this.onEnter,
+            onEntered: this.onEntered,
+            onEntering: this.onEntering,
+            onExit: this.onExit,
+            onExiting: this.onExiting,
+            onExited: this.onExited
+        })));
+    };
+    return CSSTransition2;
+}(_reactDefault.default.Component);
+CSSTransition1.defaultProps = {
+    classNames: ''
+};
+CSSTransition1.propTypes = _extendsDefault.default({
+}, _transitionDefault.default.propTypes, {
+    /**
+   * The animation classNames applied to the component as it appears, enters,
+   * exits or has finished the transition. A single name can be provided, which
+   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
+   *
+   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
+   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
+   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
+   *
+   * A few details to note about how these classes are applied:
+   *
+   * 1. They are _joined_ with the ones that are already defined on the child
+   *    component, so if you want to add some base styles, you can use
+   *    `className` without worrying that it will be overridden.
+   *
+   * 2. If the transition component mounts with `in={false}`, no classes are
+   *    applied yet. You might be expecting `*-exit-done`, but if you think
+   *    about it, a component cannot finish exiting if it hasn't entered yet.
+   *
+   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
+   *    allows you to define different behavior for when appearing is done and
+   *    when regular entering is done, using selectors like
+   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
+   *    an epic entrance animation when element first appears in the DOM using
+   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
+   *    simply use `fade-enter-done` for defining both cases.
+   *
+   * Each individual classNames can also be specified independently like:
+   *
+   * ```js
+   * classNames={{
+   *  appear: 'my-appear',
+   *  appearActive: 'my-active-appear',
+   *  appearDone: 'my-done-appear',
+   *  enter: 'my-enter',
+   *  enterActive: 'my-active-enter',
+   *  enterDone: 'my-done-enter',
+   *  exit: 'my-exit',
+   *  exitActive: 'my-active-exit',
+   *  exitDone: 'my-done-exit',
+   * }}
+   * ```
+   *
+   * If you want to set these classes using CSS Modules:
+   *
+   * ```js
+   * import styles from './styles.css';
+   * ```
+   *
+   * you might want to use camelCase in your CSS file, that way could simply
+   * spread them instead of listing them one by one:
+   *
+   * ```js
+   * classNames={{ ...styles }}
+   * ```
+   *
+   * @type {string | {
+   *  appear?: string,
+   *  appearActive?: string,
+   *  appearDone?: string,
+   *  enter?: string,
+   *  enterActive?: string,
+   *  enterDone?: string,
+   *  exit?: string,
+   *  exitActive?: string,
+   *  exitDone?: string,
+   * }}
+   */ classNames: _propTypes1.classNamesShape,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
+   * applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEnter: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter-active' or
+   * 'appear-active' class is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEntering: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter' or
+   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEntered: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit' class is
+   * applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExit: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExiting: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit' classes
+   * are **removed** and the `exit-done` class is added to the DOM node.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExited: _propTypesDefault.default.func
+});
+exports.default = CSSTransition1;
+
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","dom-helpers/addClass":"72Fep","dom-helpers/removeClass":"i3BZq","react":"6TuXu","./Transition":"6qqDo","./utils/PropTypes":"da2hb","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"8sH79":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactDom = require("react-dom");
+var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _transitionGroup = require("./TransitionGroup");
+var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
+/**
+ * The `<ReplaceTransition>` component is a specialized `Transition` component
+ * that animates between two children.
+ *
+ * ```jsx
+ * <ReplaceTransition in>
+ *   <Fade><div>I appear first</div></Fade>
+ *   <Fade><div>I replace the above</div></Fade>
+ * </ReplaceTransition>
+ * ```
+ */ var ReplaceTransition1 = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(ReplaceTransition2, _React$Component);
+    function ReplaceTransition2() {
+        var _this;
+        for(var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++)_args[_key] = arguments[_key];
+        _this = _React$Component.call.apply(_React$Component, [
+            this
+        ].concat(_args)) || this;
+        _this.handleEnter = function() {
+            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+            return _this.handleLifecycle('onEnter', 0, args);
+        };
+        _this.handleEntering = function() {
+            for(var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++)args[_key3] = arguments[_key3];
+            return _this.handleLifecycle('onEntering', 0, args);
+        };
+        _this.handleEntered = function() {
+            for(var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++)args[_key4] = arguments[_key4];
+            return _this.handleLifecycle('onEntered', 0, args);
+        };
+        _this.handleExit = function() {
+            for(var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++)args[_key5] = arguments[_key5];
+            return _this.handleLifecycle('onExit', 1, args);
+        };
+        _this.handleExiting = function() {
+            for(var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++)args[_key6] = arguments[_key6];
+            return _this.handleLifecycle('onExiting', 1, args);
+        };
+        _this.handleExited = function() {
+            for(var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++)args[_key7] = arguments[_key7];
+            return _this.handleLifecycle('onExited', 1, args);
+        };
+        return _this;
+    }
+    var _proto = ReplaceTransition2.prototype;
+    _proto.handleLifecycle = function handleLifecycle(handler, idx, originalArgs) {
+        var _child$props;
+        var children = this.props.children;
+        var child = _reactDefault.default.Children.toArray(children)[idx];
+        if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
+        if (this.props[handler]) {
+            var maybeNode = child.props.nodeRef ? undefined : _reactDomDefault.default.findDOMNode(this);
+            this.props[handler](maybeNode);
+        }
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, children = _this$props.children, inProp = _this$props.in, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
+            "children",
+            "in"
+        ]);
+        var _React$Children$toArr = _reactDefault.default.Children.toArray(children), first = _React$Children$toArr[0], second = _React$Children$toArr[1];
+        delete props.onEnter;
+        delete props.onEntering;
+        delete props.onEntered;
+        delete props.onExit;
+        delete props.onExiting;
+        delete props.onExited;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupDefault.default, props, inProp ? _reactDefault.default.cloneElement(first, {
+            key: 'first',
+            onEnter: this.handleEnter,
+            onEntering: this.handleEntering,
+            onEntered: this.handleEntered
+        }) : _reactDefault.default.cloneElement(second, {
+            key: 'second',
+            onEnter: this.handleExit,
+            onEntering: this.handleExiting,
+            onEntered: this.handleExited
+        })));
+    };
+    return ReplaceTransition2;
+}(_reactDefault.default.Component);
+ReplaceTransition1.propTypes = {
+    in: _propTypesDefault.default.bool.isRequired,
+    children: function children(props, propName) {
+        if (_reactDefault.default.Children.count(props[propName]) !== 2) return new Error("\"" + propName + "\" must be exactly two transition components.");
+        return null;
+    }
+};
+exports.default = ReplaceTransition1;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","react":"6TuXu","react-dom":"gkWJK","./TransitionGroup":"lIDMU","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"lIDMU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _assertThisInitialized = require("@babel/runtime/helpers/esm/assertThisInitialized");
+var _assertThisInitializedDefault = parcelHelpers.interopDefault(_assertThisInitialized);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _transitionGroupContext = require("./TransitionGroupContext");
+var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
+var _childMapping = require("./utils/ChildMapping");
+var values = Object.values || function(obj) {
+    return Object.keys(obj).map(function(k) {
+        return obj[k];
+    });
+};
+var defaultProps = {
+    component: 'div',
+    childFactory: function childFactory(child) {
+        return child;
+    }
+};
+/**
+ * The `<TransitionGroup>` component manages a set of transition components
+ * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
+ * components, `<TransitionGroup>` is a state machine for managing the mounting
+ * and unmounting of components over time.
+ *
+ * Consider the example below. As items are removed or added to the TodoList the
+ * `in` prop is toggled automatically by the `<TransitionGroup>`.
+ *
+ * Note that `<TransitionGroup>`  does not define any animation behavior!
+ * Exactly _how_ a list item animates is up to the individual transition
+ * component. This means you can mix and match animations across different list
+ * items.
+ */ var TransitionGroup1 = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(TransitionGroup2, _React$Component);
+    function TransitionGroup2(props, context) {
+        var _this;
+        _this = _React$Component.call(this, props, context) || this;
+        var handleExited = _this.handleExited.bind(_assertThisInitializedDefault.default(_this)); // Initial children should all be entering, dependent on appear
+        _this.state = {
+            contextValue: {
+                isMounting: true
+            },
+            handleExited: handleExited,
+            firstRender: true
+        };
+        return _this;
+    }
+    var _proto = TransitionGroup2.prototype;
+    _proto.componentDidMount = function componentDidMount() {
+        this.mounted = true;
+        this.setState({
+            contextValue: {
+                isMounting: false
+            }
+        });
+    };
+    _proto.componentWillUnmount = function componentWillUnmount() {
+        this.mounted = false;
+    };
+    TransitionGroup2.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
+        var prevChildMapping = _ref.children, handleExited = _ref.handleExited, firstRender = _ref.firstRender;
+        return {
+            children: firstRender ? _childMapping.getInitialChildMapping(nextProps, handleExited) : _childMapping.getNextChildMapping(nextProps, prevChildMapping, handleExited),
+            firstRender: false
+        };
+    } // node is `undefined` when user provided `nodeRef` prop
+    ;
+    _proto.handleExited = function handleExited(child, node) {
+        var currentChildMapping = _childMapping.getChildMapping(this.props.children);
+        if (child.key in currentChildMapping) return;
+        if (child.props.onExited) child.props.onExited(node);
+        if (this.mounted) this.setState(function(state) {
+            var children = _extendsDefault.default({
+            }, state.children);
+            delete children[child.key];
+            return {
+                children: children
+            };
+        });
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, Component = _this$props.component, childFactory = _this$props.childFactory, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
+            "component",
+            "childFactory"
+        ]);
+        var contextValue = this.state.contextValue;
+        var children = values(this.state.children).map(childFactory);
+        delete props.appear;
+        delete props.enter;
+        delete props.exit;
+        if (Component === null) return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
+            value: contextValue
+        }, children));
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
+            value: contextValue
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Component, props, children)));
+    };
+    return TransitionGroup2;
+}(_reactDefault.default.Component);
+TransitionGroup1.propTypes = {
+    /**
+   * `<TransitionGroup>` renders a `<div>` by default. You can change this
+   * behavior by providing a `component` prop.
+   * If you use React v16+ and would like to avoid a wrapping `<div>` element
+   * you can pass in `component={null}`. This is useful if the wrapping div
+   * borks your css styles.
+   */ component: _propTypesDefault.default.any,
+    /**
+   * A set of `<Transition>` components, that are toggled `in` and out as they
+   * leave. the `<TransitionGroup>` will inject specific transition props, so
+   * remember to spread them through if you are wrapping the `<Transition>` as
+   * with our `<Fade>` example.
+   *
+   * While this component is meant for multiple `Transition` or `CSSTransition`
+   * children, sometimes you may want to have a single transition child with
+   * content that you want to be transitioned out and in when you change it
+   * (e.g. routes, images etc.) In that case you can change the `key` prop of
+   * the transition child as you change its content, this will cause
+   * `TransitionGroup` to transition the child out and back in.
+   */ children: _propTypesDefault.default.node,
+    /**
+   * A convenience prop that enables or disables appear animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ appear: _propTypesDefault.default.bool,
+    /**
+   * A convenience prop that enables or disables enter animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ enter: _propTypesDefault.default.bool,
+    /**
+   * A convenience prop that enables or disables exit animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ exit: _propTypesDefault.default.bool,
+    /**
+   * You may need to apply reactive updates to a child as it is exiting.
+   * This is generally done by using `cloneElement` however in the case of an exiting
+   * child the element has already been removed and not accessible to the consumer.
+   *
+   * If you do need to update a child as it leaves you can provide a `childFactory`
+   * to wrap every child, even the ones that are leaving.
+   *
+   * @type Function(child: ReactElement) -> ReactElement
+   */ childFactory: _propTypesDefault.default.func
+};
+TransitionGroup1.defaultProps = defaultProps;
+exports.default = TransitionGroup1;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/assertThisInitialized":"iOcza","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","react":"6TuXu","./TransitionGroupContext":"7XbAv","./utils/ChildMapping":"iBXKH","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"iOcza":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function _assertThisInitialized(self) {
+    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return self;
+}
+exports.default = _assertThisInitialized;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"iBXKH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */ parcelHelpers.export(exports, "getChildMapping", ()=>getChildMapping
+);
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */ parcelHelpers.export(exports, "mergeChildMappings", ()=>mergeChildMappings
+);
+parcelHelpers.export(exports, "getInitialChildMapping", ()=>getInitialChildMapping
+);
+parcelHelpers.export(exports, "getNextChildMapping", ()=>getNextChildMapping
+);
+var _react = require("react");
+function getChildMapping(children, mapFn) {
+    var mapper = function mapper1(child) {
+        return mapFn && _react.isValidElement(child) ? mapFn(child) : child;
+    };
+    var result = Object.create(null);
+    if (children) _react.Children.map(children, function(c) {
+        return c;
+    }).forEach(function(child) {
+        // run the map function here instead so that the key is the computed one
+        result[child.key] = mapper(child);
+    });
+    return result;
+}
+function mergeChildMappings(prev, next) {
+    prev = prev || {
+    };
+    next = next || {
+    };
+    function getValueForKey(key) {
+        return key in next ? next[key] : prev[key];
+    } // For each key of `next`, the list of keys to insert before that key in
+    // the combined list
+    var nextKeysPending = Object.create(null);
+    var pendingKeys = [];
+    for(var prevKey in prev){
+        if (prevKey in next) {
+            if (pendingKeys.length) {
+                nextKeysPending[prevKey] = pendingKeys;
+                pendingKeys = [];
+            }
+        } else pendingKeys.push(prevKey);
+    }
+    var i;
+    var childMapping = {
+    };
+    for(var nextKey in next){
+        if (nextKeysPending[nextKey]) for(i = 0; i < nextKeysPending[nextKey].length; i++){
+            var pendingNextKey = nextKeysPending[nextKey][i];
+            childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+        }
+        childMapping[nextKey] = getValueForKey(nextKey);
+    } // Finally, add the keys which didn't appear before any key in `next`
+    for(i = 0; i < pendingKeys.length; i++)childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+    return childMapping;
+}
+function getProp(child, prop, props) {
+    return props[prop] != null ? props[prop] : child.props[prop];
+}
+function getInitialChildMapping(props, onExited) {
+    return getChildMapping(props.children, function(child) {
+        return _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: true,
+            appear: getProp(child, 'appear', props),
+            enter: getProp(child, 'enter', props),
+            exit: getProp(child, 'exit', props)
+        });
+    });
+}
+function getNextChildMapping(nextProps, prevChildMapping, onExited) {
+    var nextChildMapping = getChildMapping(nextProps.children);
+    var children = mergeChildMappings(prevChildMapping, nextChildMapping);
+    Object.keys(children).forEach(function(key) {
+        var child = children[key];
+        if (!_react.isValidElement(child)) return;
+        var hasPrev = key in prevChildMapping;
+        var hasNext = key in nextChildMapping;
+        var prevChild = prevChildMapping[key];
+        var isLeaving = _react.isValidElement(prevChild) && !prevChild.props.in; // item is new (entering)
+        if (hasNext && (!hasPrev || isLeaving)) // console.log('entering', key)
+        children[key] = _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: true,
+            exit: getProp(child, 'exit', nextProps),
+            enter: getProp(child, 'enter', nextProps)
+        });
+        else if (!hasNext && hasPrev && !isLeaving) // item is old (exiting)
+        // console.log('leaving', key)
+        children[key] = _react.cloneElement(child, {
+            in: false
+        });
+        else if (hasNext && hasPrev && _react.isValidElement(prevChild)) // item hasn't changed transition states
+        // copy over the last transition props;
+        // console.log('unchanged', key)
+        children[key] = _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: prevChild.props.in,
+            exit: getProp(child, 'exit', nextProps),
+            enter: getProp(child, 'enter', nextProps)
+        });
+    });
+    return children;
+}
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2WsGH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "modes", ()=>modes
+);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _transition = require("./Transition");
+var _transitionGroupContext = require("./TransitionGroupContext");
+var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
+var _leaveRenders, _enterRenders;
+function areChildrenDifferent(oldChildren, newChildren) {
+    if (oldChildren === newChildren) return false;
+    if (_reactDefault.default.isValidElement(oldChildren) && _reactDefault.default.isValidElement(newChildren) && oldChildren.key != null && oldChildren.key === newChildren.key) return false;
+    return true;
+}
+var modes = {
+    out: 'out-in',
+    in: 'in-out'
+};
+var callHook = function callHook1(element, name, cb) {
+    return function() {
+        var _element$props;
+        element.props[name] && (_element$props = element.props)[name].apply(_element$props, arguments);
+        cb();
+    };
+};
+var leaveRenders = (_leaveRenders = {
+}, _leaveRenders[modes.out] = function(_ref) {
+    var current = _ref.current, changeState = _ref.changeState;
+    return _reactDefault.default.cloneElement(current, {
+        in: false,
+        onExited: callHook(current, 'onExited', function() {
+            changeState(_transition.ENTERING, null);
+        })
+    });
+}, _leaveRenders[modes.in] = function(_ref2) {
+    var current = _ref2.current, changeState = _ref2.changeState, children = _ref2.children;
+    return [
+        current,
+        _reactDefault.default.cloneElement(children, {
+            in: true,
+            onEntered: callHook(children, 'onEntered', function() {
+                changeState(_transition.ENTERING);
+            })
+        })
+    ];
+}, _leaveRenders);
+var enterRenders = (_enterRenders = {
+}, _enterRenders[modes.out] = function(_ref3) {
+    var children = _ref3.children, changeState = _ref3.changeState;
+    return _reactDefault.default.cloneElement(children, {
+        in: true,
+        onEntered: callHook(children, 'onEntered', function() {
+            changeState(_transition.ENTERED, _reactDefault.default.cloneElement(children, {
+                in: true
+            }));
+        })
+    });
+}, _enterRenders[modes.in] = function(_ref4) {
+    var current = _ref4.current, children = _ref4.children, changeState = _ref4.changeState;
+    return [
+        _reactDefault.default.cloneElement(current, {
+            in: false,
+            onExited: callHook(current, 'onExited', function() {
+                changeState(_transition.ENTERED, _reactDefault.default.cloneElement(children, {
+                    in: true
+                }));
+            })
+        }),
+        _reactDefault.default.cloneElement(children, {
+            in: true
+        })
+    ];
+}, _enterRenders);
+/**
+ * A transition component inspired by the [vue transition modes](https://vuejs.org/v2/guide/transitions.html#Transition-Modes).
+ * You can use it when you want to control the render between state transitions.
+ * Based on the selected mode and the child's key which is the `Transition` or `CSSTransition` component, the `SwitchTransition` makes a consistent transition between them.
+ *
+ * If the `out-in` mode is selected, the `SwitchTransition` waits until the old child leaves and then inserts a new child.
+ * If the `in-out` mode is selected, the `SwitchTransition` inserts a new child first, waits for the new child to enter and then removes the old child.
+ *
+ * **Note**: If you want the animation to happen simultaneously
+ * (that is, to have the old child removed and a new child inserted **at the same time**),
+ * you should use
+ * [`TransitionGroup`](https://reactcommunity.org/react-transition-group/transition-group)
+ * instead.
+ *
+ * ```jsx
+ * function App() {
+ *  const [state, setState] = useState(false);
+ *  return (
+ *    <SwitchTransition>
+ *      <CSSTransition
+ *        key={state ? "Goodbye, world!" : "Hello, world!"}
+ *        addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
+ *        classNames='fade'
+ *      >
+ *        <button onClick={() => setState(state => !state)}>
+ *          {state ? "Goodbye, world!" : "Hello, world!"}
+ *        </button>
+ *      </CSSTransition>
+ *    </SwitchTransition>
+ *  );
+ * }
+ * ```
+ *
+ * ```css
+ * .fade-enter{
+ *    opacity: 0;
+ * }
+ * .fade-exit{
+ *    opacity: 1;
+ * }
+ * .fade-enter-active{
+ *    opacity: 1;
+ * }
+ * .fade-exit-active{
+ *    opacity: 0;
+ * }
+ * .fade-enter-active,
+ * .fade-exit-active{
+ *    transition: opacity 500ms;
+ * }
+ * ```
+ */ var SwitchTransition1 = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(SwitchTransition2, _React$Component);
+    function SwitchTransition2() {
+        var _this;
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+        _this = _React$Component.call.apply(_React$Component, [
+            this
+        ].concat(args)) || this;
+        _this.state = {
+            status: _transition.ENTERED,
+            current: null
+        };
+        _this.appeared = false;
+        _this.changeState = function(status, current) {
+            if (current === void 0) current = _this.state.current;
+            _this.setState({
+                status: status,
+                current: current
+            });
+        };
+        return _this;
+    }
+    var _proto = SwitchTransition2.prototype;
+    _proto.componentDidMount = function componentDidMount() {
+        this.appeared = true;
+    };
+    SwitchTransition2.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {
+        if (props.children == null) return {
+            current: null
+        };
+        if (state.status === _transition.ENTERING && props.mode === modes.in) return {
+            status: _transition.ENTERING
+        };
+        if (state.current && areChildrenDifferent(state.current, props.children)) return {
+            status: _transition.EXITING
+        };
+        return {
+            current: _reactDefault.default.cloneElement(props.children, {
+                in: true
+            })
+        };
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, children = _this$props.children, mode = _this$props.mode, _this$state = this.state, status = _this$state.status, current = _this$state.current;
+        var data = {
+            children: children,
+            current: current,
+            changeState: this.changeState,
+            status: status
+        };
+        var component;
+        switch(status){
+            case _transition.ENTERING:
+                component = enterRenders[mode](data);
+                break;
+            case _transition.EXITING:
+                component = leaveRenders[mode](data);
+                break;
+            case _transition.ENTERED:
+                component = current;
+        }
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
+            value: {
+                isMounting: !this.appeared
+            }
+        }, component));
+    };
+    return SwitchTransition2;
+}(_reactDefault.default.Component);
+SwitchTransition1.propTypes = {
+    /**
+   * Transition modes.
+   * `out-in`: Current element transitions out first, then when complete, the new element transitions in.
+   * `in-out`: New element transitions in first, then when complete, the current element transitions out.
+   *
+   * @type {'out-in'|'in-out'}
+   */ mode: _propTypesDefault.default.oneOf([
+        modes.in,
+        modes.out
+    ]),
+    /**
+   * Any `Transition` or `CSSTransition` component.
+   */ children: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.element.isRequired
+    ])
+};
+SwitchTransition1.defaultProps = {
+    mode: modes.out
+};
+exports.default = SwitchTransition1;
+
+},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","./Transition":"6qqDo","./TransitionGroupContext":"7XbAv","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6uv7f":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e992 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45956,7 +47201,7 @@ $RefreshReg$(_c, "Loader");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./loader.scss":"CHT7t"}],"CHT7t":[function() {},{}],"8GWVf":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./loader.scss":"CHT7t","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"CHT7t":[function() {},{}],"8GWVf":[function(require,module,exports) {
 'use strict';
 var compose = require('redux').compose;
 exports.__esModule = true;

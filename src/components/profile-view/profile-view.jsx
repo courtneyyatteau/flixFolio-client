@@ -11,8 +11,9 @@ import {
   Card,
   Container,
 } from "react-bootstrap";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import FavoritesView from "../favorites-view/favorites-view";
-import { Link } from "react-router-dom";
 
 import axios from "axios";
 export class ProfileView extends React.Component {
@@ -94,19 +95,34 @@ export class ProfileView extends React.Component {
     const Username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
 
-    axios
-      .delete(`https://flixfolio.herokuapp.com/users/${Username}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        alert("User deleted");
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-        window.open("/", "_self");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    confirmAlert({
+      title: "Confirm to submit",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            axios
+              .delete(`https://flixfolio.herokuapp.com/users/${Username}`, {
+                headers: { Authorization: `Bearer ${token}` },
+              })
+              .then((response) => {
+                alert("User deleted");
+                localStorage.removeItem("user");
+                localStorage.removeItem("token");
+                window.open("/", "_self");
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          },
+        },
+        {
+          label: "No",
+          //onClick: () => alert('Click No')
+        },
+      ],
+    });
   };
 
   onFavRemove = (e, movie) => {
