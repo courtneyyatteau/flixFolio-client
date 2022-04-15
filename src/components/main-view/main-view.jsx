@@ -34,8 +34,9 @@ import Loader from "../loader/loader";
 import FavoritesView from "../favorites-view/favorites-view";
 
 class MainView extends React.Component {
+  state = { loading: false };
   getMovies(token) {
-    this.setState({ loading: true });
+    
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
@@ -53,14 +54,13 @@ class MainView extends React.Component {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.props.setUser(localStorage.getItem("user"));
+      this.setState({ loading: true });
       this.getMovies(accessToken);
     }
-    this.setState({ loading: false });
   }
 
   onLoggedIn(authData) {
     this.props.setUser(authData.user.Username);
-
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
     this.getMovies(authData.token);
@@ -72,7 +72,6 @@ class MainView extends React.Component {
     this.props.setUser(null);
     this.setState({ loading: false });
   }
-  state = { loading: false };
 
   render() {
     let { movies, user } = this.props;
