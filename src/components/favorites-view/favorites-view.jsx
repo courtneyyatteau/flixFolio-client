@@ -22,18 +22,14 @@ function FavoritesView(props) {
             ) {
               return (
                 <Col sm={6} md={6} lg={3} xl={2} key={movie._id}>
-                  <Card className="fav-movie">
-                    <MovieCard movie={movie} />
-                    <Card.Body>
-                      <Button
-                        id="btn2"
-                        value={movie._id}
-                        onClick={(e) => onFavRemove(e, movie)}
-                      >
-                        Remove
-                      </Button>
-                    </Card.Body>
-                  </Card>
+                  <MovieCard movie={movie} />
+                    <Button
+                      id="btn2"
+                      value={movie._id}
+                      onClick={(e) => onFavRemove(e, movie)}
+                    >
+                      Remove
+                    </Button>
                 </Col>
               );
             }
