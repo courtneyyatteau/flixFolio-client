@@ -22,7 +22,7 @@ function FavoritesView(props) {
               return (
                 <div id="fav-movie">
                   <MovieCard movie={movie} />
-                  <Button id="fav-btn2">Remove</Button>
+                  <Button id="fav-btn2" onClick={onFavRemove}>Remove</Button>
                 </div>
               );
             }
