@@ -1,7 +1,7 @@
 $main-color: #2565ae;
 
 .fav-movie {
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 #btn2 {
@@ -11,4 +11,8 @@ $main-color: #2565ae;
   font-size: 25px;
   border: none;
   float: right;
+}
+
+.favs {
+  margin-top: 50px;
 }

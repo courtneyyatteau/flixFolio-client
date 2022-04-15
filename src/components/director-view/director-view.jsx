@@ -19,14 +19,18 @@ export class DirectorView extends React.Component {
       <Card className="director-view">
         <Card.Img className="director-img" src={director.ImagePath} />
         <Card.Title className="director-name">
-          <p>{director.Name}</p>
+          <p className="director-name">{director.Name}</p>
         </Card.Title>
         <Card.Text className="director-description">
-          Bio: {director.Bio}
+          <span>Bio: </span>
+          {director.Bio}
         </Card.Text>
-        <Card.Text>Birthday: {director.Birth}</Card.Text>
+        <Card.Text className="director-description">
+          <span>Birthday: </span>
+          {director.Birth.substring(0, 10)}
+        </Card.Text>
         <Button
-          id="back-btn"
+          id="back-btn-1"
           onClick={() => {
             onBackClick();
           }}

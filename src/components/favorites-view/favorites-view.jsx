@@ -7,7 +7,7 @@ function FavoritesView(props) {
   const { FavoriteMovies, movies, onFavRemove } = props;
 
   return (
-    <Card.Body>
+    <Container className="favs">
       {FavoriteMovies.length === 0 && (
         <div className="text-center">No Favorite Movies</div>
       )}
@@ -39,7 +39,7 @@ function FavoritesView(props) {
             }
           })}
       </Row>
-    </Card.Body>
+    </Container>
   );
 }
 

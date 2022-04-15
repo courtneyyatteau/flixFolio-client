@@ -42880,6 +42880,7 @@ class DirectorView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                        className: "director-name",
                         __source: {
                             fileName: "src/components/director-view/director-view.jsx",
                             lineNumber: 22
@@ -42896,29 +42897,44 @@ class DirectorView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: [
-                        "Bio: ",
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 25
+                            },
+                            __self: this,
+                            children: "Bio: "
+                        }),
                         director.Bio
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
+                    className: "director-description",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 27
+                        lineNumber: 28
                     },
                     __self: this,
                     children: [
-                        "Birthday: ",
-                        director.Birth
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 29
+                            },
+                            __self: this,
+                            children: "Birthday: "
+                        }),
+                        director.Birth.substring(0, 10)
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                    id: "back-btn",
+                    id: "back-btn-1",
                     onClick: ()=>{
                         onBackClick();
                     },
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 28
+                        lineNumber: 32
                     },
                     __self: this,
                     children: "Back"
@@ -43504,7 +43520,8 @@ var _favoritesViewScss = require("./favorites-view.scss");
 var _reactRouterDom = require("react-router-dom");
 function FavoritesView(props) {
     const { FavoriteMovies , movies , onFavRemove  } = props;
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+        className: "favs",
         __source: {
             fileName: "src/components/favorites-view/favorites-view.jsx",
             lineNumber: 10
