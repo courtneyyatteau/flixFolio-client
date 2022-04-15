@@ -262,22 +262,6 @@ span {
     margin-top: 20px;
   }
 }
-.fav-movie {
-  margin: 20px;
-}
-
-#btn2 {
-  background-color: #2565ae;
-  color: white;
-  border-radius: 5px;
-  font-size: 25px;
-  border: none;
-  float: right;
-}
-
-.favs {
-  margin-top: 50px;
-}
 body.react-confirm-alert-body-element {
   overflow: hidden;
 }
@@ -396,6 +380,22 @@ body.react-confirm-alert-body-element {
   }
 }
 
+.fav-movie {
+  margin: 20px;
+}
+
+#btn2 {
+  background-color: #2565ae;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  border: none;
+  float: right;
+}
+
+.favs {
+  margin-top: 50px;
+}
 #nav-bar {
   width: 100%;
   position: sticky;
