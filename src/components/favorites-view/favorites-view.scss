@@ -1,18 +1,43 @@
 $main-color: #2565ae;
 
-.fav-movie {
-  margin: 20px;
-}
-
 #btn2 {
   background-color: $main-color;
   color: white;
   border-radius: 5px;
   font-size: 25px;
   border: none;
-  float: right;
 }
 
-.favs {
-  margin-top: 50px;
+.movie-img {
+  height: 400px;
+}
+
+.favorite {
+  margin: 100px;
+}
+
+.fav-btn {
+  margin: 0 auto;
+}
+
+#fav-btn2 {
+  background-color: $main-color;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  float: right;
+  font-size: 25px;
+  margin-bottom: 60px;
+  margin-right: 45px;
+}
+
+#fav-movie {
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .favs {
+    margin-top: 50px;
+  }
 }

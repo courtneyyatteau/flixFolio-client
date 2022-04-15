@@ -63,8 +63,10 @@ function MoviesList(props) {
             </Col>
           ))}
         </Row>
-        <br/>
-        <br/>
+      </Container>
+      <Container fluid className="container-list">
+        <br />
+        <br />
         <h1 className="header">Force Flix (Action)</h1>
         <Row>
           {filteredAction.map((m) => (

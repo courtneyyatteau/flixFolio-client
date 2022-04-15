@@ -88,7 +88,7 @@ export class NavigationView extends React.Component {
           </Link>
         </NavDropdown>
         <Navbar.Brand href="/" id="logo" className="brand ml-auto">
-          FlixFolio
+          FlixFolio 🎬
         </Navbar.Brand>
       </Navbar>
     );

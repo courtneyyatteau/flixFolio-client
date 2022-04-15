@@ -28,9 +28,9 @@ export class AdventureView extends React.Component {
         <h2>Feat Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
-            <Col xs={6} md={6} lg={3} key={m._id}>
+            <Col id="fav-movie" xs={6} md={6} lg={4} key={m._id}>
               <Link to={`/movies/${m._id}`}>
-                <MovieCard movie={m} />
+                <MovieCard movie={m} className="movie-card" />
               </Link>{" "}
             </Col>
           ))}

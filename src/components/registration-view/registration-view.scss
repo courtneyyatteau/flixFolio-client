@@ -1,36 +1,51 @@
 $main-color: #2565ae;
 $background-color: #d5f3fe;
 
-#btn {
-  background-color: $main-color;
-  color: white;
-  margin: 20px 0;
-  float: right;
-}
-
-#form {
-  max-width: 500px;
-  margin: 40px auto;
-}
-
 #form-field {
   margin-top: 15px;
   font-size: 20px;
 }
 
-#btn-1,
+#reg-btn,
 #btn-2 {
   background-color: $main-color;
   border-radius: 5px;
   border: none;
   color: white;
   text-decoration: none;
+  font-size: 25px;
 }
 
-#btn-1 {
-  margin: 10px 0;
+#reg-btn {
+  float: right;
 }
 
-#acct {
-  margin-left: 500px;
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-box label {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.form-box input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 0;
+  border-radius: 5px;
+  font-size: 23px;
+  margin-bottom: 35px;
+}
+
+.register {
+  margin: 80px;
+}
+
+.acct {
+  margin-left: 20px;
+  margin-top: 50px;
+  font-size: 25px;
 }

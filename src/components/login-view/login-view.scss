@@ -1,13 +1,5 @@
 $main-color: #2565ae;
 
-#form-field {
-  font-size: 20px;
-}
-
-#form-label {
-  text-align: left;
-}
-
 #bttn-1,
 #btn-2 {
   background-color: $main-color;
@@ -15,6 +7,16 @@ $main-color: #2565ae;
   border: none;
   color: white;
   text-decoration: none;
+  font-size: 25px;
+}
+
+#bttn-1 {
+  float: right;
+}
+
+.acct {
+  margin-right: 10px;
+  font-size: 25px;
 }
 
 #bttn-1,
@@ -22,6 +24,26 @@ $main-color: #2565ae;
   margin: 10px 15px;
 }
 
-#acctt {
-  margin-left: 200px;
+.form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-box label {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.form-box input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  border: 0;
+  border-radius: 5px;
+  font-size: 23px;
+  margin-bottom: 35px;
+}
+
+.login {
+  margin: 100px;
 }

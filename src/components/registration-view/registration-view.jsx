@@ -73,11 +73,11 @@ export function RegistrationView(props) {
 
   return (
     <>
-      <Container>
-        <Form id="form">
-          <Form.Group controlId="formUsername">
-            <Form.Label>Username:</Form.Label>
-            <Form.Control
+      <Container className="register">
+        <form className="form">
+          <div className="form-box">
+            <label>Username:</label>
+            <input
               type="text"
               placeholder="Enter username"
               value={username}
@@ -85,11 +85,10 @@ export function RegistrationView(props) {
             />
             {/* code added here to display validation error */}
             {usernameErr && <p>{usernameErr}</p>}
-          </Form.Group>
-
-          <Form.Group controlId="formPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
+          </div>
+          <div className="form-box">
+            <label>Password</label>
+            <input
               type="password"
               placeholder="Password"
               value={password}
@@ -97,49 +96,45 @@ export function RegistrationView(props) {
             />
             {/* code added here to display validation error */}
             {passwordErr && <p>{passwordErr}</p>}
-          </Form.Group>
-
-          <Form.Group controlId="formBday" id="form-field">
-            <Form.Label>Birthday:</Form.Label>
-            <Form.Control
-              type="date"
-              onChange={(e) => setBirthday(e.target.value)}
-            />
+          </div>
+          <div className="form-box">
+            <label>Birthday:</label>
+            <input type="date" onChange={(e) => setBirthday(e.target.value)} />
             {/* code added here to display validation error */}
             {birthdayErr && <p>{birthdayErr}</p>}
-          </Form.Group>
-
-          <Form.Group controlId="formEmail" id="form-field">
-            <Form.Label>Email:</Form.Label>
-            <Form.Control
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          </div>
+          <div className="form-box">
+            <label>Email:</label>
+            <input type="email" onChange={(e) => setEmail(e.target.value)} />
             {/* code added here to display validation error */}
             {emailErr && <p>{emailErr}</p>}
-          </Form.Group>
+          </div>
           <Button
-            id="btn-1"
+            id="reg-btn"
             variant="primary"
             type="submit"
             onClick={handleSubmit}
           >
             Submit
           </Button>
-        </Form>
-        <Row>
-          <Col id="acct">
-            Already have an account?
-            <Button
-              id="btn-2"
-              onClick={() => {
-                onLogin();
-              }}
-            >
-              Login Here
-            </Button>
-          </Col>
-        </Row>
+          <br />
+          <br /> 
+          <br /> 
+          <br />
+          <Row>
+            <p className="acct">
+              Already have an account?
+              <Button
+                id="btn-2"
+                onClick={() => {
+                  onLogin();
+                }}
+              >
+                Login Here
+              </Button>
+            </p>
+          </Row>
+        </form>
       </Container>
     </>
   );
