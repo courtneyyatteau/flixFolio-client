@@ -25,7 +25,7 @@ function FavoritesView(props) {
               xs={6}
               md={6}
               lg={3}
-              key={m._id}
+              key={movie._id}
               className="column"
             >
                 <div id="fav-movie">
