@@ -201,6 +201,14 @@ html {
 span {
   font-weight: 900;
 }
+
+.director-stuff {
+  margin-left: 30px;
+}
+
+.director-img {
+  width: 100%;
+}
 .genre-view {
   margin: 40px;
   padding: 40px;
@@ -473,7 +481,7 @@ body.react-confirm-alert-body-element {
   float: right;
   font-size: 25px;
   margin-bottom: 60px;
-  margin-right: 45px;
+  margin-right: 60px;
 }
 
 #fav-movie {

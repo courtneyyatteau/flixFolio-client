@@ -3,7 +3,6 @@ import { Col, Row, Container, Form, Button } from "react-bootstrap";
 import "./movies-list.scss";
 import { MovieCard } from "../movie-card/movie-card";
 import { useHistory } from "react-router-dom";
-import { Transition } from "react-transition-group";
 
 function MoviesList(props) {
   const [theMovie, setMovie] = useState("");

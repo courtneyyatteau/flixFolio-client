@@ -25681,10 +25681,10 @@ var _loaderDefault = parcelHelpers.interopDefault(_loader);
 var _favoritesView = require("../favorites-view/favorites-view");
 var _favoritesViewDefault = parcelHelpers.interopDefault(_favoritesView);
 class MainView extends _reactDefault.default.Component {
+    state = {
+        loading: false
+    };
     getMovies(token) {
-        this.setState({
-            loading: true
-        });
         _axiosDefault.default.get("https://flixfolio.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -25703,11 +25703,11 @@ class MainView extends _reactDefault.default.Component {
         let accessToken = localStorage.getItem("token");
         if (accessToken !== null) {
             this.props.setUser(localStorage.getItem("user"));
+            this.setState({
+                loading: true
+            });
             this.getMovies(accessToken);
         }
-        this.setState({
-            loading: false
-        });
     }
     onLoggedIn(authData) {
         this.props.setUser(authData.user.Username);
@@ -25723,15 +25723,12 @@ class MainView extends _reactDefault.default.Component {
             loading: false
         });
     }
-    state = {
-        loading: false
-    };
     render() {
         let { movies , user  } = this.props;
         if (this.state.loading) return(/*#__PURE__*/ _jsxRuntime.jsx(_loaderDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 79
+                lineNumber: 78
             },
             __self: this
         }));
@@ -25739,20 +25736,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 82
+                lineNumber: 81
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 83
+                    lineNumber: 82
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 84
+                        lineNumber: 83
                     },
                     __self: this,
                     children: [
@@ -25782,7 +25779,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 85
+                                lineNumber: 84
                             },
                             __self: this
                         }),
@@ -25799,7 +25796,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 106
+                                lineNumber: 105
                             },
                             __self: this
                         }),
@@ -25816,7 +25813,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 121
+                                lineNumber: 120
                             },
                             __self: this
                         }),
@@ -25845,7 +25842,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 135
+                                lineNumber: 134
                             },
                             __self: this
                         }),
@@ -25881,7 +25878,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 160
+                                lineNumber: 159
                             },
                             __self: this
                         }),
@@ -25916,7 +25913,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 191
+                                lineNumber: 190
                             },
                             __self: this
                         }),
@@ -25924,7 +25921,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/profile",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 220
+                                lineNumber: 219
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25937,7 +25934,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 222
+                                            lineNumber: 221
                                         },
                                         __self: this
                                     }),
@@ -25946,7 +25943,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 229
+                                            lineNumber: 228
                                         },
                                         __self: this
                                     })
@@ -25957,7 +25954,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 232
+                                lineNumber: 231
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25970,7 +25967,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 234
+                                            lineNumber: 233
                                         },
                                         __self: this
                                     }),
@@ -25978,7 +25975,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 241
+                                            lineNumber: 240
                                         },
                                         __self: this
                                     })
@@ -25989,7 +25986,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/adventure",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 244
+                                lineNumber: 243
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26002,7 +25999,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 246
+                                            lineNumber: 245
                                         },
                                         __self: this
                                     }),
@@ -26010,7 +26007,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 253
+                                            lineNumber: 252
                                         },
                                         __self: this
                                     })
@@ -26021,7 +26018,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/comedy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 256
+                                lineNumber: 255
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26034,7 +26031,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 258
+                                            lineNumber: 257
                                         },
                                         __self: this
                                     }),
@@ -26042,7 +26039,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 265
+                                            lineNumber: 264
                                         },
                                         __self: this
                                     })
@@ -26053,7 +26050,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/documentary",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 268
+                                lineNumber: 267
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26066,7 +26063,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 270
+                                            lineNumber: 269
                                         },
                                         __self: this
                                     }),
@@ -26074,7 +26071,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 277
+                                            lineNumber: 276
                                         },
                                         __self: this
                                     })
@@ -26085,7 +26082,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/drama",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 280
+                                lineNumber: 279
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26098,7 +26095,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 282
+                                            lineNumber: 281
                                         },
                                         __self: this
                                     }),
@@ -26106,7 +26103,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 289
+                                            lineNumber: 288
                                         },
                                         __self: this
                                     })
@@ -26117,7 +26114,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/family",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 292
+                                lineNumber: 291
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26130,7 +26127,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 294
+                                            lineNumber: 293
                                         },
                                         __self: this
                                     }),
@@ -26138,7 +26135,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 301
+                                            lineNumber: 300
                                         },
                                         __self: this
                                     })
@@ -26149,7 +26146,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/fantasy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 304
+                                lineNumber: 303
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26162,7 +26159,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 306
+                                            lineNumber: 305
                                         },
                                         __self: this
                                     }),
@@ -26170,7 +26167,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 313
+                                            lineNumber: 312
                                         },
                                         __self: this
                                     })
@@ -26181,7 +26178,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/horror",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 316
+                                lineNumber: 315
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26194,7 +26191,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 318
+                                            lineNumber: 317
                                         },
                                         __self: this
                                     }),
@@ -26202,7 +26199,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 325
+                                            lineNumber: 324
                                         },
                                         __self: this
                                     })
@@ -26213,7 +26210,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/musical",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 328
+                                lineNumber: 327
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26226,7 +26223,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 330
+                                            lineNumber: 329
                                         },
                                         __self: this
                                     }),
@@ -26234,7 +26231,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 337
+                                            lineNumber: 336
                                         },
                                         __self: this
                                     })
@@ -26245,7 +26242,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/mystery",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 340
+                                lineNumber: 339
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26258,7 +26255,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 342
+                                            lineNumber: 341
                                         },
                                         __self: this
                                     }),
@@ -26266,7 +26263,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 349
+                                            lineNumber: 348
                                         },
                                         __self: this
                                     })
@@ -26277,7 +26274,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/romance",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 352
+                                lineNumber: 351
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26290,7 +26287,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 354
+                                            lineNumber: 353
                                         },
                                         __self: this
                                     }),
@@ -26298,7 +26295,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 361
+                                            lineNumber: 360
                                         },
                                         __self: this
                                     })
@@ -26309,7 +26306,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/scifi",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 364
+                                lineNumber: 363
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26322,7 +26319,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 366
+                                            lineNumber: 365
                                         },
                                         __self: this
                                     }),
@@ -26330,7 +26327,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 373
+                                            lineNumber: 372
                                         },
                                         __self: this
                                     })
@@ -26341,7 +26338,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/western",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 376
+                                lineNumber: 375
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26354,7 +26351,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 378
+                                            lineNumber: 377
                                         },
                                         __self: this
                                     }),
@@ -26362,7 +26359,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 385
+                                            lineNumber: 384
                                         },
                                         __self: this
                                     })
@@ -42921,91 +42918,116 @@ class DirectorView extends _reactDefault.default.Component {
     }
     render() {
         const { director , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
             className: "director-view",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
                 lineNumber: 19
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
-                    className: "director-img",
-                    src: director.ImagePath,
-                    __source: {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 20
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                    className: "director-name",
-                    __source: {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 21
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                        className: "director-name",
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                __source: {
+                    fileName: "src/components/director-view/director-view.jsx",
+                    lineNumber: 20
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                        xs: 3,
                         __source: {
                             fileName: "src/components/director-view/director-view.jsx",
-                            lineNumber: 22
+                            lineNumber: 21
                         },
                         __self: this,
-                        children: director.Name
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                            className: "director-img",
+                            src: director.ImagePath,
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 22
+                            },
+                            __self: this
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                        className: "director-stuff",
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 24
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                className: "director-name",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "director-name",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 26
+                                    },
+                                    __self: this,
+                                    children: director.Name
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
+                                className: "director-description",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 28
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                        __source: {
+                                            fileName: "src/components/director-view/director-view.jsx",
+                                            lineNumber: 29
+                                        },
+                                        __self: this,
+                                        children: "Bio: "
+                                    }),
+                                    director.Bio
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
+                                className: "director-description",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 32
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                        __source: {
+                                            fileName: "src/components/director-view/director-view.jsx",
+                                            lineNumber: 33
+                                        },
+                                        __self: this,
+                                        children: "Birthday: "
+                                    }),
+                                    director.Birth.substring(0, 10)
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                id: "back-btn-1",
+                                onClick: ()=>{
+                                    onBackClick();
+                                },
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 36
+                                },
+                                __self: this,
+                                children: "Back"
+                            })
+                        ]
                     })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
-                    className: "director-description",
-                    __source: {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 24
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 25
-                            },
-                            __self: this,
-                            children: "Bio: "
-                        }),
-                        director.Bio
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Text, {
-                    className: "director-description",
-                    __source: {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 28
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 29
-                            },
-                            __self: this,
-                            children: "Birthday: "
-                        }),
-                        director.Birth.substring(0, 10)
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                    id: "back-btn-1",
-                    onClick: ()=>{
-                        onBackClick();
-                    },
-                    __source: {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 32
-                    },
-                    __self: this,
-                    children: "Back"
-                })
-            ]
+                ]
+            })
         }));
     }
 }
@@ -43876,6 +43898,8 @@ function FavoritesView(props) {
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 id: "fav-btn2",
+                                onClick: (e)=>onFavRemove(e, movie)
+                                ,
                                 __source: {
                                     fileName: "src/components/favorites-view/favorites-view.jsx",
                                     lineNumber: 25
@@ -43919,36 +43943,57 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _movieCardScss = require("./movie-card.scss");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
+var _reactHoverVideoPlayer = require("react-hover-video-player");
+var _reactHoverVideoPlayerDefault = parcelHelpers.interopDefault(_reactHoverVideoPlayer);
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
                 id: "movie-card",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 13
+                    lineNumber: 14
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                     to: `/movies/${movie._id}`,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 14
+                        lineNumber: 15
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        id: "movie-img",
-                        variant: "top",
-                        src: movie.ImagePath,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactHoverVideoPlayerDefault.default, {
+                        videoSrc: "https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4",
+                        muted: false,
+                        volume: 0.5,
+                        pausedOverlay: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                            id: "movie-img",
+                            variant: "top",
+                            src: movie.ImagePath,
+                            alt: "",
+                            style: {
+                                // Make the image expand to cover the video's dimensions
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "contain",
+                                margin: "0 20px"
+                            }
+                        }),
+                        loadingOverlay: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "loading-overlay",
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "loading-spinner"
+                            })
+                        }),
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 15
+                            lineNumber: 16
                         },
                         __self: this
                     })
@@ -43979,7 +44024,748 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"j0Dt2":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","react-hover-video-player":"4PlUB","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"4PlUB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>HoverVideoPlayer
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */ var __assign = function() {
+    __assign = Object.assign || function __assign1(t) {
+        for(var s, i = 1, n = arguments.length; i < n; i++){
+            s = arguments[i];
+            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+/**
+ * Hook handles manually setting some additional attributes on the video that
+ * can't be set directly via attributes on the element.
+ *
+ * @param {React.RefObject<HTMLVideoElement>} videoRef - Ref to the video element
+ * @param {bool} muted - Whether the video should be muted
+ * @param {number} volume - The volume level that the video's audio should be set to
+ * @param {bool} disableRemotePlayback - Whether we want to disable showing controls to cast the video
+ * @param {bool} disablePictureInPicture - Whether we want to disable showing controls to play the video in picture-in-picture mode
+ */ function useSetAdditionalAttributesOnVideo(videoRef, muted, volume, disableRemotePlayback, disablePictureInPicture) {
+    _react.useEffect(function() {
+        var videoElement = videoRef.current;
+        // Manually setting the `muted` attribute on the video element via an effect in order
+        // to avoid a know React issue with the `muted` prop not applying correctly on initial render
+        // https://github.com/facebook/react/issues/10389
+        videoElement.muted = muted;
+        // Set the video's volume to match the `volume` prop
+        // Note that this will have no effect if the `muted` prop is set to true
+        videoElement.volume = volume;
+    }, [
+        videoRef,
+        muted,
+        volume
+    ]);
+    _react.useEffect(function() {
+        var videoElement = videoRef.current;
+        // React does not support directly setting disableRemotePlayback or disablePictureInPicture directly
+        // via the video element's props, so we have to manually set them in an effect
+        videoElement.disableRemotePlayback = disableRemotePlayback;
+        videoElement.disablePictureInPicture = disablePictureInPicture;
+    }, [
+        videoRef,
+        disablePictureInPicture,
+        disableRemotePlayback
+    ]);
+}
+/**
+ * Hook adds event listeners to the hover target and returns whether the user is currently hovering over it or not.
+ *
+ * @param {HoverTarget} hoverTarget - Ref, function, or Node for the element that we should apply our hover event listeners to.
+ *                                      If the user did not specify one with the hoverTarget prop, we will fall back to use
+ *                                      the hover player's container div element.
+ * @param {bool} disableDefaultEventHandling - Whether our default event handling should be disabled.
+ * @param {func} onHoverStart - Callback fired when the user starts hovering on the player's hover target
+ * @param {func} onHoverEnd - Callback fired when the user stops hovering on the player's hover target
+ *
+ * @returns {bool}  Whether the user is currently hovering over the player's hover target
+ */ function useIsHoveringOverVideo(hoverTarget, disableDefaultEventHandling, onHoverStartCallback, onHoverEndCallback) {
+    // Keep track of whether the user is hovering over the video and it should therefore be playing or not
+    var _a = _react.useState(false), isHoveringOverVideo = _a[0], setIsHoveringOverVideo = _a[1];
+    var previousIsHoveringOverVideoRef = _react.useRef(isHoveringOverVideo);
+    _react.useEffect(function() {
+        // If default event handling is disabled, we shouldn't check for touch events outside of the player
+        if (disableDefaultEventHandling) return undefined;
+        // Get the element that we should add our hover event listeners to
+        var hoverEventTargetElement;
+        // If the `hoverTarget` prop was provided, it could be a function, a DOM element, or a React ref, so
+        // figure out which one it is and get the hover target element out of it accordingly
+        if (typeof hoverTarget === 'function') hoverEventTargetElement = hoverTarget();
+        else if (hoverTarget instanceof Node) hoverEventTargetElement = hoverTarget;
+        else if (hoverTarget.current) hoverEventTargetElement = hoverTarget.current;
+        // If we weren't able to get a valid hover target to attach event listeners to, return early
+        if (!hoverEventTargetElement || !hoverEventTargetElement.addEventListener) {
+            console.error('HoverVideoPlayer was unable to add event listeners to a hover target. Please check your usage of the `hoverTarget` prop.');
+            return undefined;
+        }
+        // Add the event listeners
+        var onHoverStart = function() {
+            return setIsHoveringOverVideo(true);
+        };
+        var onHoverEnd = function() {
+            return setIsHoveringOverVideo(false);
+        };
+        // Mouse events
+        hoverEventTargetElement.addEventListener('mouseenter', onHoverStart);
+        hoverEventTargetElement.addEventListener('mouseleave', onHoverEnd);
+        // Focus/blur
+        hoverEventTargetElement.addEventListener('focus', onHoverStart);
+        hoverEventTargetElement.addEventListener('blur', onHoverEnd);
+        // Touch events
+        var touchStartListenerOptions = {
+            passive: true
+        };
+        hoverEventTargetElement.addEventListener('touchstart', onHoverStart, touchStartListenerOptions);
+        // Event listener pauses the video when the user touches somewhere outside of the player
+        var onWindowTouchStart = function(event) {
+            if (!(event.target instanceof Node) || !hoverEventTargetElement.contains(event.target)) onHoverEnd();
+        };
+        window.addEventListener('touchstart', onWindowTouchStart, touchStartListenerOptions);
+        // Return a cleanup function that removes all event listeners
+        return function() {
+            hoverEventTargetElement.removeEventListener('mouseenter', onHoverStart);
+            hoverEventTargetElement.removeEventListener('mouseleave', onHoverEnd);
+            hoverEventTargetElement.removeEventListener('focus', onHoverStart);
+            hoverEventTargetElement.removeEventListener('blur', onHoverEnd);
+            hoverEventTargetElement.removeEventListener('touchstart', onHoverStart);
+            window.removeEventListener('touchstart', onWindowTouchStart);
+        };
+    }, [
+        disableDefaultEventHandling,
+        hoverTarget
+    ]);
+    // Effect fires hover callbacks as isHoveringOverVideo changes
+    _react.useEffect(function() {
+        if (previousIsHoveringOverVideoRef.current === isHoveringOverVideo) return;
+        previousIsHoveringOverVideoRef.current = isHoveringOverVideo;
+        if (isHoveringOverVideo && onHoverStartCallback != null) onHoverStartCallback();
+        else if (!isHoveringOverVideo && onHoverEndCallback != null) onHoverEndCallback();
+    }, [
+        isHoveringOverVideo,
+        onHoverEndCallback,
+        onHoverStartCallback
+    ]);
+    return isHoveringOverVideo;
+}
+// Enumerates states that the hover player's overlay can be in
+var OverlayState;
+(function(OverlayState1) {
+    // Only the paused overlay is visible, if provided
+    OverlayState1["paused"] = "paused";
+    // Both the paused and loading overlays are visible, if provided
+    OverlayState1["loading"] = "loading";
+    // No overlays are visible
+    OverlayState1["playing"] = "playing";
+})(OverlayState || (OverlayState = {
+}));
+/**
+ * Hook manages safely transitioning video playback between
+ * a playing or paused state, depending on the value of shouldPlayVideo
+ *
+ * @param {React.RefObject<HTMLVideoElement>} videoRef - Ref to the video element
+ * @param {bool} shouldPlayVideo - Whether the video should currently be playing or not
+ * @param {number} playbackRangeStart - The start time of the playback range that the video must be kept within
+ * @param {number} playbackRangeEnd - The end time of the playback range that the video must be kept within
+ * @param {bool} loop - Whether the video should loop when it reaches the end of its playback range or not
+ *                        If a playback range is set, the native `loop` video attribute will not work, so we have to
+ *                        manually implement this behavior ourselves.
+ * @param {bool} restartOnPaused - Whether the video should be reset to the start when paused
+ * @param {bool} shouldWaitForOverlayTransitionBeforePausing - Whether the player has an overlay which we should wait to fade back in before we pause the video
+ * @param {bool} hasLoadingOverlay - Whether the player has an overlay to display when loading
+ * @param {number} overlayTransitionDuration - How long it should take for overlays to fade in/out; this influences how long we should wait
+ *                                              after the user stops hovering before fully pausing the video since the paused overlay needs time to fade in.
+ * @param {number} loadingStateTimeout - How long to wait after starting a play attempt to fade in the loading overlay
+ *
+ * @returns {[OverlayState, bool]} An array with the current overlay state in the first position and whether the video player is active in the second positions
+ */ function useManageVideoPlayback(videoRef, shouldPlayVideo, playbackRangeStart, playbackRangeEnd, loop, restartOnPaused, shouldWaitForOverlayTransitionBeforePausing, hasLoadingOverlay, overlayTransitionDuration, loadingStateTimeout, shouldSuppressPlaybackInterruptedErrors) {
+    // Keep track of how the paused and loading overlays should be displayed
+    var _a = _react.useState(OverlayState.paused), overlayState = _a[0], setOverlayState = _a[1];
+    // Keep track of whether the video is currently playing or attempting to play
+    var _b = _react.useState(false), isVideoLoadingOrPlaying = _b[0], setIsVideoLoadingOrPlaying = _b[1];
+    // Keep track of when the video is "active", meaning it is in one of the following states:
+    // 1. The user is hovering over the video but it is still loading
+    // 2. The user is hovering over the video and it is playing
+    // 3. The user is no longer hovering over the video but it is still transitioning back into a paused state
+    //
+    // This helps us keep track of when the player is truly done with the video so we can perform
+    // cleanup such as resetting the time to the start or unloading the video
+    var isVideoActive = shouldPlayVideo || isVideoLoadingOrPlaying;
+    // Keep a ref for all variables related to the video's playback state
+    // which we need to persist between renders and manage asynchronously
+    // but shouldn't trigger re-renders when updated
+    var mutableVideoState = _react.useRef(null);
+    if (mutableVideoState.current === null) // Set initial values for our video state
+    mutableVideoState.current = {
+        // Whether there is a play promise in progress which we should avoid interrupting
+        // with calls to video.pause() or video.load()
+        isPlayAttemptInProgress: false,
+        // Keep refs for timeouts so we can keep track of and cancel them
+        pauseTimeout: null,
+        loadingStateTimeout: null,
+        // Keep track of the video time that we should start from when the video is played again
+        // This is particularly useful so we can restore our previous place in the video even if
+        // we are unloading it every time it gets paused
+        videoTimeToRestore: playbackRangeStart || 0,
+        // Keep refs to previous values for some states so we can avoid running effects for
+        // changes in values we don't care about
+        previousIsVideoActive: false,
+        previousShouldPlayVideo: false
+    };
+    // Cancel any pending timeouts to pause or show a loading state
+    var clearVideoStateTimeouts = _react.useCallback(function() {
+        clearTimeout(mutableVideoState.current.pauseTimeout);
+        clearTimeout(mutableVideoState.current.loadingStateTimeout);
+    }, []);
+    _react.useEffect(// On cleanup when the component is unmounting, clear any outstanding timeouts
+    function() {
+        return function() {
+            return clearVideoStateTimeouts();
+        };
+    }, [
+        clearVideoStateTimeouts
+    ]);
+    // Method begins an attempt to play the video and updates state accordingly
+    var attemptToPlayVideo = _react.useCallback(function() {
+        mutableVideoState.current.isPlayAttemptInProgress = true;
+        var videoElement = videoRef.current;
+        videoElement.play().catch(function(error) {
+            // If shouldSuppressPlaybackInterruptedErrors is true and this is an AbortError, do nothing instead of logging it.
+            if (shouldSuppressPlaybackInterruptedErrors && error.name === 'AbortError') return;
+            // Additional handling for when browsers block playback for unmuted videos.
+            // This is unfortunately necessary because most modern browsers do not allow playing videos with audio
+            //  until the user has "interacted" with the page by clicking somewhere at least once; mouseenter events
+            //  don't count.
+            // If the video isn't muted and playback failed with a `NotAllowedError`, this means the browser blocked
+            // playing the video because the user hasn't clicked anywhere on the page yet.
+            if (!videoElement.muted && error.name === 'NotAllowedError') {
+                console.warn('HoverVideoPlayer: Playback with sound was blocked by the browser. Attempting to play again with the video muted; audio will be restored if the user clicks on the page.');
+                // Mute the video and attempt to play again
+                videoElement.muted = true;
+                videoElement.play();
+                // When the user clicks on the document, unmute the video since we should now
+                // be free to play audio
+                var onClickDocument_1 = function() {
+                    videoElement.muted = false;
+                    // Clean up the event listener so it is only fired once
+                    document.removeEventListener('click', onClickDocument_1);
+                };
+                document.addEventListener('click', onClickDocument_1);
+            } else // Log any other playback errors with console.error
+            console.error("HoverVideoPlayer: " + error.message);
+        });
+    }, [
+        videoRef,
+        shouldSuppressPlaybackInterruptedErrors
+    ]);
+    // Method attempts to pause the video, if it is safe to do so without interrupting a pending play promise
+    var attemptToPauseVideo = _react.useCallback(function() {
+        var videoElement = videoRef.current;
+        if (!videoElement.paused && // If there is a play attempt in progress, the video can't be
+        //  safely paused right away without intnerrupting the play promise and throwing an error.
+        // In this case, we'll have to wait for the logic in the video's `onPlaying` event
+        // to immediately pause the video as soon as the play promise resolves
+        !mutableVideoState.current.isPlayAttemptInProgress) videoElement.pause();
+    }, [
+        videoRef
+    ]);
+    // Effect adds a `play` and `pause` event listener to the video element to keep our state
+    // updated to reflect whether the video is currently playing or paused
+    _react.useEffect(function() {
+        var videoElement = videoRef.current;
+        var onPause = function() {
+            return setIsVideoLoadingOrPlaying(false);
+        };
+        var onPlay = function() {
+            return setIsVideoLoadingOrPlaying(true);
+        };
+        videoElement.addEventListener('pause', onPause);
+        videoElement.addEventListener('play', onPlay);
+        return function() {
+            videoElement.removeEventListener('pause', onPause);
+            videoElement.removeEventListener('play', onPlay);
+        };
+    }, [
+        videoRef
+    ]);
+    // Effect adds a `playing` event listener to the video to update state to reflect when the video successfully starts playing
+    _react.useEffect(function() {
+        var videoElement = videoRef.current;
+        // Listen for when the video actually finishes loading and starts playing
+        var onPlaying = function() {
+            // Ensure we cancel any pending loading state timeout
+            clearVideoStateTimeouts();
+            // The play attempt is now complete
+            mutableVideoState.current.isPlayAttemptInProgress = false;
+            if (shouldPlayVideo) // Hide the overlays to reveal the video now that it's playing
+            setOverlayState(OverlayState.playing);
+            else // If the play attempt just succeeded but we no longer want to play the video,
+            // pause it immediately!
+            videoElement.pause();
+        };
+        videoElement.addEventListener('playing', onPlaying);
+        return function() {
+            videoElement.removeEventListener('playing', onPlaying);
+        };
+    }, [
+        clearVideoStateTimeouts,
+        shouldPlayVideo,
+        videoRef
+    ]);
+    // When the video becomes inactive, effect resets it to the start if restartOnPaused is true and
+    // stores the video's current time so we can restore to it when we start playing the video again
+    _react.useEffect(function() {
+        if (mutableVideoState.current.previousIsVideoActive === isVideoActive) return;
+        mutableVideoState.current.previousIsVideoActive = isVideoActive;
+        if (!isVideoActive) {
+            var videoElement = videoRef.current;
+            // Ensure we cancel any pending timeouts to pause or show a loading state
+            // since we are now officially paused
+            clearVideoStateTimeouts();
+            if (restartOnPaused) {
+                // Reset the video to the start since we're now paused
+                var resetStartTime = playbackRangeStart || 0;
+                videoElement.currentTime = resetStartTime;
+            }
+            // Hang onto the time that the video is currently at so we can
+            // restore it when we try to play again
+            // This is mainly helpful because the unloadVideoOnPaused prop will cause
+            // the video's currentTime to be cleared every time its sources are unloaded
+            // after pausing
+            mutableVideoState.current.videoTimeToRestore = videoElement.currentTime;
+        }
+    }, [
+        clearVideoStateTimeouts,
+        isVideoActive,
+        playbackRangeStart,
+        restartOnPaused,
+        videoRef, 
+    ]);
+    // Effect starts an update loop while the video is playing
+    // to ensure the video stays within the bounds of its playback range
+    _react.useEffect(function() {
+        if (// If we don't have a playback range set, we don't need to do anything here
+        playbackRangeStart === null && playbackRangeEnd === null) return undefined;
+        var videoElement = videoRef.current;
+        // Checks the video's time to make sure it
+        // stays clamped inside the playback range
+        var keepVideoTimeWithinPlaybackRange = function() {
+            // Use playbackRangeEnd as our maximum time to play to, or default to the video's full duration
+            var playbackRangeMaxTime = playbackRangeEnd || videoElement.duration;
+            // Use playbackRangeStart as our minimum time to play from, or default to the very beginning of the video (0sƒ)
+            var playbackRangeMinTime = playbackRangeStart || 0;
+            if (videoElement.currentTime >= playbackRangeMaxTime) {
+                // If the video's current time has played past the maximum time in the playback range,
+                // determine how to handle keeping the video inside of the playback range
+                if (loop) {
+                    // If the video should loop, jump it back to the start of the playback range again
+                    videoElement.currentTime = playbackRangeMinTime;
+                    // If the video is paused, start playing it again (when the video reaches the end
+                    // of the playback range for the first time, most browsers will pause it)
+                    if (shouldPlayVideo && (videoElement.paused || videoElement.ended)) attemptToPlayVideo();
+                } else {
+                    // If we don't want to loop the video, just pause it
+                    attemptToPauseVideo();
+                    if (videoElement.currentTime > playbackRangeMaxTime) videoElement.currentTime = playbackRangeMaxTime;
+                }
+            } else if (videoElement.currentTime < playbackRangeMinTime) // If the video's current time has someone gotten before the playback range,
+            // clamp it to the lower end of the playback range
+            videoElement.currentTime = playbackRangeMinTime;
+        };
+        // Run one initial check to make sure the video is initially clamped within its playback range
+        keepVideoTimeWithinPlaybackRange();
+        // Add a timeupdate event listener to keep the video within its playback range
+        // as its time changes
+        videoElement.addEventListener('timeupdate', keepVideoTimeWithinPlaybackRange);
+        // Remove the event listener on cleanup
+        return function() {
+            return videoElement.removeEventListener('timeupdate', keepVideoTimeWithinPlaybackRange);
+        };
+    }, [
+        attemptToPauseVideo,
+        attemptToPlayVideo,
+        loop,
+        playbackRangeEnd,
+        playbackRangeStart,
+        shouldPlayVideo,
+        videoRef, 
+    ]);
+    // Effect attempts to play or pause the video as shouldPlayVideo changes
+    _react.useEffect(function() {
+        // Only run the effect when shouldPlayVideo changes
+        if (mutableVideoState.current.previousShouldPlayVideo === shouldPlayVideo) return;
+        mutableVideoState.current.previousShouldPlayVideo = shouldPlayVideo;
+        // Clear any outstanding timeouts since our playback state is changing
+        clearVideoStateTimeouts();
+        var videoElement = videoRef.current;
+        // The video is stopped if it is paused or ended
+        var isVideoStopped = videoElement.paused || videoElement.ended;
+        // If shouldPlayVideo is true, attempt to start playing the video
+        if (shouldPlayVideo) {
+            // readyState 3 is HAVE_FUTURE_DATA, meaning the video has loaded enough data that it can play
+            var isVideoLoadedEnoughToPlay = videoElement.readyState >= 3;
+            // If the video is stopped or still loading and we have a loading overlay,
+            // set a timeout to display the overlay if the video doesn't finish loading
+            // after a certain amount of time
+            if ((isVideoStopped || !isVideoLoadedEnoughToPlay) && hasLoadingOverlay) // If we have a loading overlay, set a timeout to start showing it if the video doesn't start playing
+            // before the loading state timeout has elapsed
+            mutableVideoState.current.loadingStateTimeout = window.setTimeout(function() {
+                // If this timeout wasn't cancelled, we're still trying to play the video
+                // and it's still loading, so fade in the loading overlay
+                setOverlayState(OverlayState.loading);
+            }, loadingStateTimeout);
+            // If the video is fully stopped, we need to attempt to start it by calling play()
+            if (isVideoStopped) {
+                // Ensure we're at the correct time to start playing from
+                videoElement.currentTime = mutableVideoState.current.videoTimeToRestore;
+                // Start attempting to play
+                attemptToPlayVideo();
+            } else if (isVideoLoadedEnoughToPlay) // If the video isn't stopped and is loaded enough to play. it's already playing,
+            // so ensure the overlays are hidden to reflect that!
+            setOverlayState(OverlayState.playing);
+        } else {
+            // Start fading the paused overlay back in
+            setOverlayState(OverlayState.paused);
+            if (shouldWaitForOverlayTransitionBeforePausing && overlayTransitionDuration) // If we have a paused/hover overlay, set a timeout with a duration of the overlay's fade
+            // transition since we want to keep the video playing until the overlay has fully
+            // faded in and hidden it.
+            mutableVideoState.current.pauseTimeout = window.setTimeout(attemptToPauseVideo, overlayTransitionDuration);
+            else // If we don't have an overlay transition to wait on, pause right away!
+            attemptToPauseVideo();
+        }
+    }, [
+        attemptToPauseVideo,
+        attemptToPlayVideo,
+        clearVideoStateTimeouts,
+        hasLoadingOverlay,
+        shouldWaitForOverlayTransitionBeforePausing,
+        loadingStateTimeout,
+        overlayTransitionDuration,
+        shouldPlayVideo,
+        videoRef, 
+    ]);
+    return [
+        overlayState,
+        isVideoActive
+    ];
+}
+/**
+ * @function  formatVideoSrc
+ *
+ * Hook takes the videoSrc prop and formats it as a standardized array of VideoSource objects which can be used to render
+ * <source> elements for the video
+ *
+ * @param {VideoSrcProp}  videoSrc - Source(s) to format into VideoSource objects so they can be added to the video player.
+ * @param {number}  playbackRangeStart - The earliest time in seconds that we should start loading the video from.
+ *                                        This will be enforced by using a #t media fragment identifier to tell the browser to only
+ *                                        load the video starting from this time.
+ *                                        If not provided, we will load from the start of the video.
+ * @param {number}  playbackRangeEnd - The maximum time in seconds that we should load the video to.
+ *                                        This will be enforced by using a #t media fragment identifier to tell the browser to only
+ *                                        load the video up to this time.
+ *                                        If not provided, we will load to the end of the video.
+ *
+ * @returns {VideoSource[]} Array of formatted VideoSource objects which can be used to render <source> elements for the video
+ */ function useFormatVideoSrc(videoSrc, playbackRangeStart, playbackRangeEnd) {
+    var previousVideoSrc = _react.useRef(null);
+    var previousFormattedVideoSources = _react.useRef(null);
+    // If videoSrc is shallowly equal with the previous videoSrc we can just return the previous formatted video sources
+    if (previousVideoSrc.current !== null && videoSrc === previousVideoSrc.current) return previousFormattedVideoSources.current;
+    // Store the previous videoSrc so we can compare it on the next render
+    previousVideoSrc.current = videoSrc;
+    var formattedVideoSources = [];
+    if (videoSrc == null) // A videoSrc value is required in order to make the video player work
+    console.error("Error: 'videoSrc' prop is required for HoverVideoPlayer component");
+    else {
+        // Make sure we can treat the videoSrc value as an array
+        var rawVideoSources = Array.isArray(videoSrc) ? videoSrc : [
+            videoSrc
+        ];
+        // Parse our video source values into an array of VideoSource objects that can be used to render sources for the video
+        for(var i = 0, numSources = rawVideoSources.length; i < numSources; i += 1){
+            var source = rawVideoSources[i];
+            var hasPlaybackRangeStart = playbackRangeStart !== null;
+            var hasPlaybackRangeEnd = playbackRangeEnd !== null;
+            // Construct a media fragment identifier string to append to the video's URL to ensure
+            // we only load the portion of the video that we need for the provided playback range
+            // (see here for more details: https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery#specifying_playback_range)
+            var playbackRangeMediaFragmentIdentifier = hasPlaybackRangeStart || hasPlaybackRangeEnd ? // This identifier follows the format `#t=[starttime][,endtime]` and will tell the browser to only load the video file
+            // within this defined time range.
+            // This helps save us from loading some unneeded data when we only need whatever is within the playback range!
+            "#t=" + (hasPlaybackRangeStart ? playbackRangeStart : '') + (hasPlaybackRangeEnd ? "," + playbackRangeEnd : '') : '';
+            if (typeof source === 'string') // If the source is a string, it's an src URL so format it into a VideoSource object and add it to the array
+            formattedVideoSources.push({
+                src: "" + source + playbackRangeMediaFragmentIdentifier
+            });
+            else if (source && source.src) // If the source is an object with an src, just add it to the array
+            formattedVideoSources.push({
+                src: "" + source.src + playbackRangeMediaFragmentIdentifier,
+                type: source.type
+            });
+            else // Log an error if one of the videoSrc values is invalid
+            console.error("Error: invalid value provided to HoverVideoPlayer prop 'videoSrc':", source);
+        }
+    }
+    // If our formatted video sources are deeply equal to the previous formatted sources
+    // based on a simple string comparison, return the previous formatted sources instead to maintain
+    // referential equality
+    if (JSON.stringify(formattedVideoSources) === JSON.stringify(previousFormattedVideoSources.current)) return previousFormattedVideoSources.current;
+    // Store the final formatted video sources so we can return them on subsequent renders
+    // if the videoSrc hasn't changed
+    previousFormattedVideoSources.current = formattedVideoSources;
+    return formattedVideoSources;
+}
+/**
+ * Hook takes the videoCaptions prop and formats it as a standardized array of VideoCaptionsTrack objects which can be used to render
+ * <track> elements for the video
+ *
+ * @param {VideoCaptionsProp} videoCaptions - Captions track(s) to use for the video player for accessibility.
+ *
+ * @returns {VideoCaptionsTrack[]}  Array of formatted VideoCaptionsTrack objects which can be used to render <track> elements for the video
+ */ function useFormatVideoCaptions(videoCaptions) {
+    return _react.useMemo(function() {
+        var formattedVideoCaptions = [];
+        // If captions were provided, format them for use for the video
+        if (videoCaptions != null) {
+            // Make sure we can treat the videoCaptions value as an array
+            var rawVideoCaptions = Array.isArray(videoCaptions) ? videoCaptions : [
+                videoCaptions
+            ];
+            // Parse our raw video captions values into an array of formatted VideoCaptionsTrack
+            // objects that can be used to render caption tracks for the video
+            for(var i = 0, numCaptions = rawVideoCaptions.length; i < numCaptions; i += 1){
+                var captions = rawVideoCaptions[i];
+                if (captions && captions.src) formattedVideoCaptions.push({
+                    src: captions.src,
+                    srcLang: captions.srcLang,
+                    label: captions.label,
+                    kind: captions.kind || 'captions',
+                    default: Boolean(captions.default)
+                });
+                else // Log an error if one of the videoCaptions values is invalid
+                console.error("Error: invalid value provided to HoverVideoPlayer prop 'videoCaptions'", captions);
+            }
+        }
+        return formattedVideoCaptions;
+    }, [
+        videoCaptions
+    ]);
+}
+// CSS styles to make some contents in the player expand to fill the container
+var expandToFillContainerStyle = {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
+};
+var containerMatchContentDimensionsStyle = {
+    display: 'inline-block'
+};
+var containerSizingStyles = {
+    video: containerMatchContentDimensionsStyle,
+    overlay: containerMatchContentDimensionsStyle,
+    container: null,
+    manual: null
+};
+// Styles to apply to the paused overlay wrapper for each sizing mode
+var pausedOverlayWrapperSizingStyles = {
+    // Sizing should be based on the video element, so make the overlay
+    // expand to cover the player's container element
+    video: expandToFillContainerStyle,
+    // Sizing should be based on the paused overlay, so set position: relative
+    // to make it occupy space in the document flow
+    overlay: {
+        position: 'relative'
+    },
+    // Sizing should be based on the player's container element, so make the overlay
+    // expand to cover it
+    container: expandToFillContainerStyle,
+    // Don't apply any preset styling to the overlay
+    manual: null
+};
+// Styles to apply to the video element for each sizing mode
+var videoSizingStyles = {
+    // Sizing should be based on the video element, so set display: block
+    // to make sure it occupies space in the document flow
+    video: {
+        display: 'block',
+        // Ensure the video is sized relative to the container's width
+        // rather than the video asset's native width
+        width: '100%'
+    },
+    // Make the video element expand to cover the container if we're sizing
+    // based on the overlay or container
+    overlay: expandToFillContainerStyle,
+    container: expandToFillContainerStyle,
+    // Don't apply any preset styling to the video
+    manual: null
+};
+/**
+ * @component HoverVideoPlayer
+ * @license MIT
+ *
+ * @param {HoverVideoPlayerProps} props
+ */ var HoverVideoPlayer = function(_a) {
+    var videoSrc = _a.videoSrc, _b = _a.videoCaptions, videoCaptions = _b === void 0 ? null : _b, _c = _a.focused, focused = _c === void 0 ? false : _c, _d = _a.disableDefaultEventHandling, disableDefaultEventHandling = _d === void 0 ? false : _d, _e = _a.hoverTarget, hoverTarget = _e === void 0 ? null : _e, _f = _a.onHoverStart, onHoverStart = _f === void 0 ? null : _f, _g = _a.onHoverEnd, onHoverEnd = _g === void 0 ? null : _g, _h = _a.hoverOverlay, hoverOverlay = _h === void 0 ? null : _h, _j = _a.pausedOverlay, pausedOverlay = _j === void 0 ? null : _j, _k = _a.loadingOverlay, loadingOverlay = _k === void 0 ? null : _k, _l = _a.loadingStateTimeout, loadingStateTimeout = _l === void 0 ? 200 : _l, _m = _a.overlayTransitionDuration, overlayTransitionDuration = _m === void 0 ? 400 : _m, _o = _a.restartOnPaused, restartOnPaused = _o === void 0 ? false : _o, _p = _a.unloadVideoOnPaused, unloadVideoOnPaused = _p === void 0 ? false : _p, _q = _a.playbackRangeStart, playbackRangeStart = _q === void 0 ? null : _q, _r = _a.playbackRangeEnd, playbackRangeEnd = _r === void 0 ? null : _r, _s = _a.muted, muted = _s === void 0 ? true : _s, _t = _a.volume, volume = _t === void 0 ? 1 : _t, _u = _a.loop, loop = _u === void 0 ? true : _u, _v = _a.preload, preload = _v === void 0 ? null : _v, _w = _a.crossOrigin, crossOrigin = _w === void 0 ? 'anonymous' : _w, _x = _a.controls, controls = _x === void 0 ? false : _x, _y = _a.controlsList, controlsList = _y === void 0 ? null : _y, _z = _a.disableRemotePlayback, disableRemotePlayback = _z === void 0 ? true : _z, _0 = _a.disablePictureInPicture, disablePictureInPicture = _0 === void 0 ? true : _0, _1 = _a.className, className = _1 === void 0 ? null : _1, _2 = _a.style, style = _2 === void 0 ? null : _2, _3 = _a.hoverOverlayWrapperClassName, hoverOverlayWrapperClassName = _3 === void 0 ? null : _3, _4 = _a.hoverOverlayWrapperStyle, hoverOverlayWrapperStyle = _4 === void 0 ? null : _4, _5 = _a.pausedOverlayWrapperClassName, pausedOverlayWrapperClassName = _5 === void 0 ? null : _5, _6 = _a.pausedOverlayWrapperStyle, pausedOverlayWrapperStyle = _6 === void 0 ? null : _6, _7 = _a.loadingOverlayWrapperClassName, loadingOverlayWrapperClassName = _7 === void 0 ? null : _7, _8 = _a.loadingOverlayWrapperStyle, loadingOverlayWrapperStyle = _8 === void 0 ? null : _8, _9 = _a.videoId, videoId = _9 === void 0 ? null : _9, _10 = _a.videoClassName, videoClassName = _10 === void 0 ? null : _10, _11 = _a.videoRef, forwardedVideoRef = _11 === void 0 ? null : _11, _12 = _a.videoStyle, videoStyle = _12 === void 0 ? null : _12, _13 = _a.sizingMode, sizingMode = _13 === void 0 ? 'video' : _13, _14 = _a.shouldSuppressPlaybackInterruptedErrors, shouldSuppressPlaybackInterruptedErrors = _14 === void 0 ? true : _14;
+    // Element refs
+    var containerRef = _react.useRef(null);
+    var videoRef = _react.useRef(null);
+    // Forward out local videoRef along to the videoRef prop
+    _react.useImperativeHandle(forwardedVideoRef, function() {
+        return videoRef.current;
+    });
+    // Effect sets attributes on the video which can't be done via props
+    useSetAdditionalAttributesOnVideo(videoRef, muted, volume, disableRemotePlayback, disablePictureInPicture);
+    var isHoveringOverVideo = useIsHoveringOverVideo(// If the hoverTarget prop wasn't provided, fall back to the component's container div
+    hoverTarget || containerRef, disableDefaultEventHandling, onHoverStart, onHoverEnd);
+    // We should attempt to play the video if the user is hovering over it or the `focused` override prop is enabled
+    var shouldPlayVideo = isHoveringOverVideo || focused;
+    var hasPausedOverlay = Boolean(pausedOverlay);
+    var hasHoverOverlay = Boolean(hoverOverlay);
+    // If we have a paused or hover overlay, the player should wait
+    // for the overlay(s) to finish transitioning back in before we
+    // pause the video
+    var shouldWaitForOverlayTransitionBeforePausing = hasPausedOverlay || hasHoverOverlay;
+    var hasLoadingOverlay = Boolean(loadingOverlay);
+    // Effect handles transitioning the video between playing or paused states
+    // depending on the current value for `shouldPlayVideo`
+    var _15 = useManageVideoPlayback(videoRef, shouldPlayVideo, playbackRangeStart, playbackRangeEnd, loop, restartOnPaused, shouldWaitForOverlayTransitionBeforePausing, hasLoadingOverlay, overlayTransitionDuration, loadingStateTimeout, shouldSuppressPlaybackInterruptedErrors), overlayState = _15[0], isVideoActive = _15[1];
+    // If the video's sources should be unloaded when it's paused and the video is not currently active, we can unload the video's sources.
+    // We will remove the video's <source> tags in this render and then call video.load() in an effect to
+    // fully unload the video
+    var shouldUnloadVideo = unloadVideoOnPaused && !isVideoActive;
+    // Parse the sources and captions into formatted arrays that we can use to
+    // render <source> and <track> elements for the video
+    var formattedVideoCaptions = useFormatVideoCaptions(videoCaptions);
+    var formattedVideoSources = useFormatVideoSrc(videoSrc, playbackRangeStart, playbackRangeEnd);
+    // Keep a ref to the previous formatted video sources so we can track when the video sources change
+    var previousFormattedVideoSourcesRef = _react.useRef(formattedVideoSources);
+    // Effect re-loads the video if its sources should be unloaded when paused or if the videoSrc changed
+    _react.useEffect(function() {
+        // Only reload when the video is paused
+        if (isVideoActive) return;
+        if (unloadVideoOnPaused || previousFormattedVideoSourcesRef.current !== formattedVideoSources) {
+            // Perform a manual load to unload the video's current source
+            var videoElement = videoRef.current;
+            videoElement.load();
+            previousFormattedVideoSourcesRef.current = formattedVideoSources;
+        }
+    }, [
+        isVideoActive,
+        unloadVideoOnPaused,
+        formattedVideoSources
+    ]);
+    var hasPlaybackRange = playbackRangeStart !== null || playbackRangeEnd !== null;
+    // Show the paused overlay if the overlay state is either "paused" OR "loading"; if
+    // "loading", the loading overlay will be displayed on top of the paused overlay
+    var isPausedOverlayVisible = overlayState !== OverlayState.playing;
+    // Show the loading overlay only if the overlay state is specifically "loading"
+    var isLoadingOverlayVisibile = overlayState === OverlayState.loading;
+    return _reactDefault.default.createElement("div", {
+        "data-testid": "hover-video-player-container",
+        ref: containerRef,
+        className: className,
+        style: __assign(__assign(__assign({
+        }, containerSizingStyles[sizingMode]), {
+            position: 'relative'
+        }), style)
+    }, hasPausedOverlay ? _reactDefault.default.createElement("div", {
+        style: __assign(__assign(__assign({
+        }, pausedOverlayWrapperSizingStyles[sizingMode]), {
+            zIndex: 1,
+            opacity: isPausedOverlayVisible ? 1 : 0,
+            transition: "opacity " + overlayTransitionDuration + "ms",
+            // Disable pointer events on the paused overlay when it's hidden
+            pointerEvents: isPausedOverlayVisible ? 'auto' : 'none'
+        }), pausedOverlayWrapperStyle),
+        className: pausedOverlayWrapperClassName,
+        "data-testid": "paused-overlay-wrapper"
+    }, pausedOverlay) : null, hasLoadingOverlay ? _reactDefault.default.createElement("div", {
+        style: __assign(__assign(__assign({
+        }, expandToFillContainerStyle), {
+            zIndex: 2,
+            opacity: isLoadingOverlayVisibile ? 1 : 0,
+            transition: "opacity " + overlayTransitionDuration + "ms",
+            // Disable pointer events on the loading overlay when it's hidden
+            pointerEvents: isLoadingOverlayVisibile ? 'auto' : 'none'
+        }), loadingOverlayWrapperStyle),
+        className: loadingOverlayWrapperClassName,
+        "data-testid": "loading-overlay-wrapper"
+    }, loadingOverlay) : null, hasHoverOverlay ? _reactDefault.default.createElement("div", {
+        style: __assign(__assign(__assign({
+        }, expandToFillContainerStyle), {
+            zIndex: 3,
+            // Show the hover overlay when the player is hovered/playing
+            opacity: shouldPlayVideo ? 1 : 0,
+            transition: "opacity " + overlayTransitionDuration + "ms",
+            // Disable pointer events on the hover overlay when it's hidden
+            pointerEvents: shouldPlayVideo ? 'auto' : 'none'
+        }), hoverOverlayWrapperStyle),
+        className: hoverOverlayWrapperClassName,
+        "data-testid": "hover-overlay-wrapper"
+    }, hoverOverlay) : null, _reactDefault.default.createElement("video", {
+        // If a playback range is set, the loop attribute will not work correctly so there's no point in setting it here;
+        // in that case, we will manually implement this behavior
+        loop: loop && !hasPlaybackRange,
+        playsInline: true,
+        preload: preload,
+        crossOrigin: crossOrigin,
+        ref: videoRef,
+        style: __assign(__assign(__assign({
+        }, videoSizingStyles[sizingMode]), {
+            objectFit: 'cover'
+        }), videoStyle),
+        controls: controls,
+        controlsList: controlsList,
+        className: videoClassName,
+        id: videoId,
+        "data-testid": "video-element"
+    }, !shouldUnloadVideo && // Only render sources for the video if it is not unloaded
+    formattedVideoSources.map(function(_a1) {
+        var src = _a1.src, type = _a1.type;
+        return _reactDefault.default.createElement("source", {
+            key: src,
+            src: src,
+            type: type
+        });
+    }), formattedVideoCaptions.map(function(_a1) {
+        var src = _a1.src, srcLang = _a1.srcLang, label = _a1.label, kind = _a1.kind, isDefault = _a1.default;
+        return _reactDefault.default.createElement("track", {
+            key: src,
+            kind: kind,
+            src: src,
+            srcLang: srcLang,
+            label: label,
+            default: isDefault
+        });
+    })));
+};
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"j0Dt2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$469c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44470,7 +45256,6 @@ var _reactBootstrap = require("react-bootstrap");
 var _moviesListScss = require("./movies-list.scss");
 var _movieCard = require("../movie-card/movie-card");
 var _reactRouterDom = require("react-router-dom");
-var _reactTransitionGroup = require("react-transition-group");
 var _s = $RefreshSig$();
 function MoviesList(props) {
     _s();
@@ -44489,7 +45274,7 @@ function MoviesList(props) {
         className: "main-view",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 20
+            lineNumber: 19
         },
         __self: this
     }));
@@ -44510,7 +45295,7 @@ function MoviesList(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 42
+            lineNumber: 41
         },
         __self: this,
         children: [
@@ -44518,7 +45303,7 @@ function MoviesList(props) {
                 id: "formSearch",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 43
+                    lineNumber: 42
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
@@ -44527,7 +45312,7 @@ function MoviesList(props) {
                     onSubmit: onFormSubmit,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 44
+                        lineNumber: 43
                     },
                     __self: this,
                     children: [
@@ -44539,7 +45324,7 @@ function MoviesList(props) {
                             ,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 45
+                                lineNumber: 44
                             },
                             __self: this
                         }),
@@ -44549,7 +45334,7 @@ function MoviesList(props) {
                             onClick: onFormSubmit,
                             __source: {
                                 fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 51
+                                lineNumber: 50
                             },
                             __self: this,
                             children: "Search"
@@ -44560,7 +45345,7 @@ function MoviesList(props) {
             /*#__PURE__*/ _jsxRuntime.jsx("br", {
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 56
+                    lineNumber: 55
                 },
                 __self: this
             }),
@@ -44569,7 +45354,7 @@ function MoviesList(props) {
                 className: "container-list",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 57
+                    lineNumber: 56
                 },
                 __self: this,
                 children: [
@@ -44577,7 +45362,7 @@ function MoviesList(props) {
                         className: "header",
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 58
+                            lineNumber: 57
                         },
                         __self: this,
                         children: "Featured Flix"
@@ -44585,7 +45370,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 59
+                            lineNumber: 58
                         },
                         __self: this,
                         children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44595,14 +45380,14 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 61
+                                    lineNumber: 60
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 62
+                                        lineNumber: 61
                                     },
                                     __self: this
                                 })
@@ -44616,10 +45401,17 @@ function MoviesList(props) {
                 className: "container-list",
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 67
+                    lineNumber: 66
                 },
                 __self: this,
                 children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 67
+                        },
+                        __self: this
+                    }),
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
@@ -44627,18 +45419,11 @@ function MoviesList(props) {
                         },
                         __self: this
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                        __source: {
-                            fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 69
-                        },
-                        __self: this
-                    }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         className: "header",
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 70
+                            lineNumber: 69
                         },
                         __self: this,
                         children: "Force Flix (Action)"
@@ -44646,7 +45431,7 @@ function MoviesList(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 71
+                            lineNumber: 70
                         },
                         __self: this,
                         children: filteredAction.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44656,14 +45441,14 @@ function MoviesList(props) {
                                 lg: 3,
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
-                                    lineNumber: 73
+                                    lineNumber: 72
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 74
+                                        lineNumber: 73
                                     },
                                     __self: this
                                 })
@@ -44688,992 +45473,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./movies-list.scss":"9gz3w","../movie-card/movie-card":"6EiBJ","react-router-dom":"cpyQW","react-transition-group":"gQu97","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"9gz3w":[function() {},{}],"gQu97":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CSSTransition", ()=>_csstransitionDefault.default
-);
-parcelHelpers.export(exports, "ReplaceTransition", ()=>_replaceTransitionDefault.default
-);
-parcelHelpers.export(exports, "SwitchTransition", ()=>_switchTransitionDefault.default
-);
-parcelHelpers.export(exports, "TransitionGroup", ()=>_transitionGroupDefault.default
-);
-parcelHelpers.export(exports, "Transition", ()=>_transitionDefault.default
-);
-parcelHelpers.export(exports, "config", ()=>_configDefault.default
-);
-var _csstransition = require("./CSSTransition");
-var _csstransitionDefault = parcelHelpers.interopDefault(_csstransition);
-var _replaceTransition = require("./ReplaceTransition");
-var _replaceTransitionDefault = parcelHelpers.interopDefault(_replaceTransition);
-var _switchTransition = require("./SwitchTransition");
-var _switchTransitionDefault = parcelHelpers.interopDefault(_switchTransition);
-var _transitionGroup = require("./TransitionGroup");
-var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
-var _transition = require("./Transition");
-var _transitionDefault = parcelHelpers.interopDefault(_transition);
-var _config = require("./config");
-var _configDefault = parcelHelpers.interopDefault(_config);
-
-},{"./CSSTransition":"echQq","./ReplaceTransition":"8sH79","./SwitchTransition":"2WsGH","./TransitionGroup":"lIDMU","./Transition":"6qqDo","./config":"eRNqr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"echQq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _addClass = require("dom-helpers/addClass");
-var _addClassDefault = parcelHelpers.interopDefault(_addClass);
-var _removeClass = require("dom-helpers/removeClass");
-var _removeClassDefault = parcelHelpers.interopDefault(_removeClass);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _transition = require("./Transition");
-var _transitionDefault = parcelHelpers.interopDefault(_transition);
-var _propTypes1 = require("./utils/PropTypes");
-var _addClass1 = function addClass(node, classes) {
-    return node && classes && classes.split(' ').forEach(function(c) {
-        return _addClassDefault.default(node, c);
-    });
-};
-var removeClass = function removeClass1(node, classes) {
-    return node && classes && classes.split(' ').forEach(function(c) {
-        return _removeClassDefault.default(node, c);
-    });
-};
-/**
- * A transition component inspired by the excellent
- * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
- * use it if you're using CSS transitions or animations. It's built upon the
- * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
- * component, so it inherits all of its props.
- *
- * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
- * and `exit` states of the transition. The first class is applied and then a
- * second `*-active` class in order to activate the CSS transition. After the
- * transition, matching `*-done` class names are applied to persist the
- * transition state.
- *
- * ```jsx
- * function App() {
- *   const [inProp, setInProp] = useState(false);
- *   return (
- *     <div>
- *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
- *         <div>
- *           {"I'll receive my-node-* classes"}
- *         </div>
- *       </CSSTransition>
- *       <button type="button" onClick={() => setInProp(true)}>
- *         Click to Enter
- *       </button>
- *     </div>
- *   );
- * }
- * ```
- *
- * When the `in` prop is set to `true`, the child component will first receive
- * the class `example-enter`, then the `example-enter-active` will be added in
- * the next tick. `CSSTransition` [forces a
- * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
- * between before adding the `example-enter-active`. This is an important trick
- * because it allows us to transition between `example-enter` and
- * `example-enter-active` even though they were added immediately one after
- * another. Most notably, this is what makes it possible for us to animate
- * _appearance_.
- *
- * ```css
- * .my-node-enter {
- *   opacity: 0;
- * }
- * .my-node-enter-active {
- *   opacity: 1;
- *   transition: opacity 200ms;
- * }
- * .my-node-exit {
- *   opacity: 1;
- * }
- * .my-node-exit-active {
- *   opacity: 0;
- *   transition: opacity 200ms;
- * }
- * ```
- *
- * `*-active` classes represent which styles you want to animate **to**, so it's
- * important to add `transition` declaration only to them, otherwise transitions
- * might not behave as intended! This might not be obvious when the transitions
- * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
- * the example above (minus `transition`), but it becomes apparent in more
- * complex transitions.
- *
- * **Note**: If you're using the
- * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
- * prop, make sure to define styles for `.appear-*` classes as well.
- */ var CSSTransition1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLooseDefault.default(CSSTransition2, _React$Component);
-    function CSSTransition2() {
-        var _this;
-        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
-        _this = _React$Component.call.apply(_React$Component, [
-            this
-        ].concat(args)) || this;
-        _this.appliedClasses = {
-            appear: {
-            },
-            enter: {
-            },
-            exit: {
-            }
-        };
-        _this.onEnter = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument[0], appearing = _this$resolveArgument[1];
-            _this.removeClasses(node, 'exit');
-            _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
-            if (_this.props.onEnter) _this.props.onEnter(maybeNode, maybeAppearing);
-        };
-        _this.onEntering = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument2[0], appearing = _this$resolveArgument2[1];
-            var type = appearing ? 'appear' : 'enter';
-            _this.addClass(node, type, 'active');
-            if (_this.props.onEntering) _this.props.onEntering(maybeNode, maybeAppearing);
-        };
-        _this.onEntered = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument3[0], appearing = _this$resolveArgument3[1];
-            var type = appearing ? 'appear' : 'enter';
-            _this.removeClasses(node, type);
-            _this.addClass(node, type, 'done');
-            if (_this.props.onEntered) _this.props.onEntered(maybeNode, maybeAppearing);
-        };
-        _this.onExit = function(maybeNode) {
-            var _this$resolveArgument4 = _this.resolveArguments(maybeNode), node = _this$resolveArgument4[0];
-            _this.removeClasses(node, 'appear');
-            _this.removeClasses(node, 'enter');
-            _this.addClass(node, 'exit', 'base');
-            if (_this.props.onExit) _this.props.onExit(maybeNode);
-        };
-        _this.onExiting = function(maybeNode) {
-            var _this$resolveArgument5 = _this.resolveArguments(maybeNode), node = _this$resolveArgument5[0];
-            _this.addClass(node, 'exit', 'active');
-            if (_this.props.onExiting) _this.props.onExiting(maybeNode);
-        };
-        _this.onExited = function(maybeNode) {
-            var _this$resolveArgument6 = _this.resolveArguments(maybeNode), node = _this$resolveArgument6[0];
-            _this.removeClasses(node, 'exit');
-            _this.addClass(node, 'exit', 'done');
-            if (_this.props.onExited) _this.props.onExited(maybeNode);
-        };
-        _this.resolveArguments = function(maybeNode, maybeAppearing) {
-            return _this.props.nodeRef ? [
-                _this.props.nodeRef.current,
-                maybeNode
-            ] // here `maybeNode` is actually `appearing`
-             : [
-                maybeNode,
-                maybeAppearing
-            ];
-        };
-        _this.getClassNames = function(type) {
-            var classNames = _this.props.classNames;
-            var isStringClassNames = typeof classNames === 'string';
-            var prefix = isStringClassNames && classNames ? classNames + "-" : '';
-            var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
-            var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
-            var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
-            return {
-                baseClassName: baseClassName,
-                activeClassName: activeClassName,
-                doneClassName: doneClassName
-            };
-        };
-        return _this;
-    }
-    var _proto = CSSTransition2.prototype;
-    _proto.addClass = function addClass1(node, type, phase) {
-        var className = this.getClassNames(type)[phase + "ClassName"];
-        var _this$getClassNames = this.getClassNames('enter'), doneClassName = _this$getClassNames.doneClassName;
-        if (type === 'appear' && phase === 'done' && doneClassName) className += " " + doneClassName;
-         // This is to force a repaint,
-        // which is necessary in order to transition styles when adding a class name.
-        if (phase === 'active') /* eslint-disable no-unused-expressions */ node && node.scrollTop;
-        if (className) {
-            this.appliedClasses[type][phase] = className;
-            _addClass1(node, className);
-        }
-    };
-    _proto.removeClasses = function removeClasses(node, type) {
-        var _this$appliedClasses$ = this.appliedClasses[type], baseClassName = _this$appliedClasses$.base, activeClassName = _this$appliedClasses$.active, doneClassName = _this$appliedClasses$.done;
-        this.appliedClasses[type] = {
-        };
-        if (baseClassName) removeClass(node, baseClassName);
-        if (activeClassName) removeClass(node, activeClassName);
-        if (doneClassName) removeClass(node, doneClassName);
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, _ = _this$props.classNames, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
-            "classNames"
-        ]);
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionDefault.default, _extendsDefault.default({
-        }, props, {
-            onEnter: this.onEnter,
-            onEntered: this.onEntered,
-            onEntering: this.onEntering,
-            onExit: this.onExit,
-            onExiting: this.onExiting,
-            onExited: this.onExited
-        })));
-    };
-    return CSSTransition2;
-}(_reactDefault.default.Component);
-CSSTransition1.defaultProps = {
-    classNames: ''
-};
-CSSTransition1.propTypes = _extendsDefault.default({
-}, _transitionDefault.default.propTypes, {
-    /**
-   * The animation classNames applied to the component as it appears, enters,
-   * exits or has finished the transition. A single name can be provided, which
-   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
-   *
-   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
-   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
-   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
-   *
-   * A few details to note about how these classes are applied:
-   *
-   * 1. They are _joined_ with the ones that are already defined on the child
-   *    component, so if you want to add some base styles, you can use
-   *    `className` without worrying that it will be overridden.
-   *
-   * 2. If the transition component mounts with `in={false}`, no classes are
-   *    applied yet. You might be expecting `*-exit-done`, but if you think
-   *    about it, a component cannot finish exiting if it hasn't entered yet.
-   *
-   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
-   *    allows you to define different behavior for when appearing is done and
-   *    when regular entering is done, using selectors like
-   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
-   *    an epic entrance animation when element first appears in the DOM using
-   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
-   *    simply use `fade-enter-done` for defining both cases.
-   *
-   * Each individual classNames can also be specified independently like:
-   *
-   * ```js
-   * classNames={{
-   *  appear: 'my-appear',
-   *  appearActive: 'my-active-appear',
-   *  appearDone: 'my-done-appear',
-   *  enter: 'my-enter',
-   *  enterActive: 'my-active-enter',
-   *  enterDone: 'my-done-enter',
-   *  exit: 'my-exit',
-   *  exitActive: 'my-active-exit',
-   *  exitDone: 'my-done-exit',
-   * }}
-   * ```
-   *
-   * If you want to set these classes using CSS Modules:
-   *
-   * ```js
-   * import styles from './styles.css';
-   * ```
-   *
-   * you might want to use camelCase in your CSS file, that way could simply
-   * spread them instead of listing them one by one:
-   *
-   * ```js
-   * classNames={{ ...styles }}
-   * ```
-   *
-   * @type {string | {
-   *  appear?: string,
-   *  appearActive?: string,
-   *  appearDone?: string,
-   *  enter?: string,
-   *  enterActive?: string,
-   *  enterDone?: string,
-   *  exit?: string,
-   *  exitActive?: string,
-   *  exitDone?: string,
-   * }}
-   */ classNames: _propTypes1.classNamesShape,
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEnter: _propTypesDefault.default.func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter-active' or
-   * 'appear-active' class is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEntering: _propTypesDefault.default.func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter' or
-   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEntered: _propTypesDefault.default.func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExit: _propTypesDefault.default.func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExiting: _propTypesDefault.default.func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit' classes
-   * are **removed** and the `exit-done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExited: _propTypesDefault.default.func
-});
-exports.default = CSSTransition1;
-
-},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","dom-helpers/addClass":"72Fep","dom-helpers/removeClass":"i3BZq","react":"6TuXu","./Transition":"6qqDo","./utils/PropTypes":"da2hb","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"8sH79":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactDom = require("react-dom");
-var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-var _transitionGroup = require("./TransitionGroup");
-var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
-/**
- * The `<ReplaceTransition>` component is a specialized `Transition` component
- * that animates between two children.
- *
- * ```jsx
- * <ReplaceTransition in>
- *   <Fade><div>I appear first</div></Fade>
- *   <Fade><div>I replace the above</div></Fade>
- * </ReplaceTransition>
- * ```
- */ var ReplaceTransition1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLooseDefault.default(ReplaceTransition2, _React$Component);
-    function ReplaceTransition2() {
-        var _this;
-        for(var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++)_args[_key] = arguments[_key];
-        _this = _React$Component.call.apply(_React$Component, [
-            this
-        ].concat(_args)) || this;
-        _this.handleEnter = function() {
-            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
-            return _this.handleLifecycle('onEnter', 0, args);
-        };
-        _this.handleEntering = function() {
-            for(var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++)args[_key3] = arguments[_key3];
-            return _this.handleLifecycle('onEntering', 0, args);
-        };
-        _this.handleEntered = function() {
-            for(var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++)args[_key4] = arguments[_key4];
-            return _this.handleLifecycle('onEntered', 0, args);
-        };
-        _this.handleExit = function() {
-            for(var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++)args[_key5] = arguments[_key5];
-            return _this.handleLifecycle('onExit', 1, args);
-        };
-        _this.handleExiting = function() {
-            for(var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++)args[_key6] = arguments[_key6];
-            return _this.handleLifecycle('onExiting', 1, args);
-        };
-        _this.handleExited = function() {
-            for(var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++)args[_key7] = arguments[_key7];
-            return _this.handleLifecycle('onExited', 1, args);
-        };
-        return _this;
-    }
-    var _proto = ReplaceTransition2.prototype;
-    _proto.handleLifecycle = function handleLifecycle(handler, idx, originalArgs) {
-        var _child$props;
-        var children = this.props.children;
-        var child = _reactDefault.default.Children.toArray(children)[idx];
-        if (child.props[handler]) (_child$props = child.props)[handler].apply(_child$props, originalArgs);
-        if (this.props[handler]) {
-            var maybeNode = child.props.nodeRef ? undefined : _reactDomDefault.default.findDOMNode(this);
-            this.props[handler](maybeNode);
-        }
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, children = _this$props.children, inProp = _this$props.in, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
-            "children",
-            "in"
-        ]);
-        var _React$Children$toArr = _reactDefault.default.Children.toArray(children), first = _React$Children$toArr[0], second = _React$Children$toArr[1];
-        delete props.onEnter;
-        delete props.onEntering;
-        delete props.onEntered;
-        delete props.onExit;
-        delete props.onExiting;
-        delete props.onExited;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupDefault.default, props, inProp ? _reactDefault.default.cloneElement(first, {
-            key: 'first',
-            onEnter: this.handleEnter,
-            onEntering: this.handleEntering,
-            onEntered: this.handleEntered
-        }) : _reactDefault.default.cloneElement(second, {
-            key: 'second',
-            onEnter: this.handleExit,
-            onEntering: this.handleExiting,
-            onEntered: this.handleExited
-        })));
-    };
-    return ReplaceTransition2;
-}(_reactDefault.default.Component);
-ReplaceTransition1.propTypes = {
-    in: _propTypesDefault.default.bool.isRequired,
-    children: function children(props, propName) {
-        if (_reactDefault.default.Children.count(props[propName]) !== 2) return new Error("\"" + propName + "\" must be exactly two transition components.");
-        return null;
-    }
-};
-exports.default = ReplaceTransition1;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","react":"6TuXu","react-dom":"gkWJK","./TransitionGroup":"lIDMU","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"lIDMU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _assertThisInitialized = require("@babel/runtime/helpers/esm/assertThisInitialized");
-var _assertThisInitializedDefault = parcelHelpers.interopDefault(_assertThisInitialized);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _transitionGroupContext = require("./TransitionGroupContext");
-var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
-var _childMapping = require("./utils/ChildMapping");
-var values = Object.values || function(obj) {
-    return Object.keys(obj).map(function(k) {
-        return obj[k];
-    });
-};
-var defaultProps = {
-    component: 'div',
-    childFactory: function childFactory(child) {
-        return child;
-    }
-};
-/**
- * The `<TransitionGroup>` component manages a set of transition components
- * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
- * components, `<TransitionGroup>` is a state machine for managing the mounting
- * and unmounting of components over time.
- *
- * Consider the example below. As items are removed or added to the TodoList the
- * `in` prop is toggled automatically by the `<TransitionGroup>`.
- *
- * Note that `<TransitionGroup>`  does not define any animation behavior!
- * Exactly _how_ a list item animates is up to the individual transition
- * component. This means you can mix and match animations across different list
- * items.
- */ var TransitionGroup1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLooseDefault.default(TransitionGroup2, _React$Component);
-    function TransitionGroup2(props, context) {
-        var _this;
-        _this = _React$Component.call(this, props, context) || this;
-        var handleExited = _this.handleExited.bind(_assertThisInitializedDefault.default(_this)); // Initial children should all be entering, dependent on appear
-        _this.state = {
-            contextValue: {
-                isMounting: true
-            },
-            handleExited: handleExited,
-            firstRender: true
-        };
-        return _this;
-    }
-    var _proto = TransitionGroup2.prototype;
-    _proto.componentDidMount = function componentDidMount() {
-        this.mounted = true;
-        this.setState({
-            contextValue: {
-                isMounting: false
-            }
-        });
-    };
-    _proto.componentWillUnmount = function componentWillUnmount() {
-        this.mounted = false;
-    };
-    TransitionGroup2.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
-        var prevChildMapping = _ref.children, handleExited = _ref.handleExited, firstRender = _ref.firstRender;
-        return {
-            children: firstRender ? _childMapping.getInitialChildMapping(nextProps, handleExited) : _childMapping.getNextChildMapping(nextProps, prevChildMapping, handleExited),
-            firstRender: false
-        };
-    } // node is `undefined` when user provided `nodeRef` prop
-    ;
-    _proto.handleExited = function handleExited(child, node) {
-        var currentChildMapping = _childMapping.getChildMapping(this.props.children);
-        if (child.key in currentChildMapping) return;
-        if (child.props.onExited) child.props.onExited(node);
-        if (this.mounted) this.setState(function(state) {
-            var children = _extendsDefault.default({
-            }, state.children);
-            delete children[child.key];
-            return {
-                children: children
-            };
-        });
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, Component = _this$props.component, childFactory = _this$props.childFactory, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
-            "component",
-            "childFactory"
-        ]);
-        var contextValue = this.state.contextValue;
-        var children = values(this.state.children).map(childFactory);
-        delete props.appear;
-        delete props.enter;
-        delete props.exit;
-        if (Component === null) return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
-            value: contextValue
-        }, children));
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
-            value: contextValue
-        }, /*#__PURE__*/ _reactDefault.default.createElement(Component, props, children)));
-    };
-    return TransitionGroup2;
-}(_reactDefault.default.Component);
-TransitionGroup1.propTypes = {
-    /**
-   * `<TransitionGroup>` renders a `<div>` by default. You can change this
-   * behavior by providing a `component` prop.
-   * If you use React v16+ and would like to avoid a wrapping `<div>` element
-   * you can pass in `component={null}`. This is useful if the wrapping div
-   * borks your css styles.
-   */ component: _propTypesDefault.default.any,
-    /**
-   * A set of `<Transition>` components, that are toggled `in` and out as they
-   * leave. the `<TransitionGroup>` will inject specific transition props, so
-   * remember to spread them through if you are wrapping the `<Transition>` as
-   * with our `<Fade>` example.
-   *
-   * While this component is meant for multiple `Transition` or `CSSTransition`
-   * children, sometimes you may want to have a single transition child with
-   * content that you want to be transitioned out and in when you change it
-   * (e.g. routes, images etc.) In that case you can change the `key` prop of
-   * the transition child as you change its content, this will cause
-   * `TransitionGroup` to transition the child out and back in.
-   */ children: _propTypesDefault.default.node,
-    /**
-   * A convenience prop that enables or disables appear animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ appear: _propTypesDefault.default.bool,
-    /**
-   * A convenience prop that enables or disables enter animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ enter: _propTypesDefault.default.bool,
-    /**
-   * A convenience prop that enables or disables exit animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ exit: _propTypesDefault.default.bool,
-    /**
-   * You may need to apply reactive updates to a child as it is exiting.
-   * This is generally done by using `cloneElement` however in the case of an exiting
-   * child the element has already been removed and not accessible to the consumer.
-   *
-   * If you do need to update a child as it leaves you can provide a `childFactory`
-   * to wrap every child, even the ones that are leaving.
-   *
-   * @type Function(child: ReactElement) -> ReactElement
-   */ childFactory: _propTypesDefault.default.func
-};
-TransitionGroup1.defaultProps = defaultProps;
-exports.default = TransitionGroup1;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/assertThisInitialized":"iOcza","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","react":"6TuXu","./TransitionGroupContext":"7XbAv","./utils/ChildMapping":"iBXKH","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"iOcza":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function _assertThisInitialized(self) {
-    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    return self;
-}
-exports.default = _assertThisInitialized;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"iBXKH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/**
- * Given `this.props.children`, return an object mapping key to child.
- *
- * @param {*} children `this.props.children`
- * @return {object} Mapping of key to child
- */ parcelHelpers.export(exports, "getChildMapping", ()=>getChildMapping
-);
-/**
- * When you're adding or removing children some may be added or removed in the
- * same render pass. We want to show *both* since we want to simultaneously
- * animate elements in and out. This function takes a previous set of keys
- * and a new set of keys and merges them with its best guess of the correct
- * ordering. In the future we may expose some of the utilities in
- * ReactMultiChild to make this easy, but for now React itself does not
- * directly have this concept of the union of prevChildren and nextChildren
- * so we implement it here.
- *
- * @param {object} prev prev children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @param {object} next next children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @return {object} a key set that contains all keys in `prev` and all keys
- * in `next` in a reasonable order.
- */ parcelHelpers.export(exports, "mergeChildMappings", ()=>mergeChildMappings
-);
-parcelHelpers.export(exports, "getInitialChildMapping", ()=>getInitialChildMapping
-);
-parcelHelpers.export(exports, "getNextChildMapping", ()=>getNextChildMapping
-);
-var _react = require("react");
-function getChildMapping(children, mapFn) {
-    var mapper = function mapper1(child) {
-        return mapFn && _react.isValidElement(child) ? mapFn(child) : child;
-    };
-    var result = Object.create(null);
-    if (children) _react.Children.map(children, function(c) {
-        return c;
-    }).forEach(function(child) {
-        // run the map function here instead so that the key is the computed one
-        result[child.key] = mapper(child);
-    });
-    return result;
-}
-function mergeChildMappings(prev, next) {
-    prev = prev || {
-    };
-    next = next || {
-    };
-    function getValueForKey(key) {
-        return key in next ? next[key] : prev[key];
-    } // For each key of `next`, the list of keys to insert before that key in
-    // the combined list
-    var nextKeysPending = Object.create(null);
-    var pendingKeys = [];
-    for(var prevKey in prev){
-        if (prevKey in next) {
-            if (pendingKeys.length) {
-                nextKeysPending[prevKey] = pendingKeys;
-                pendingKeys = [];
-            }
-        } else pendingKeys.push(prevKey);
-    }
-    var i;
-    var childMapping = {
-    };
-    for(var nextKey in next){
-        if (nextKeysPending[nextKey]) for(i = 0; i < nextKeysPending[nextKey].length; i++){
-            var pendingNextKey = nextKeysPending[nextKey][i];
-            childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
-        }
-        childMapping[nextKey] = getValueForKey(nextKey);
-    } // Finally, add the keys which didn't appear before any key in `next`
-    for(i = 0; i < pendingKeys.length; i++)childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
-    return childMapping;
-}
-function getProp(child, prop, props) {
-    return props[prop] != null ? props[prop] : child.props[prop];
-}
-function getInitialChildMapping(props, onExited) {
-    return getChildMapping(props.children, function(child) {
-        return _react.cloneElement(child, {
-            onExited: onExited.bind(null, child),
-            in: true,
-            appear: getProp(child, 'appear', props),
-            enter: getProp(child, 'enter', props),
-            exit: getProp(child, 'exit', props)
-        });
-    });
-}
-function getNextChildMapping(nextProps, prevChildMapping, onExited) {
-    var nextChildMapping = getChildMapping(nextProps.children);
-    var children = mergeChildMappings(prevChildMapping, nextChildMapping);
-    Object.keys(children).forEach(function(key) {
-        var child = children[key];
-        if (!_react.isValidElement(child)) return;
-        var hasPrev = key in prevChildMapping;
-        var hasNext = key in nextChildMapping;
-        var prevChild = prevChildMapping[key];
-        var isLeaving = _react.isValidElement(prevChild) && !prevChild.props.in; // item is new (entering)
-        if (hasNext && (!hasPrev || isLeaving)) // console.log('entering', key)
-        children[key] = _react.cloneElement(child, {
-            onExited: onExited.bind(null, child),
-            in: true,
-            exit: getProp(child, 'exit', nextProps),
-            enter: getProp(child, 'enter', nextProps)
-        });
-        else if (!hasNext && hasPrev && !isLeaving) // item is old (exiting)
-        // console.log('leaving', key)
-        children[key] = _react.cloneElement(child, {
-            in: false
-        });
-        else if (hasNext && hasPrev && _react.isValidElement(prevChild)) // item hasn't changed transition states
-        // copy over the last transition props;
-        // console.log('unchanged', key)
-        children[key] = _react.cloneElement(child, {
-            onExited: onExited.bind(null, child),
-            in: prevChild.props.in,
-            exit: getProp(child, 'exit', nextProps),
-            enter: getProp(child, 'enter', nextProps)
-        });
-    });
-    return children;
-}
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2WsGH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "modes", ()=>modes
-);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _transition = require("./Transition");
-var _transitionGroupContext = require("./TransitionGroupContext");
-var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
-var _leaveRenders, _enterRenders;
-function areChildrenDifferent(oldChildren, newChildren) {
-    if (oldChildren === newChildren) return false;
-    if (_reactDefault.default.isValidElement(oldChildren) && _reactDefault.default.isValidElement(newChildren) && oldChildren.key != null && oldChildren.key === newChildren.key) return false;
-    return true;
-}
-var modes = {
-    out: 'out-in',
-    in: 'in-out'
-};
-var callHook = function callHook1(element, name, cb) {
-    return function() {
-        var _element$props;
-        element.props[name] && (_element$props = element.props)[name].apply(_element$props, arguments);
-        cb();
-    };
-};
-var leaveRenders = (_leaveRenders = {
-}, _leaveRenders[modes.out] = function(_ref) {
-    var current = _ref.current, changeState = _ref.changeState;
-    return _reactDefault.default.cloneElement(current, {
-        in: false,
-        onExited: callHook(current, 'onExited', function() {
-            changeState(_transition.ENTERING, null);
-        })
-    });
-}, _leaveRenders[modes.in] = function(_ref2) {
-    var current = _ref2.current, changeState = _ref2.changeState, children = _ref2.children;
-    return [
-        current,
-        _reactDefault.default.cloneElement(children, {
-            in: true,
-            onEntered: callHook(children, 'onEntered', function() {
-                changeState(_transition.ENTERING);
-            })
-        })
-    ];
-}, _leaveRenders);
-var enterRenders = (_enterRenders = {
-}, _enterRenders[modes.out] = function(_ref3) {
-    var children = _ref3.children, changeState = _ref3.changeState;
-    return _reactDefault.default.cloneElement(children, {
-        in: true,
-        onEntered: callHook(children, 'onEntered', function() {
-            changeState(_transition.ENTERED, _reactDefault.default.cloneElement(children, {
-                in: true
-            }));
-        })
-    });
-}, _enterRenders[modes.in] = function(_ref4) {
-    var current = _ref4.current, children = _ref4.children, changeState = _ref4.changeState;
-    return [
-        _reactDefault.default.cloneElement(current, {
-            in: false,
-            onExited: callHook(current, 'onExited', function() {
-                changeState(_transition.ENTERED, _reactDefault.default.cloneElement(children, {
-                    in: true
-                }));
-            })
-        }),
-        _reactDefault.default.cloneElement(children, {
-            in: true
-        })
-    ];
-}, _enterRenders);
-/**
- * A transition component inspired by the [vue transition modes](https://vuejs.org/v2/guide/transitions.html#Transition-Modes).
- * You can use it when you want to control the render between state transitions.
- * Based on the selected mode and the child's key which is the `Transition` or `CSSTransition` component, the `SwitchTransition` makes a consistent transition between them.
- *
- * If the `out-in` mode is selected, the `SwitchTransition` waits until the old child leaves and then inserts a new child.
- * If the `in-out` mode is selected, the `SwitchTransition` inserts a new child first, waits for the new child to enter and then removes the old child.
- *
- * **Note**: If you want the animation to happen simultaneously
- * (that is, to have the old child removed and a new child inserted **at the same time**),
- * you should use
- * [`TransitionGroup`](https://reactcommunity.org/react-transition-group/transition-group)
- * instead.
- *
- * ```jsx
- * function App() {
- *  const [state, setState] = useState(false);
- *  return (
- *    <SwitchTransition>
- *      <CSSTransition
- *        key={state ? "Goodbye, world!" : "Hello, world!"}
- *        addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
- *        classNames='fade'
- *      >
- *        <button onClick={() => setState(state => !state)}>
- *          {state ? "Goodbye, world!" : "Hello, world!"}
- *        </button>
- *      </CSSTransition>
- *    </SwitchTransition>
- *  );
- * }
- * ```
- *
- * ```css
- * .fade-enter{
- *    opacity: 0;
- * }
- * .fade-exit{
- *    opacity: 1;
- * }
- * .fade-enter-active{
- *    opacity: 1;
- * }
- * .fade-exit-active{
- *    opacity: 0;
- * }
- * .fade-enter-active,
- * .fade-exit-active{
- *    transition: opacity 500ms;
- * }
- * ```
- */ var SwitchTransition1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLooseDefault.default(SwitchTransition2, _React$Component);
-    function SwitchTransition2() {
-        var _this;
-        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
-        _this = _React$Component.call.apply(_React$Component, [
-            this
-        ].concat(args)) || this;
-        _this.state = {
-            status: _transition.ENTERED,
-            current: null
-        };
-        _this.appeared = false;
-        _this.changeState = function(status, current) {
-            if (current === void 0) current = _this.state.current;
-            _this.setState({
-                status: status,
-                current: current
-            });
-        };
-        return _this;
-    }
-    var _proto = SwitchTransition2.prototype;
-    _proto.componentDidMount = function componentDidMount() {
-        this.appeared = true;
-    };
-    SwitchTransition2.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {
-        if (props.children == null) return {
-            current: null
-        };
-        if (state.status === _transition.ENTERING && props.mode === modes.in) return {
-            status: _transition.ENTERING
-        };
-        if (state.current && areChildrenDifferent(state.current, props.children)) return {
-            status: _transition.EXITING
-        };
-        return {
-            current: _reactDefault.default.cloneElement(props.children, {
-                in: true
-            })
-        };
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, children = _this$props.children, mode = _this$props.mode, _this$state = this.state, status = _this$state.status, current = _this$state.current;
-        var data = {
-            children: children,
-            current: current,
-            changeState: this.changeState,
-            status: status
-        };
-        var component;
-        switch(status){
-            case _transition.ENTERING:
-                component = enterRenders[mode](data);
-                break;
-            case _transition.EXITING:
-                component = leaveRenders[mode](data);
-                break;
-            case _transition.ENTERED:
-                component = current;
-        }
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
-            value: {
-                isMounting: !this.appeared
-            }
-        }, component));
-    };
-    return SwitchTransition2;
-}(_reactDefault.default.Component);
-SwitchTransition1.propTypes = {
-    /**
-   * Transition modes.
-   * `out-in`: Current element transitions out first, then when complete, the new element transitions in.
-   * `in-out`: New element transitions in first, then when complete, the current element transitions out.
-   *
-   * @type {'out-in'|'in-out'}
-   */ mode: _propTypesDefault.default.oneOf([
-        modes.in,
-        modes.out
-    ]),
-    /**
-   * Any `Transition` or `CSSTransition` component.
-   */ children: _propTypesDefault.default.oneOfType([
-        _propTypesDefault.default.element.isRequired
-    ])
-};
-SwitchTransition1.defaultProps = {
-    mode: modes.out
-};
-exports.default = SwitchTransition1;
-
-},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","./Transition":"6qqDo","./TransitionGroupContext":"7XbAv","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6uv7f":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./movies-list.scss":"9gz3w","../movie-card/movie-card":"6EiBJ","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"9gz3w":[function() {},{}],"6uv7f":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e992 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

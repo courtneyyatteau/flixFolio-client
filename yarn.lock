@@ -5196,7 +5196,7 @@
   "resolved" "https://registry.npmjs.org/react-confirm-alert/-/react-confirm-alert-2.8.0.tgz"
   "version" "2.8.0"
 
-"react-dom@^16.8.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0":
+"react-dom@^16.8.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -5204,6 +5204,11 @@
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
     "scheduler" "^0.20.2"
+
+"react-hover-video-player@^9.5.0":
+  "integrity" "sha512-aZsUMXAnEbU3kEBUjlLyUBS38C3Gmuq3A4MEHgnD1pl1LKvZLnr51ZB2nwOSvwDvobvSHcjXayu4ukKN1F52lA=="
+  "resolved" "https://registry.npmjs.org/react-hover-video-player/-/react-hover-video-player-9.5.0.tgz"
+  "version" "9.5.0"
 
 "react-is@^16.13.1", "react-is@^16.3.2", "react-is@^16.6.0", "react-is@^16.7.0", "react-is@^16.8.0 || ^17.0.0":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
