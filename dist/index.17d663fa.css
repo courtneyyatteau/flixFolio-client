@@ -510,11 +510,6 @@ p {
   border-radius: 10px;
 }
 
-#movie-img:hover {
-  opacity: 70%;
-  cursor: pointer;
-}
-
 #open-btn {
   background-color: #2565ae;
   border-radius: 5px;
@@ -624,6 +619,10 @@ p {
   margin-left: 5px;
 }
 
+.stuff {
+  margin-bottom: 180px;
+}
+
 #formSearch {
   margin: 20px 20px;
 }
@@ -648,12 +647,12 @@ p {
     font-size: 60px;
   }
 }
-.movie-card {
-  margin: 100px;
-}
-
 h1 {
   margin-bottom: 10px;
+}
+
+.column {
+  margin-bottom: 300px;
 }
 .search-bar {
   margin: 10px;

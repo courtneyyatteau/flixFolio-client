@@ -43961,42 +43961,43 @@ class MovieCard extends _reactDefault.default.Component {
                     lineNumber: 14
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: `/movies/${movie._id}`,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactHoverVideoPlayerDefault.default, {
+                    videoSrc: "https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4",
+                    muted: false,
+                    volume: 0.5,
+                    className: "video",
+                    unloadVideoOnPaused: true,
+                    pausedOverlay: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        id: "movie-img",
+                        variant: "top",
+                        src: movie.ImagePath,
+                        alt: "",
+                        style: {
+                            // Make the image expand to cover the video's dimensions
+                            width: "200%",
+                            height: "200%",
+                            objectFit: "contain",
+                            margin: "0 20px"
+                        }
+                    }),
+                    hoverOverlay: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "hover-overlay",
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: `/movies/${movie._id}`,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                id: "open-btn",
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "movie-info-btn",
+                                    children: "Movie Info"
+                                })
+                            })
+                        })
+                    }),
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 15
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactHoverVideoPlayerDefault.default, {
-                        videoSrc: "https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4",
-                        muted: false,
-                        volume: 0.5,
-                        pausedOverlay: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                            id: "movie-img",
-                            variant: "top",
-                            src: movie.ImagePath,
-                            alt: "",
-                            style: {
-                                // Make the image expand to cover the video's dimensions
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "contain",
-                                margin: "0 20px"
-                            }
-                        }),
-                        loadingOverlay: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "loading-overlay",
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "loading-spinner"
-                            })
-                        }),
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 16
-                        },
-                        __self: this
-                    })
+                    __self: this
                 })
             })
         }));
@@ -45377,7 +45378,8 @@ function MoviesList(props) {
                                 xs: 6,
                                 sm: 6,
                                 md: 4,
-                                lg: 3,
+                                lg: 4,
+                                className: "stuff",
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
                                     lineNumber: 60
@@ -45385,6 +45387,7 @@ function MoviesList(props) {
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                     movie: m,
+                                    className: "movie-card",
                                     __source: {
                                         fileName: "src/components/movies-list/movies-list.jsx",
                                         lineNumber: 61
@@ -45439,6 +45442,7 @@ function MoviesList(props) {
                                 sm: 6,
                                 md: 4,
                                 lg: 3,
+                                className: "column",
                                 __source: {
                                     fileName: "src/components/movies-list/movies-list.jsx",
                                     lineNumber: 72
@@ -45552,27 +45556,41 @@ class ActionView extends _reactDefault.default.Component {
                             xs: 6,
                             md: 6,
                             lg: 3,
+                            className: "column",
                             __source: {
                                 fileName: "src/components/genre-views/action-view.jsx",
                                 lineNumber: 30
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/action-view.jsx",
-                                        lineNumber: 31
+                                        lineNumber: 38
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/action-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/action-view.jsx",
+                                                lineNumber: 39
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -45732,22 +45750,34 @@ class AdventureView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/adventure-view.jsx",
                                         lineNumber: 32
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        className: "movie-card",
-                                        __source: {
-                                            fileName: "src/components/genre-views/adventure-view.jsx",
-                                            lineNumber: 33
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/adventure-view.jsx",
+                                                lineNumber: 33
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -45855,21 +45885,34 @@ class ComedyView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/comedy-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/comedy-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/comedy-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -45977,21 +46020,34 @@ class DocumentaryView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/documentary-view.jsx",
                                         lineNumber: 33
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/documentary-view.jsx",
-                                            lineNumber: 34
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/documentary-view.jsx",
+                                                lineNumber: 34
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46099,21 +46155,34 @@ class DramaView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/drama-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/drama-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/drama-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46221,21 +46290,34 @@ class FamilyView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/family-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/family-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/family-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46343,21 +46425,34 @@ class FantasyView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/fantasy-flix.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/fantasy-flix.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/fantasy-flix.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46465,21 +46560,34 @@ class HorrorView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/horror-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/horror-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/horror-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46587,21 +46695,34 @@ class MusicalView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/musical-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/musical-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/musical-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46709,21 +46830,34 @@ class MysteryView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/mystery-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/mystery-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/mystery-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46831,21 +46965,34 @@ class RomanceView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/romance-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/romance-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/romance-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -46865,7 +47012,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(RomanceView);
 /*#__PURE__*/ _jsxRuntime.jsx("h2", {
     __source: {
         fileName: "src/components/genre-views/romance-view.jsx",
-        lineNumber: 49
+        lineNumber: 61
     },
     __self: undefined,
     children: "Fondness Flix"
@@ -46961,21 +47108,34 @@ class SciFiView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/scifi-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/scifi-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/scifi-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -47083,21 +47243,34 @@ class WesternView extends _reactDefault.default.Component {
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${m._id}`,
                                     __source: {
                                         fileName: "src/components/genre-views/western-view.jsx",
                                         lineNumber: 31
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
-                                        __source: {
-                                            fileName: "src/components/genre-views/western-view.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this
-                                    })
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: m.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-views/western-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
                                 }),
                                 " "
                             ]
@@ -47117,7 +47290,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(WesternView);
 /*#__PURE__*/ _jsxRuntime.jsx("h2", {
     __source: {
         fileName: "src/components/genre-views/western-view.jsx",
-        lineNumber: 49
+        lineNumber: 61
     },
     __self: undefined,
     children: "Frontier Flix"

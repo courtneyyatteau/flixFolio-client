@@ -57,8 +57,8 @@ function MoviesList(props) {
         <h1 className="header">Featured Flix</h1>
         <Row>
           {filteredMovies.map((m) => (
-            <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
-              <MovieCard movie={m} />
+            <Col xs={6} sm={6} md={4} lg={4} key={m._id} className="stuff">
+              <MovieCard movie={m} className="movie-card" />
             </Col>
           ))}
         </Row>
@@ -69,7 +69,7 @@ function MoviesList(props) {
         <h1 className="header">Force Flix (Action)</h1>
         <Row>
           {filteredAction.map((m) => (
-            <Col xs={6} sm={6} md={4} lg={3} key={m._id}>
+            <Col xs={6} sm={6} md={4} lg={3} key={m._id} className="column">
               <MovieCard movie={m} />
             </Col>
           ))}

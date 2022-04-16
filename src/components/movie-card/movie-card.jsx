@@ -12,33 +12,37 @@ export class MovieCard extends React.Component {
     return (
       <div>
         <Card id="movie-card">
-          <Link to={`/movies/${movie._id}`}>
-            <HoverVideoPlayer
-              videoSrc="https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4"
-              muted={false}
-              volume={0.5}
-              pausedOverlay={
-                <img
-                  id="movie-img"
-                  variant="top"
-                  src={movie.ImagePath}
-                  alt=""
-                  style={{
-                    // Make the image expand to cover the video's dimensions
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    margin: "0 20px",
-                  }}
-                />
-              }
-              loadingOverlay={
-                <div className="loading-overlay">
-                  <div className="loading-spinner" />
-                </div>
-              }
-            />
-          </Link>
+          <HoverVideoPlayer
+            videoSrc="https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4"
+            muted={false}
+            volume={0.5}
+            className="video"
+            unloadVideoOnPaused
+            pausedOverlay={
+              <img
+                id="movie-img"
+                variant="top"
+                src={movie.ImagePath}
+                alt=""
+                style={{
+                  // Make the image expand to cover the video's dimensions
+                  width: "200%",
+                  height: "200%",
+                  objectFit: "contain",
+                  margin: "0 20px",
+                }}
+              />
+            }
+            hoverOverlay={
+              <div className="hover-overlay">
+                <Link to={`/movies/${movie._id}`}>
+                  <Button id="open-btn">
+                    <span className="movie-info-btn">Movie Info</span>
+                  </Button>
+                </Link>
+              </div>
+            }
+          />
         </Card>
       </div>
     );

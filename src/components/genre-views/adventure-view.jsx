@@ -30,7 +30,19 @@ export class AdventureView extends React.Component {
           {filteredMovies.map((m) => (
             <Col id="fav-movie" xs={6} md={6} lg={4} key={m._id}>
               <Link to={`/movies/${m._id}`}>
-                <MovieCard movie={m} className="movie-card" />
+                <img
+                  id="movie-img"
+                  variant="top"
+                  src={m.ImagePath}
+                  alt=""
+                  style={{
+                    // Make the image expand to cover the video's dimensions
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    margin: "10px",
+                  }}
+                />{" "}
               </Link>{" "}
             </Col>
           ))}

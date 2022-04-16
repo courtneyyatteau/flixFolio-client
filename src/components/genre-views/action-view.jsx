@@ -27,9 +27,28 @@ export class ActionView extends React.Component {
         <h2>Force Flix</h2>
         <Row>
           {filteredMovies.map((m) => (
-            <Col id="fav-movie" xs={6} md={6} lg={3} key={m._id}>
+            <Col
+              id="fav-movie"
+              xs={6}
+              md={6}
+              lg={3}
+              key={m._id}
+              className="column"
+            >
               <Link to={`/movies/${m._id}`}>
-                <MovieCard movie={m} />
+                <img
+                  id="movie-img"
+                  variant="top"
+                  src={m.ImagePath}
+                  alt=""
+                  style={{
+                    // Make the image expand to cover the video's dimensions
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    margin: "10px",
+                  }}
+                />{" "}
               </Link>{" "}
             </Col>
           ))}
