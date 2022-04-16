@@ -20,6 +20,14 @@ function FavoritesView(props) {
               FavoriteMovies.find((favorite) => favorite === movie._id)
             ) {
               return (
+                <Col
+              id="fav-movie"
+              xs={6}
+              md={6}
+              lg={3}
+              key={m._id}
+              className="column"
+            >
                 <div id="fav-movie">
                   <Link to={`/movies/${movie._id}`}>
                 <img
@@ -40,6 +48,7 @@ function FavoritesView(props) {
                     Remove
                   </Button>
                 </div>
+           </Col>
               );
             }
           })}
