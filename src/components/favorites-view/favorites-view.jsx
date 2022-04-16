@@ -21,7 +21,21 @@ function FavoritesView(props) {
             ) {
               return (
                 <div id="fav-movie">
-                  <MovieCard movie={movie} />
+                  <Link to={`/movies/${m._id}`}>
+                <img
+                  id="movie-img"
+                  variant="top"
+                  src={movie.ImagePath}
+                  alt=""
+                  style={{
+                    // Make the image expand to cover the video's dimensions
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    margin: "10px",
+                  }}
+                />{" "}
+              </Link>{" "}
                   <Button id="fav-btn2" onClick={(e) => onFavRemove(e, movie)}>
                     Remove
                   </Button>
