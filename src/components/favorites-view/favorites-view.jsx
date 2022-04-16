@@ -21,7 +21,7 @@ function FavoritesView(props) {
             ) {
               return (
                 <div id="fav-movie">
-                  <Link to={`/movies/${m._id}`}>
+                  <Link to={`/movies/${movie._id}`}>
                 <img
                   id="movie-img"
                   variant="top"
