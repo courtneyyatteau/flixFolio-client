@@ -15,7 +15,7 @@ export class MovieCard extends React.Component {
           <HoverVideoPlayer
             videoSrc="https://yatteauphotoz.imgix.net/DJANGO%20UNCHAINED%20-%20Official%20International%20Trailer.mp4"
             muted={false}
-            controls
+        
             volume={0.5}
             className="video"
             unloadVideoOnPaused
