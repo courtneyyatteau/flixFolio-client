@@ -43882,35 +43882,69 @@ function FavoritesView(props) {
                 __self: this,
                 children: FavoriteMovies.length > 0 && movies.map((movie)=>{
                     if (movie._id === FavoriteMovies.find((favorite)=>favorite === movie._id
-                    )) return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    )) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         id: "fav-movie",
+                        xs: 6,
+                        md: 6,
+                        lg: 3,
+                        className: "column",
                         __source: {
                             fileName: "src/components/favorites-view/favorites-view.jsx",
                             lineNumber: 22
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                movie: movie,
-                                __source: {
-                                    fileName: "src/components/favorites-view/favorites-view.jsx",
-                                    lineNumber: 23
-                                },
-                                __self: this
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                id: "fav-btn2",
-                                onClick: (e)=>onFavRemove(e, movie)
-                                ,
-                                __source: {
-                                    fileName: "src/components/favorites-view/favorites-view.jsx",
-                                    lineNumber: 24
-                                },
-                                __self: this,
-                                children: "Remove"
-                            })
-                        ]
-                    }));
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            id: "fav-movie",
+                            __source: {
+                                fileName: "src/components/favorites-view/favorites-view.jsx",
+                                lineNumber: 30
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsxs(Link, {
+                                    to: `/movies/${movie._id}`,
+                                    __source: {
+                                        fileName: "src/components/favorites-view/favorites-view.jsx",
+                                        lineNumber: 31
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                            id: "movie-img",
+                                            variant: "top",
+                                            src: movie.ImagePath,
+                                            alt: "",
+                                            style: {
+                                                // Make the image expand to cover the video's dimensions
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                margin: "10px"
+                                            },
+                                            __source: {
+                                                fileName: "src/components/favorites-view/favorites-view.jsx",
+                                                lineNumber: 32
+                                            },
+                                            __self: this
+                                        }),
+                                        " "
+                                    ]
+                                }),
+                                " ",
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                    id: "fav-btn2",
+                                    onClick: (e)=>onFavRemove(e, movie)
+                                    ,
+                                    __source: {
+                                        fileName: "src/components/favorites-view/favorites-view.jsx",
+                                        lineNumber: 46
+                                    },
+                                    __self: this,
+                                    children: "Remove"
+                                })
+                            ]
+                        })
+                    }, movie._id));
                 })
             })
         ]
