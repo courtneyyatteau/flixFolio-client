@@ -2,7 +2,6 @@ $main-color: #2565ae;
 
 .container-list {
   max-width: 1600px;
-  
 }
 
 .header {
@@ -28,6 +27,10 @@ $main-color: #2565ae;
   margin: 20px 0px;
 }
 
+.movies-list {
+  margin: 0 auto;
+}
+
 #searchBar {
   margin-left: 50px;
   padding: 20px;
@@ -45,5 +48,9 @@ $main-color: #2565ae;
 
   .header {
     font-size: 60px;
+  }
+
+  .movies-list {
+    margin-left: 100px;
   }
 }

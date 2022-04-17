@@ -43879,78 +43879,84 @@ function FavoritesView(props) {
                 __self: this,
                 children: "No Favorite Movies"
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+            /*#__PURE__*/ _jsxRuntime.jsx("div", {
                 className: "favorite-container",
                 __source: {
                     fileName: "src/components/favorites-view/favorites-view.jsx",
                     lineNumber: 15
                 },
                 __self: this,
-                children: FavoriteMovies.length > 0 && movies.map((movie)=>{
-                    if (movie._id === FavoriteMovies.find((favorite)=>favorite === movie._id
-                    )) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        id: "fav-movie",
-                        xs: 6,
-                        md: 6,
-                        lg: 3,
-                        className: "column",
-                        __source: {
-                            fileName: "src/components/favorites-view/favorites-view.jsx",
-                            lineNumber: 23
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/favorites-view/favorites-view.jsx",
+                        lineNumber: 16
+                    },
+                    __self: this,
+                    children: FavoriteMovies.length > 0 && movies.map((movie)=>{
+                        if (movie._id === FavoriteMovies.find((favorite)=>favorite === movie._id
+                        )) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             id: "fav-movie",
+                            xs: 6,
+                            md: 6,
+                            lg: 3,
+                            className: "column",
                             __source: {
                                 fileName: "src/components/favorites-view/favorites-view.jsx",
-                                lineNumber: 31
+                                lineNumber: 24
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
-                                    to: `/movies/${movie._id}`,
-                                    __source: {
-                                        fileName: "src/components/favorites-view/favorites-view.jsx",
-                                        lineNumber: 32
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                            id: "movie-img",
-                                            variant: "top",
-                                            src: movie.ImagePath,
-                                            alt: "",
-                                            style: {
-                                                // Make the image expand to cover the video's dimensions
-                                                width: "100%",
-                                                height: "100%",
-                                                objectFit: "contain",
-                                                margin: "10px"
-                                            },
-                                            __source: {
-                                                fileName: "src/components/favorites-view/favorites-view.jsx",
-                                                lineNumber: 33
-                                            },
-                                            __self: this
-                                        }),
-                                        " "
-                                    ]
-                                }),
-                                " ",
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    id: "fav-btn2",
-                                    onClick: (e)=>onFavRemove(e, movie)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/favorites-view/favorites-view.jsx",
-                                        lineNumber: 47
-                                    },
-                                    __self: this,
-                                    children: "Remove"
-                                })
-                            ]
-                        })
-                    }, movie._id));
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                id: "fav-movie",
+                                __source: {
+                                    fileName: "src/components/favorites-view/favorites-view.jsx",
+                                    lineNumber: 32
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
+                                        to: `/movies/${movie._id}`,
+                                        __source: {
+                                            fileName: "src/components/favorites-view/favorites-view.jsx",
+                                            lineNumber: 33
+                                        },
+                                        __self: this,
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                                id: "movie-img",
+                                                variant: "top",
+                                                src: movie.ImagePath,
+                                                alt: "",
+                                                style: {
+                                                    // Make the image expand to cover the video's dimensions
+                                                    width: "100%",
+                                                    height: "500px",
+                                                    objectFit: "contain"
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/favorites-view/favorites-view.jsx",
+                                                    lineNumber: 34
+                                                },
+                                                __self: this
+                                            }),
+                                            " "
+                                        ]
+                                    }),
+                                    " ",
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                        id: "fav-btn2",
+                                        onClick: (e)=>onFavRemove(e, movie)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/favorites-view/favorites-view.jsx",
+                                            lineNumber: 47
+                                        },
+                                        __self: this,
+                                        children: "Remove"
+                                    })
+                                ]
+                            })
+                        }, movie._id));
+                    })
                 })
             })
         ]
@@ -44560,123 +44566,125 @@ function MoviesList(props) {
     const handleClick = ()=>{
         history.push(`/movies/${foundMovieId}`);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                id: "formSearch",
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 42
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
-                    className: "d-flex",
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "movies-list",
+            __source: {
+                fileName: "src/components/movies-list/movies-list.jsx",
+                lineNumber: 42
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     id: "formSearch",
-                    onSubmit: onFormSubmit,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
                         lineNumber: 43
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
-                            placeholder: "Search by title",
-                            id: "searchBar",
-                            type: "search",
-                            onChange: (e)=>setMovie(e.target.value)
-                            ,
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 44
-                            },
-                            __self: this
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                            id: "btnType",
-                            type: "submit",
-                            onClick: onFormSubmit,
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 50
-                            },
-                            __self: this,
-                            children: "Search"
-                        })
-                    ]
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 55
-                },
-                __self: this
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                fluid: true,
-                className: "container-list",
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 56
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "stuff",
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
+                        className: "d-flex",
+                        id: "formSearch",
+                        onSubmit: onFormSubmit,
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 44
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+                                placeholder: "Search by title",
+                                id: "searchBar",
+                                type: "search",
+                                onChange: (e)=>setMovie(e.target.value)
+                                ,
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 45
+                                },
+                                __self: this
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                id: "btnType",
+                                type: "submit",
+                                onClick: onFormSubmit,
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 51
+                                },
+                                __self: this,
+                                children: "Search"
+                            })
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 56
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+                    fluid: true,
+                    className: "container-list",
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
                         lineNumber: 57
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                            className: "header",
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 58
-                            },
-                            __self: this,
-                            children: "Featured Flix"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                            className: "featured-rows",
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 59
-                            },
-                            __self: this,
-                            children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                    xs: 6,
-                                    sm: 6,
-                                    md: 4,
-                                    lg: 3,
-                                    className: "featured",
-                                    __source: {
-                                        fileName: "src/components/movies-list/movies-list.jsx",
-                                        lineNumber: 61
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                        movie: m,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        className: "stuff",
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 58
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                className: "header",
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 59
+                                },
+                                __self: this,
+                                children: "Featured Flix"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                className: "featured-rows",
+                                __source: {
+                                    fileName: "src/components/movies-list/movies-list.jsx",
+                                    lineNumber: 60
+                                },
+                                __self: this,
+                                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        xs: 6,
+                                        sm: 6,
+                                        md: 6,
+                                        lg: 4,
+                                        xl: 3,
+                                        className: "featured",
                                         __source: {
                                             fileName: "src/components/movies-list/movies-list.jsx",
                                             lineNumber: 62
                                         },
-                                        __self: this
-                                    })
-                                }, m._id)
-                            )
-                        })
-                    ]
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                                            movie: m,
+                                            __source: {
+                                                fileName: "src/components/movies-list/movies-list.jsx",
+                                                lineNumber: 71
+                                            },
+                                            __self: this
+                                        })
+                                    }, m._id)
+                                )
+                            })
+                        ]
+                    })
                 })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 68
-                },
-                __self: this
-            })
-        ]
+            ]
+        })
     }));
 }
 _s(MoviesList, "+xiH8KNH9gKUh37ExCRk7/KLlp0=", false, function() {
