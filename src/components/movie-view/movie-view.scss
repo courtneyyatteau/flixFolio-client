@@ -23,6 +23,11 @@ $main-color: #2565ae;
   margin: 10px;
 }
 
+.director-link:hover,
+.genre-link:hover {
+  text-decoration: none;
+}
+
 #movie-title {
   font-size: 40px;
   text-align: center;
