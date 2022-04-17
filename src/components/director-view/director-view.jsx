@@ -18,7 +18,7 @@ export class DirectorView extends React.Component {
     return (
       <Card className="director-view">
         <Row>
-          <Col xs={3}>
+          <Col xs={4}>
             <img className="director-img" src={director.ImagePath} />
           </Col>
           <Col className="director-stuff">

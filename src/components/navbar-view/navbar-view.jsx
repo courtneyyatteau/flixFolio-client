@@ -9,10 +9,30 @@ export class NavigationView extends React.Component {
     const { onLoggedOut } = this.props;
 
     return (
-      <Navbar expand="lg" id="nav-bar">
-        <Nav.Link id="nav-link" href="/" className="nav-stuff-1">
-          Home
-        </Nav.Link>
+      <Navbar id="nav-bar">
+        <Navbar.Brand href="/" id="logo" className="brand mr-auto">
+          FlixFolio 🎬
+        </Navbar.Brand>
+        <NavDropdown
+          title={<Image className="userIcon" src={image} rounded width={30} />}
+          id="nav-link"
+          className="user-logo"
+        >
+          <Link to={`/profile`} className="nav-item-logo">
+            Profile
+          </Link>
+          <br />
+          <Link
+            to="#"
+            className="nav-item-logo"
+            onClick={() => {
+              onLoggedOut();
+            }}
+          >
+            {" "}
+            Sign out
+          </Link>
+        </NavDropdown>
         <NavDropdown title="Genres" id="nav-link" className="nav-stuff-2">
           <Link to={`/action`} className="nav-item">
             Action
@@ -67,29 +87,6 @@ export class NavigationView extends React.Component {
           </Link>
           <br />
         </NavDropdown>
-        <NavDropdown
-          title={<Image className="userIcon" src={image} rounded width={30} />}
-          id="nav-link"
-          className="user-logo"
-        >
-          <Link to={`/profile`} className="nav-item-logo">
-            Profile
-          </Link>
-          <br />
-          <Link
-            to="#"
-            className="nav-item-logo"
-            onClick={() => {
-              onLoggedOut();
-            }}
-          >
-            {" "}
-            Sign out
-          </Link>
-        </NavDropdown>
-        <Navbar.Brand href="/" id="logo" className="brand ml-auto">
-          FlixFolio 🎬
-        </Navbar.Brand>
       </Navbar>
     );
   }

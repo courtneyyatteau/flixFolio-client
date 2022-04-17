@@ -1,14 +1,13 @@
 import React from "react";
 import { Col, Row, Container, Form, Button, Card } from "react-bootstrap";
 import "./favorites-view.scss";
-import { Link } from "react-router-dom";
 import { MovieCard } from "../movie-card/movie-card";
 
 function FavoritesView(props) {
   const { FavoriteMovies, movies, onFavRemove } = props;
 
   return (
-    <Container className="favs">
+    <Container fluid className="favs">
       {FavoriteMovies.length === 0 && (
         <div className="text-center">No Favorite Movies</div>
       )}

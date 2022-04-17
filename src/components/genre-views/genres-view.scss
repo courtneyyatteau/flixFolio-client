@@ -1,7 +1,17 @@
-h1 {
-  margin-bottom: 10px;
+#fav-movie {
+  margin-bottom: 30px;
 }
 
-.column {
-  margin-bottom: 300px;
+.stuff {
+  margin-left: 60px;
+}
+
+@media (max-width: 1000px) {
+  .stuff {
+    margin-left: 30px;
+  }
+}
+
+.movie-image {
+  margin: 10px;
 }

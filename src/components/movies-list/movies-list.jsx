@@ -38,7 +38,7 @@ function MoviesList(props) {
   };
 
   return (
-    <div>
+    <>
       <Row id="formSearch">
         <Form className="d-flex" id="formSearch" onSubmit={onFormSubmit}>
           <Form.Control
@@ -54,28 +54,19 @@ function MoviesList(props) {
       </Row>
       <br />
       <Container fluid className="container-list">
-        <h1 className="header">Featured Flix</h1>
-        <Row>
-          {filteredMovies.map((m) => (
-            <Col xs={6} sm={6} md={4} lg={4} key={m._id} className="stuff">
-              <MovieCard movie={m} className="movie-card" />
-            </Col>
-          ))}
-        </Row>
+        <div className="stuff">
+          <h1 className="header">Featured Flix</h1>
+          <Row className="featured-rows">
+            {filteredMovies.map((m) => (
+              <Col xs={6} sm={6} md={4} lg={3} key={m._id} className="featured">
+                <MovieCard movie={m} />
+              </Col>
+            ))}
+          </Row>
+        </div>
       </Container>
-      <Container fluid className="container-list">
-        <br />
-        <br />
-        <h1 className="header">Force Flix (Action)</h1>
-        <Row>
-          {filteredAction.map((m) => (
-            <Col xs={6} sm={6} md={4} lg={3} key={m._id} className="column">
-              <MovieCard movie={m} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </div>
+      <br />
+    </>
   );
 }
 

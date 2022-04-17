@@ -36,7 +36,6 @@ import FavoritesView from "../favorites-view/favorites-view";
 class MainView extends React.Component {
   state = { loading: false };
   getMovies(token) {
-    
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
@@ -91,13 +90,15 @@ class MainView extends React.Component {
 
                 return (
                   <Container fluid>
-                    <NavigationView
-                      user={user}
-                      onLoggedOut={() => this.onLoggedOut()}
-                    />
-                    <FrontOverlay />
-                    <MoviesList movies={movies} />
-                    <FooterView />
+                    <Row>
+                      <NavigationView
+                        user={user}
+                        onLoggedOut={() => this.onLoggedOut()}
+                      />
+                      <FrontOverlay />
+                      <MoviesList movies={movies} />
+                      <FooterView />
+                    </Row>
                   </Container>
                 );
               }}
@@ -200,7 +201,7 @@ class MainView extends React.Component {
                         window.open("/", "_self");
                       }}
                     />
-                    <Col md={8}>
+                    <Col md={9}>
                       <GenreView
                         genre={
                           movies.find((m) => m.Genre.Name === match.params.name)

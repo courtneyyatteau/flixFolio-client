@@ -7,7 +7,7 @@ $main-color: #2565ae;
   font-size: 22px;
   border: none;
   float: right;
-  margin: 10px;
+  margin: 80px 20px 0;
 }
 
 #fav-btn {
@@ -16,7 +16,7 @@ $main-color: #2565ae;
   border-radius: 5px;
   font-size: 22px;
   border: none;
-  margin: 10px 0;
+  margin: 80px 0 0;
 }
 
 .movie-info {
@@ -26,11 +26,12 @@ $main-color: #2565ae;
 #movie-title {
   font-size: 40px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .movie-img {
-  max-width: 320px;
-  margin-top: 25px;
+  width: 95%;
+  margin: 25px;
   border-radius: 15px;
 }
 
@@ -41,16 +42,16 @@ $main-color: #2565ae;
 .movie-view {
   max-width: 1000px;
   margin: 40px auto;
+  padding: 10px;
 }
 
 @media (max-width: 1000px) {
   .movie-view {
     max-width: 930px;
-    margin: 40px auto;
+    margin: 30px;
   }
   .movie-img {
-    max-width: 340px;
-    margin: 60px 20px;
+    margin: 90px 20px;
   }
 
   #movie-title {

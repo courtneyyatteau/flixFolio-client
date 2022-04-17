@@ -70,7 +70,7 @@ export class MovieView extends React.Component {
     const { user, movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
+      <Card className="movie-view">
         <Row>
           <Col sm={5}>
             <img className="movie-img" src={movie.ImagePath} />
@@ -110,7 +110,7 @@ export class MovieView extends React.Component {
             </Button>
           </Col>
         </Row>
-      </div>
+      </Card>
     );
   }
 }

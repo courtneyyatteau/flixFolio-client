@@ -8,18 +8,6 @@ $main-color: #2565ae;
   border: none;
 }
 
-.movie-img {
-  height: 400px;
-}
-
-.favorite {
-  margin: 100px;
-}
-
-.fav-btn {
-  margin: 0 auto;
-}
-
 #fav-btn2 {
   background-color: $main-color;
   border-radius: 5px;
@@ -28,8 +16,7 @@ $main-color: #2565ae;
   text-decoration: none;
   float: right;
   font-size: 25px;
-  margin-bottom: 60px;
-  margin-right: 60px;
+  margin: 10px 0 60px 0;
 }
 
 #fav-movie {

@@ -64,7 +64,7 @@ html {
   font-size: 22px;
   border: none;
   float: right;
-  margin: 10px;
+  margin: 80px 20px 0;
 }
 
 #fav-btn {
@@ -73,7 +73,7 @@ html {
   border-radius: 5px;
   font-size: 22px;
   border: none;
-  margin: 10px 0;
+  margin: 80px 0 0;
 }
 
 .movie-info {
@@ -83,11 +83,12 @@ html {
 #movie-title {
   font-size: 40px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .movie-img {
-  max-width: 320px;
-  margin-top: 25px;
+  width: 95%;
+  margin: 25px;
   border-radius: 15px;
 }
 
@@ -98,17 +99,17 @@ html {
 .movie-view {
   max-width: 1000px;
   margin: 40px auto;
+  padding: 10px;
 }
 
 @media (max-width: 1000px) {
   .movie-view {
     max-width: 930px;
-    margin: 40px auto;
+    margin: 30px;
   }
 
   .movie-img {
-    max-width: 340px;
-    margin: 60px 20px;
+    margin: 90px 20px;
   }
 
   #movie-title {
@@ -173,8 +174,8 @@ html {
   font-size: 25px;
 }
 .director-view {
-  width: 150%;
-  margin: 40px;
+  width: 160%;
+  margin: 15px;
   padding: 40px;
 }
 
@@ -186,7 +187,6 @@ html {
   text-decoration: none;
   max-width: 100px;
   font-size: 25px;
-  margin-top: 10px;
   float: right;
 }
 
@@ -202,12 +202,14 @@ span {
   font-weight: 900;
 }
 
-.director-stuff {
-  margin-left: 30px;
-}
-
 .director-img {
   width: 100%;
+}
+
+@media (min-width: 1000px) {
+  #back-btn-1 {
+    margin-top: 200px;
+  }
 }
 .genre-view {
   margin: 40px;
@@ -460,18 +462,6 @@ body.react-confirm-alert-body-element {
   border: none;
 }
 
-.movie-img {
-  height: 400px;
-}
-
-.favorite {
-  margin: 100px;
-}
-
-.fav-btn {
-  margin: 0 auto;
-}
-
 #fav-btn2 {
   background-color: #2565ae;
   border-radius: 5px;
@@ -480,8 +470,7 @@ body.react-confirm-alert-body-element {
   text-decoration: none;
   float: right;
   font-size: 25px;
-  margin-bottom: 60px;
-  margin-right: 60px;
+  margin: 10px 0 60px 0;
 }
 
 #fav-movie {
@@ -494,7 +483,6 @@ body.react-confirm-alert-body-element {
   }
 }
 #movie-card {
-  margin: 0 0 20px 20px;
   padding: none;
   background-color: transparent;
   border: none;
@@ -505,8 +493,7 @@ p {
 }
 
 #movie-img {
-  max-width: 260px;
-  height: 350px;
+  height: 430px;
   border-radius: 10px;
 }
 
@@ -601,7 +588,7 @@ p {
   color: #d5f3fe;
 }
 .container-list {
-  max-width: 1400px;
+  max-width: 1600px;
 }
 
 .header {
@@ -619,12 +606,12 @@ p {
   margin-left: 5px;
 }
 
-.stuff {
-  margin-bottom: 180px;
+.featured {
+  margin-bottom: 40px;
 }
 
 #formSearch {
-  margin: 20px 20px;
+  margin: 20px 0px;
 }
 
 #searchBar {
@@ -647,12 +634,21 @@ p {
     font-size: 60px;
   }
 }
-h1 {
-  margin-bottom: 10px;
+#fav-movie {
+  margin-bottom: 30px;
 }
 
-.column {
-  margin-bottom: 300px;
+.stuff {
+  margin-left: 60px;
+}
+
+@media (max-width: 1000px) {
+  .stuff {
+    margin-left: 30px;
+  }
+}
+.movie-image {
+  margin: 10px;
 }
 .search-bar {
   margin: 10px;
