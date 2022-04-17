@@ -25685,6 +25685,9 @@ class MainView extends _reactDefault.default.Component {
         loading: false
     };
     getMovies(token) {
+        this.setState({
+            loading: true
+        });
         _axiosDefault.default.get("https://flixfolio.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -25710,6 +25713,9 @@ class MainView extends _reactDefault.default.Component {
         this.props.setUser(authData.user.Username);
         localStorage.setItem("token", authData.token);
         localStorage.setItem("user", authData.user.Username);
+        this.setState({
+            loading: true
+        });
         this.getMovies(authData.token);
     }
     onLoggedOut() {
@@ -25725,7 +25731,7 @@ class MainView extends _reactDefault.default.Component {
         if (this.state.loading) return(/*#__PURE__*/ _jsxRuntime.jsx(_loaderDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 76
+                lineNumber: 78
             },
             __self: this
         }));
@@ -25733,20 +25739,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 79
+                lineNumber: 81
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80
+                    lineNumber: 82
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 81
+                        lineNumber: 83
                     },
                     __self: this,
                     children: [
@@ -25778,7 +25784,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 82
+                                lineNumber: 84
                             },
                             __self: this
                         }),
@@ -25795,7 +25801,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 105
+                                lineNumber: 107
                             },
                             __self: this
                         }),
@@ -25812,7 +25818,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 120
+                                lineNumber: 122
                             },
                             __self: this
                         }),
@@ -25841,7 +25847,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 134
+                                lineNumber: 136
                             },
                             __self: this
                         }),
@@ -25877,7 +25883,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 159
+                                lineNumber: 161
                             },
                             __self: this
                         }),
@@ -25912,7 +25918,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 190
+                                lineNumber: 192
                             },
                             __self: this
                         }),
@@ -25920,7 +25926,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/profile",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 219
+                                lineNumber: 221
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25933,7 +25939,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 221
+                                            lineNumber: 223
                                         },
                                         __self: this
                                     }),
@@ -25942,7 +25948,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 228
+                                            lineNumber: 230
                                         },
                                         __self: this
                                     })
@@ -25953,7 +25959,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 231
+                                lineNumber: 233
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25966,7 +25972,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 233
+                                            lineNumber: 235
                                         },
                                         __self: this
                                     }),
@@ -25974,7 +25980,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 240
+                                            lineNumber: 242
                                         },
                                         __self: this
                                     })
@@ -25985,7 +25991,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/adventure",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 243
+                                lineNumber: 245
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25998,7 +26004,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 245
+                                            lineNumber: 247
                                         },
                                         __self: this
                                     }),
@@ -26006,7 +26012,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 252
+                                            lineNumber: 254
                                         },
                                         __self: this
                                     })
@@ -26017,7 +26023,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/comedy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 255
+                                lineNumber: 257
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26030,7 +26036,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 257
+                                            lineNumber: 259
                                         },
                                         __self: this
                                     }),
@@ -26038,7 +26044,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 264
+                                            lineNumber: 266
                                         },
                                         __self: this
                                     })
@@ -26049,7 +26055,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/documentary",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 267
+                                lineNumber: 269
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26062,7 +26068,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 269
+                                            lineNumber: 271
                                         },
                                         __self: this
                                     }),
@@ -26070,7 +26076,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 276
+                                            lineNumber: 278
                                         },
                                         __self: this
                                     })
@@ -26081,7 +26087,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/drama",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 279
+                                lineNumber: 281
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26094,7 +26100,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 281
+                                            lineNumber: 283
                                         },
                                         __self: this
                                     }),
@@ -26102,7 +26108,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 288
+                                            lineNumber: 290
                                         },
                                         __self: this
                                     })
@@ -26113,7 +26119,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/family",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 291
+                                lineNumber: 293
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26126,7 +26132,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 293
+                                            lineNumber: 295
                                         },
                                         __self: this
                                     }),
@@ -26134,7 +26140,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 300
+                                            lineNumber: 302
                                         },
                                         __self: this
                                     })
@@ -26145,7 +26151,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/fantasy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 303
+                                lineNumber: 305
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26158,7 +26164,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 305
+                                            lineNumber: 307
                                         },
                                         __self: this
                                     }),
@@ -26166,7 +26172,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 312
+                                            lineNumber: 314
                                         },
                                         __self: this
                                     })
@@ -26177,7 +26183,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/horror",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 315
+                                lineNumber: 317
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26190,7 +26196,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 317
+                                            lineNumber: 319
                                         },
                                         __self: this
                                     }),
@@ -26198,7 +26204,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 324
+                                            lineNumber: 326
                                         },
                                         __self: this
                                     })
@@ -26209,7 +26215,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/musical",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 327
+                                lineNumber: 329
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26222,7 +26228,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 329
+                                            lineNumber: 331
                                         },
                                         __self: this
                                     }),
@@ -26230,7 +26236,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 336
+                                            lineNumber: 338
                                         },
                                         __self: this
                                     })
@@ -26241,7 +26247,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/mystery",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 339
+                                lineNumber: 341
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26254,7 +26260,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 341
+                                            lineNumber: 343
                                         },
                                         __self: this
                                     }),
@@ -26262,7 +26268,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 348
+                                            lineNumber: 350
                                         },
                                         __self: this
                                     })
@@ -26273,7 +26279,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/romance",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 351
+                                lineNumber: 353
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26286,7 +26292,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 353
+                                            lineNumber: 355
                                         },
                                         __self: this
                                     }),
@@ -26294,7 +26300,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 360
+                                            lineNumber: 362
                                         },
                                         __self: this
                                     })
@@ -26305,7 +26311,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/scifi",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 363
+                                lineNumber: 365
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26318,7 +26324,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 365
+                                            lineNumber: 367
                                         },
                                         __self: this
                                     }),
@@ -26326,7 +26332,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 372
+                                            lineNumber: 374
                                         },
                                         __self: this
                                     })
@@ -26337,7 +26343,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/western",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 375
+                                lineNumber: 377
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26350,7 +26356,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 377
+                                            lineNumber: 379
                                         },
                                         __self: this
                                     }),
@@ -26358,7 +26364,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 384
+                                            lineNumber: 386
                                         },
                                         __self: this
                                     })

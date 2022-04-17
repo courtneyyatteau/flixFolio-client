@@ -36,6 +36,7 @@ import FavoritesView from "../favorites-view/favorites-view";
 class MainView extends React.Component {
   state = { loading: false };
   getMovies(token) {
+    this.setState({ loading: true });
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
@@ -61,6 +62,7 @@ class MainView extends React.Component {
     this.props.setUser(authData.user.Username);
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
+    this.setState({ loading: true });
     this.getMovies(authData.token);
   }
 
