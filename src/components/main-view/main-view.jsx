@@ -53,7 +53,6 @@ class MainView extends React.Component {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.props.setUser(localStorage.getItem("user"));
-      this.setState({ loading: true });
       this.getMovies(accessToken);
     }
   }
