@@ -43853,6 +43853,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _favoritesViewScss = require("./favorites-view.scss");
 var _movieCard = require("../movie-card/movie-card");
+var _reactRouterDom = require("react-router-dom");
 function FavoritesView(props) {
     const { FavoriteMovies , movies , onFavRemove  } = props;
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
@@ -43860,7 +43861,7 @@ function FavoritesView(props) {
         className: "favs",
         __source: {
             fileName: "src/components/favorites-view/favorites-view.jsx",
-            lineNumber: 10
+            lineNumber: 11
         },
         __self: this,
         children: [
@@ -43868,7 +43869,7 @@ function FavoritesView(props) {
                 className: "text-center",
                 __source: {
                     fileName: "src/components/favorites-view/favorites-view.jsx",
-                    lineNumber: 12
+                    lineNumber: 13
                 },
                 __self: this,
                 children: "No Favorite Movies"
@@ -43877,7 +43878,7 @@ function FavoritesView(props) {
                 className: "favorite-container",
                 __source: {
                     fileName: "src/components/favorites-view/favorites-view.jsx",
-                    lineNumber: 14
+                    lineNumber: 15
                 },
                 __self: this,
                 children: FavoriteMovies.length > 0 && movies.map((movie)=>{
@@ -43890,22 +43891,22 @@ function FavoritesView(props) {
                         className: "column",
                         __source: {
                             fileName: "src/components/favorites-view/favorites-view.jsx",
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                             id: "fav-movie",
                             __source: {
                                 fileName: "src/components/favorites-view/favorites-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 31
                             },
                             __self: this,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsxs(Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Link, {
                                     to: `/movies/${movie._id}`,
                                     __source: {
                                         fileName: "src/components/favorites-view/favorites-view.jsx",
-                                        lineNumber: 31
+                                        lineNumber: 32
                                     },
                                     __self: this,
                                     children: [
@@ -43923,7 +43924,7 @@ function FavoritesView(props) {
                                             },
                                             __source: {
                                                 fileName: "src/components/favorites-view/favorites-view.jsx",
-                                                lineNumber: 32
+                                                lineNumber: 33
                                             },
                                             __self: this
                                         }),
@@ -43937,7 +43938,7 @@ function FavoritesView(props) {
                                     ,
                                     __source: {
                                         fileName: "src/components/favorites-view/favorites-view.jsx",
-                                        lineNumber: 46
+                                        lineNumber: 47
                                     },
                                     __self: this,
                                     children: "Remove"
@@ -43960,7 +43961,7 @@ $RefreshReg$(_c, "FavoritesView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./favorites-view.scss":"7to4E","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"7to4E":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./favorites-view.scss":"7to4E","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"7to4E":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44992,7 +44993,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(AdventureView);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"6QQ1r":[function() {},{}],"fWpHs":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"fWpHs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6858 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45120,7 +45121,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(ComedyView);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-router-dom":"cpyQW"}],"6QQ1r":[function() {},{}],"1iRay":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"1iRay":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1644 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
