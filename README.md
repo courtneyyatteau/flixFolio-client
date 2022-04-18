@@ -1,4 +1,4 @@
-**#Overview Information
+Overview Information
 
 This movie app is a project that combines the movie database I created with a user-interface. The app opens to a login page where the user can login or create an account. Once the user logs in their data is saved locally to prevent the user from having to login on their same device every time. 
 
