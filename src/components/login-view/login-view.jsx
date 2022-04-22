@@ -65,7 +65,7 @@ export function LoginView(props) {
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter username"
             />
-            {usernameErr && <p>{usernameErr}</p>}
+            {usernameErr && <p className="error">{usernameErr}</p>}
           </div>
 
           <div className="form-box">
@@ -75,7 +75,7 @@ export function LoginView(props) {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
             />
-            {passwordErr && <p>{passwordErr}</p>}
+            {passwordErr && <p className="error">{passwordErr}</p>}
           </div>
           <Row>
             <Col>

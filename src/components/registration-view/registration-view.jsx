@@ -84,7 +84,7 @@ export function RegistrationView(props) {
               onChange={(e) => setUsername(e.target.value)}
             />
             {/* code added here to display validation error */}
-            {usernameErr && <p>{usernameErr}</p>}
+            {usernameErr && <p className="error">{usernameErr}</p>}
           </div>
           <div className="form-box">
             <label>Password</label>
@@ -95,19 +95,19 @@ export function RegistrationView(props) {
               onChange={(e) => setPassword(e.target.value)}
             />
             {/* code added here to display validation error */}
-            {passwordErr && <p>{passwordErr}</p>}
+            {passwordErr && <p className="error">{passwordErr}</p>}
           </div>
           <div className="form-box">
             <label>Birthday:</label>
             <input type="date" onChange={(e) => setBirthday(e.target.value)} />
             {/* code added here to display validation error */}
-            {birthdayErr && <p>{birthdayErr}</p>}
+            {birthdayErr && <p className="error">{birthdayErr}</p>}
           </div>
           <div className="form-box">
             <label>Email:</label>
             <input type="email" onChange={(e) => setEmail(e.target.value)} />
             {/* code added here to display validation error */}
-            {emailErr && <p>{emailErr}</p>}
+            {emailErr && <p className="error">{emailErr}</p>}
           </div>
           <Button
             id="reg-btn"
@@ -118,8 +118,8 @@ export function RegistrationView(props) {
             Submit
           </Button>
           <br />
-          <br /> 
-          <br /> 
+          <br />
+          <br />
           <br />
           <Row>
             <p className="acct">

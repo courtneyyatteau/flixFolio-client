@@ -30287,6 +30287,7 @@ function LoginView(props) {
                                     __self: this
                                 }),
                                 usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
                                         lineNumber: 68
@@ -30325,6 +30326,7 @@ function LoginView(props) {
                                     __self: this
                                 }),
                                 passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
                                         lineNumber: 78
@@ -42691,6 +42693,7 @@ function RegistrationView(props) {
                                     __self: this
                                 }),
                                 usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
                                         lineNumber: 87
@@ -42729,6 +42732,7 @@ function RegistrationView(props) {
                                     __self: this
                                 }),
                                 passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
                                         lineNumber: 98
@@ -42765,6 +42769,7 @@ function RegistrationView(props) {
                                     __self: this
                                 }),
                                 birthdayErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
                                         lineNumber: 104
@@ -42801,6 +42806,7 @@ function RegistrationView(props) {
                                     __self: this
                                 }),
                                 emailErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "error",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
                                         lineNumber: 110
@@ -44835,7 +44841,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(ActionView);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animate.css":"k4q3D"}],"6QQ1r":[function() {},{}],"7ZxGS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","animate.css":"k4q3D","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"7ZxGS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9bc3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46542,7 +46548,7 @@ class FrontOverlay extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./front-overlay-view.scss":"4rWg9","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animate.css":"k4q3D"}],"4rWg9":[function() {},{}],"k4q3D":[function() {},{}],"3H13H":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./front-overlay-view.scss":"4rWg9","react-bootstrap":"h2YVd","animate.css":"k4q3D","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4rWg9":[function() {},{}],"k4q3D":[function() {},{}],"3H13H":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bdfa = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

@@ -4097,6 +4097,12 @@ html {
   float: right;
 }
 
+.error {
+  color: red;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
 .acct {
   margin-right: 10px;
   font-size: 25px;
@@ -4220,6 +4226,12 @@ html {
 
 #reg-btn {
   float: right;
+}
+
+.error {
+  color: red;
+  font-weight: 900;
+  margin-bottom: 30px;
 }
 
 .form {
