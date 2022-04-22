@@ -43931,7 +43931,8 @@ function FavoritesView(props) {
                                                     // Make the image expand to cover the video's dimensions
                                                     width: "100%",
                                                     height: "500px",
-                                                    objectFit: "contain"
+                                                    objectFit: "contain",
+                                                    borderRadius: "50px"
                                                 },
                                                 __source: {
                                                     fileName: "src/components/favorites-view/favorites-view.jsx",
@@ -43949,7 +43950,7 @@ function FavoritesView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/favorites-view/favorites-view.jsx",
-                                            lineNumber: 47
+                                            lineNumber: 48
                                         },
                                         __self: this,
                                         children: "Remove"

@@ -4282,6 +4282,7 @@ span {
 
 .director-img {
   width: 100%;
+  border-radius: 10px;
 }
 
 @media (min-width: 1000px) {
@@ -4730,11 +4731,12 @@ p {
 
 .stuff {
   margin-left: 60px;
+  margin-top: 25px;
 }
 
 @media (max-width: 1000px) {
   .stuff {
-    margin-left: 30px;
+    margin-left: 25px;
   }
 }
 .movie-image {

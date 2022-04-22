@@ -41,6 +41,7 @@ function FavoritesView(props) {
                             width: "100%",
                             height: "500px",
                             objectFit: "contain",
+                            borderRadius: "50px",
                           }}
                         />{" "}
                       </Link>{" "}
