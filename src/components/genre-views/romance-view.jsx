@@ -24,8 +24,13 @@ export class RomanceView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Romance</h1>
-          <h2>Fondness Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Romance
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Fondness Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

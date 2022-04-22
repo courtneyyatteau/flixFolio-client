@@ -24,8 +24,13 @@ export class MysteryView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Mystery</h1>
-          <h2>Furtive Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Mystery
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Furtive Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

@@ -26,8 +26,13 @@ export class DocumentaryView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Documentary</h1>
-          <h2>Factual Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Documentary
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Factual Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

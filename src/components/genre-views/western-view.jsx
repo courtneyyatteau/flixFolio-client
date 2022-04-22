@@ -24,8 +24,13 @@ export class WesternView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Western</h1>
-          <h2>Frontier Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Western
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Frontier Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

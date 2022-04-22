@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import "./main-view.scss";
+import "animate.css";
 
 import { LoginView } from "../login-view/login-view";
 import { MovieView } from "../movie-view/movie-view";

@@ -24,8 +24,13 @@ export class SciFiView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Sci-Fi</h1>
-          <h2>Ficticious Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Sci-Fi
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Ficticious Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

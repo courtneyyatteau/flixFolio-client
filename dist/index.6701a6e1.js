@@ -25637,6 +25637,7 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
 var _mainViewScss = require("./main-view.scss");
+var _animateCss = require("animate.css");
 var _loginView = require("../login-view/login-view");
 var _movieView = require("../movie-view/movie-view");
 var _registrationView = require("../registration-view/registration-view");
@@ -25731,7 +25732,7 @@ class MainView extends _reactDefault.default.Component {
         if (this.state.loading) return(/*#__PURE__*/ _jsxRuntime.jsx(_loaderDefault.default, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 78
+                lineNumber: 79
             },
             __self: this
         }));
@@ -25739,20 +25740,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 81
+                lineNumber: 82
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 82
+                    lineNumber: 83
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 83
+                        lineNumber: 84
                     },
                     __self: this,
                     children: [
@@ -25784,7 +25785,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 84
+                                lineNumber: 85
                             },
                             __self: this
                         }),
@@ -25801,7 +25802,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 107
+                                lineNumber: 108
                             },
                             __self: this
                         }),
@@ -25818,7 +25819,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 122
+                                lineNumber: 123
                             },
                             __self: this
                         }),
@@ -25847,7 +25848,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 136
+                                lineNumber: 137
                             },
                             __self: this
                         }),
@@ -25883,7 +25884,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 161
+                                lineNumber: 162
                             },
                             __self: this
                         }),
@@ -25918,7 +25919,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 192
+                                lineNumber: 193
                             },
                             __self: this
                         }),
@@ -25926,7 +25927,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/profile",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 221
+                                lineNumber: 222
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25939,7 +25940,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 223
+                                            lineNumber: 224
                                         },
                                         __self: this
                                     }),
@@ -25948,7 +25949,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 230
+                                            lineNumber: 231
                                         },
                                         __self: this
                                     })
@@ -25959,7 +25960,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/action",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 233
+                                lineNumber: 234
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -25972,7 +25973,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 235
+                                            lineNumber: 236
                                         },
                                         __self: this
                                     }),
@@ -25980,7 +25981,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 242
+                                            lineNumber: 243
                                         },
                                         __self: this
                                     })
@@ -25991,7 +25992,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/adventure",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 245
+                                lineNumber: 246
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26004,7 +26005,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 247
+                                            lineNumber: 248
                                         },
                                         __self: this
                                     }),
@@ -26012,7 +26013,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 254
+                                            lineNumber: 255
                                         },
                                         __self: this
                                     })
@@ -26023,7 +26024,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/comedy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 257
+                                lineNumber: 258
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26036,7 +26037,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 259
+                                            lineNumber: 260
                                         },
                                         __self: this
                                     }),
@@ -26044,7 +26045,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 266
+                                            lineNumber: 267
                                         },
                                         __self: this
                                     })
@@ -26055,7 +26056,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/documentary",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 269
+                                lineNumber: 270
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26068,7 +26069,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 271
+                                            lineNumber: 272
                                         },
                                         __self: this
                                     }),
@@ -26076,7 +26077,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 278
+                                            lineNumber: 279
                                         },
                                         __self: this
                                     })
@@ -26087,7 +26088,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/drama",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 281
+                                lineNumber: 282
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26100,7 +26101,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 283
+                                            lineNumber: 284
                                         },
                                         __self: this
                                     }),
@@ -26108,7 +26109,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 290
+                                            lineNumber: 291
                                         },
                                         __self: this
                                     })
@@ -26119,7 +26120,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/family",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 293
+                                lineNumber: 294
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26132,7 +26133,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 295
+                                            lineNumber: 296
                                         },
                                         __self: this
                                     }),
@@ -26140,7 +26141,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 302
+                                            lineNumber: 303
                                         },
                                         __self: this
                                     })
@@ -26151,7 +26152,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/fantasy",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 305
+                                lineNumber: 306
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26164,7 +26165,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 307
+                                            lineNumber: 308
                                         },
                                         __self: this
                                     }),
@@ -26172,7 +26173,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 314
+                                            lineNumber: 315
                                         },
                                         __self: this
                                     })
@@ -26183,7 +26184,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/horror",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 317
+                                lineNumber: 318
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26196,7 +26197,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 319
+                                            lineNumber: 320
                                         },
                                         __self: this
                                     }),
@@ -26204,7 +26205,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 326
+                                            lineNumber: 327
                                         },
                                         __self: this
                                     })
@@ -26215,7 +26216,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/musical",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 329
+                                lineNumber: 330
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26228,7 +26229,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 331
+                                            lineNumber: 332
                                         },
                                         __self: this
                                     }),
@@ -26236,7 +26237,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 338
+                                            lineNumber: 339
                                         },
                                         __self: this
                                     })
@@ -26247,7 +26248,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/mystery",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 341
+                                lineNumber: 342
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26260,7 +26261,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 343
+                                            lineNumber: 344
                                         },
                                         __self: this
                                     }),
@@ -26268,7 +26269,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 350
+                                            lineNumber: 351
                                         },
                                         __self: this
                                     })
@@ -26279,7 +26280,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/romance",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 353
+                                lineNumber: 354
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26292,7 +26293,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 355
+                                            lineNumber: 356
                                         },
                                         __self: this
                                     }),
@@ -26300,7 +26301,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 362
+                                            lineNumber: 363
                                         },
                                         __self: this
                                     })
@@ -26311,7 +26312,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/scifi",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 365
+                                lineNumber: 366
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26324,7 +26325,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 367
+                                            lineNumber: 368
                                         },
                                         __self: this
                                     }),
@@ -26332,7 +26333,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 374
+                                            lineNumber: 375
                                         },
                                         __self: this
                                     })
@@ -26343,7 +26344,7 @@ class MainView extends _reactDefault.default.Component {
                             path: "/western",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 377
+                                lineNumber: 378
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -26356,7 +26357,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 379
+                                            lineNumber: 380
                                         },
                                         __self: this
                                     }),
@@ -26364,7 +26365,7 @@ class MainView extends _reactDefault.default.Component {
                                         movies: movies,
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 386
+                                            lineNumber: 387
                                         },
                                         __self: this
                                     })
@@ -26393,7 +26394,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs","../genre-views/documentary-view":"1iRay","../genre-views/drama-view":"7xlHJ","../genre-views/family-view":"7SwA7","../genre-views/fantasy-flix":"eXaXZ","../genre-views/horror-view":"9HBvp","../genre-views/musical-view":"jcUcY","../genre-views/mystery-view":"7G5Lo","../genre-views/romance-view":"4Fujk","../genre-views/scifi-view":"fEEES","../genre-views/western-view":"6UJX5","../front-overlay-view/front-overlay-view":"lcI16","../loader/loader":"3H13H","../favorites-view/favorites-view":"jg6rA","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","./main-view.scss":"jyMAr","animate.css":"k4q3D","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../registration-view/registration-view":"aP2YV","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../profile-view/profile-view":"2E7Aw","../navbar-view/navbar-view":"j0Dt2","react-bootstrap":"h2YVd","../footer-view/footer-view":"guTD3","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../genre-views/action-view":"6uv7f","../genre-views/adventure-view":"jWYYM","../genre-views/comedy-view":"fWpHs","../genre-views/documentary-view":"1iRay","../genre-views/drama-view":"7xlHJ","../genre-views/family-view":"7SwA7","../genre-views/fantasy-flix":"eXaXZ","../genre-views/horror-view":"9HBvp","../genre-views/musical-view":"jcUcY","../genre-views/mystery-view":"7G5Lo","../genre-views/romance-view":"4Fujk","../genre-views/scifi-view":"fEEES","../genre-views/western-view":"6UJX5","../front-overlay-view/front-overlay-view":"lcI16","../loader/loader":"3H13H","../favorites-view/favorites-view":"jg6rA","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -30181,7 +30182,7 @@ module.exports = Array.isArray || function(arr) {
     return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],"jyMAr":[function() {},{}],"054li":[function(require,module,exports) {
+},{}],"jyMAr":[function() {},{}],"k4q3D":[function() {},{}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44721,6 +44722,7 @@ var _reactRedux = require("react-redux");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
 var _movieCard = require("../movie-card/movie-card");
+var _animateCss = require("animate.css");
 class ActionView extends _reactDefault.default.Component {
     render() {
         const { movies , visibilityFilter  } = this.props;
@@ -44733,44 +44735,49 @@ class ActionView extends _reactDefault.default.Component {
             fluid: true,
             __source: {
                 fileName: "src/components/genre-views/action-view.jsx",
-                lineNumber: 22
+                lineNumber: 23
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "stuff",
                 __source: {
                     fileName: "src/components/genre-views/action-view.jsx",
-                    lineNumber: 23
+                    lineNumber: 24
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/genre-views/action-view.jsx",
-                            lineNumber: 24
+                            lineNumber: 25
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
                             visibilityFilter: visibilityFilter,
                             __source: {
                                 fileName: "src/components/genre-views/action-view.jsx",
-                                lineNumber: 25
+                                lineNumber: 26
                             },
                             __self: this
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/action-view.jsx",
-                            lineNumber: 27
+                            lineNumber: 28
                         },
                         __self: this,
                         children: "Action"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/action-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 34
                         },
                         __self: this,
                         children: "Force Flix"
@@ -44779,13 +44786,13 @@ class ActionView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/action-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 35
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             __source: {
                                 fileName: "src/components/genre-views/action-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 36
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44795,14 +44802,14 @@ class ActionView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/action-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 38
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/action-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 39
                                         },
                                         __self: this
                                     })
@@ -44827,7 +44834,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(ActionView);
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6QQ1r":[function() {},{}],"7ZxGS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","./genres-view.scss":"6QQ1r","react-router-dom":"cpyQW","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animate.css":"k4q3D"}],"6QQ1r":[function() {},{}],"7ZxGS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9bc3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44879,7 +44886,7 @@ $RefreshReg$(_c, "VisibilityFilterInput");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","./visibility-filter-input.scss":"3ZOIV","react-bootstrap":"h2YVd","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"3ZOIV":[function() {},{}],"jWYYM":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","./visibility-filter-input.scss":"3ZOIV","react-bootstrap":"h2YVd","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"3ZOIV":[function() {},{}],"k4q3D":[function() {},{}],"jWYYM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a632 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44939,6 +44946,10 @@ class AdventureView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/adventure-view.jsx",
                             lineNumber: 28
@@ -44947,9 +44958,10 @@ class AdventureView extends _reactDefault.default.Component {
                         children: "Adventure"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/adventure-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: "Feat Flix"
@@ -44958,13 +44970,13 @@ class AdventureView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/adventure-view.jsx",
-                            lineNumber: 30
+                            lineNumber: 35
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             __source: {
                                 fileName: "src/components/genre-views/adventure-view.jsx",
-                                lineNumber: 31
+                                lineNumber: 36
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -44974,14 +44986,14 @@ class AdventureView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/adventure-view.jsx",
-                                        lineNumber: 33
+                                        lineNumber: 38
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/adventure-view.jsx",
-                                            lineNumber: 34
+                                            lineNumber: 39
                                         },
                                         __self: this
                                     })
@@ -45066,6 +45078,10 @@ class ComedyView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/comedy-view.jsx",
                             lineNumber: 27
@@ -45074,9 +45090,10 @@ class ComedyView extends _reactDefault.default.Component {
                         children: "Comedy"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/comedy-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Funny Flix"
@@ -45085,14 +45102,14 @@ class ComedyView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/comedy-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/comedy-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45102,14 +45119,14 @@ class ComedyView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/comedy-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/comedy-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -45194,6 +45211,10 @@ class DocumentaryView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/documentary-view.jsx",
                             lineNumber: 29
@@ -45202,9 +45223,10 @@ class DocumentaryView extends _reactDefault.default.Component {
                         children: "Documentary"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/documentary-view.jsx",
-                            lineNumber: 30
+                            lineNumber: 35
                         },
                         __self: this,
                         children: "Factual Flix"
@@ -45213,14 +45235,14 @@ class DocumentaryView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/documentary-view.jsx",
-                            lineNumber: 31
+                            lineNumber: 36
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/documentary-view.jsx",
-                                lineNumber: 32
+                                lineNumber: 37
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45230,14 +45252,14 @@ class DocumentaryView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/documentary-view.jsx",
-                                        lineNumber: 34
+                                        lineNumber: 39
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/documentary-view.jsx",
-                                            lineNumber: 35
+                                            lineNumber: 40
                                         },
                                         __self: this
                                     })
@@ -45322,6 +45344,10 @@ class DramaView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/drama-view.jsx",
                             lineNumber: 27
@@ -45330,9 +45356,10 @@ class DramaView extends _reactDefault.default.Component {
                         children: "Drama"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/drama-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Fascinating Flix"
@@ -45341,14 +45368,14 @@ class DramaView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/drama-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 36
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/drama-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 37
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45358,14 +45385,14 @@ class DramaView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/drama-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 39
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/drama-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 40
                                         },
                                         __self: this
                                     })
@@ -45450,6 +45477,10 @@ class FamilyView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/family-view.jsx",
                             lineNumber: 27
@@ -45458,9 +45489,10 @@ class FamilyView extends _reactDefault.default.Component {
                         children: "Family"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/family-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Friendly Flix"
@@ -45469,14 +45501,14 @@ class FamilyView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/family-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/family-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45486,14 +45518,14 @@ class FamilyView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/family-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/family-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -45578,6 +45610,10 @@ class FantasyView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/fantasy-flix.jsx",
                             lineNumber: 27
@@ -45586,9 +45622,10 @@ class FantasyView extends _reactDefault.default.Component {
                         children: "Fantasy"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/fantasy-flix.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Fantastical Flix"
@@ -45597,14 +45634,14 @@ class FantasyView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/fantasy-flix.jsx",
-                            lineNumber: 29
+                            lineNumber: 36
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/fantasy-flix.jsx",
-                                lineNumber: 30
+                                lineNumber: 37
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45614,14 +45651,14 @@ class FantasyView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/fantasy-flix.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 39
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/fantasy-flix.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 40
                                         },
                                         __self: this
                                     })
@@ -45706,6 +45743,10 @@ class HorrorView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/horror-view.jsx",
                             lineNumber: 27
@@ -45714,9 +45755,10 @@ class HorrorView extends _reactDefault.default.Component {
                         children: "Horror"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/horror-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Frightening Flix"
@@ -45725,14 +45767,14 @@ class HorrorView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/horror-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 36
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/horror-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 37
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45742,14 +45784,14 @@ class HorrorView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/horror-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 39
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/horror-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 40
                                         },
                                         __self: this
                                     })
@@ -45834,6 +45876,10 @@ class MusicalView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/musical-view.jsx",
                             lineNumber: 27
@@ -45842,9 +45888,10 @@ class MusicalView extends _reactDefault.default.Component {
                         children: "Musical"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/musical-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Flowy Flix"
@@ -45853,14 +45900,14 @@ class MusicalView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/musical-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/musical-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45870,14 +45917,14 @@ class MusicalView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/musical-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/musical-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -45962,6 +46009,10 @@ class MysteryView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/mystery-view.jsx",
                             lineNumber: 27
@@ -45970,9 +46021,10 @@ class MysteryView extends _reactDefault.default.Component {
                         children: "Mystery"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/mystery-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Furtive Flix"
@@ -45981,14 +46033,14 @@ class MysteryView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/mystery-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/mystery-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45998,14 +46050,14 @@ class MysteryView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/mystery-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/mystery-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -46090,6 +46142,10 @@ class RomanceView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/romance-view.jsx",
                             lineNumber: 27
@@ -46098,9 +46154,10 @@ class RomanceView extends _reactDefault.default.Component {
                         children: "Romance"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/romance-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Fondness Flix"
@@ -46109,14 +46166,14 @@ class RomanceView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/romance-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/romance-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -46126,14 +46183,14 @@ class RomanceView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/romance-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/romance-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -46155,7 +46212,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(RomanceView);
 /*#__PURE__*/ _jsxRuntime.jsx("h2", {
     __source: {
         fileName: "src/components/genre-views/romance-view.jsx",
-        lineNumber: 51
+        lineNumber: 56
     },
     __self: undefined,
     children: "Fondness Flix"
@@ -46226,6 +46283,10 @@ class SciFiView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/scifi-view.jsx",
                             lineNumber: 27
@@ -46234,9 +46295,10 @@ class SciFiView extends _reactDefault.default.Component {
                         children: "Sci-Fi"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/scifi-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Ficticious Flix"
@@ -46245,14 +46307,14 @@ class SciFiView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/scifi-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/scifi-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -46262,14 +46324,14 @@ class SciFiView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/scifi-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/scifi-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -46354,6 +46416,10 @@ class WesternView extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        style: {
+                            fontSize: "60px"
+                        },
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/western-view.jsx",
                             lineNumber: 27
@@ -46362,9 +46428,10 @@ class WesternView extends _reactDefault.default.Component {
                         children: "Western"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "animate__animated animate__zoomIn",
                         __source: {
                             fileName: "src/components/genre-views/western-view.jsx",
-                            lineNumber: 28
+                            lineNumber: 33
                         },
                         __self: this,
                         children: "Frontier Flix"
@@ -46373,14 +46440,14 @@ class WesternView extends _reactDefault.default.Component {
                         fluid: true,
                         __source: {
                             fileName: "src/components/genre-views/western-view.jsx",
-                            lineNumber: 29
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             className: "stuff",
                             __source: {
                                 fileName: "src/components/genre-views/western-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 35
                             },
                             __self: this,
                             children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -46390,14 +46457,14 @@ class WesternView extends _reactDefault.default.Component {
                                     lg: 3,
                                     __source: {
                                         fileName: "src/components/genre-views/western-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                         movie: m,
                                         __source: {
                                             fileName: "src/components/genre-views/western-view.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 38
                                         },
                                         __self: this
                                     })
@@ -46419,7 +46486,7 @@ exports.default = _reactRedux.connect(mapStateToProps)(WesternView);
 /*#__PURE__*/ _jsxRuntime.jsx("h2", {
     __source: {
         fileName: "src/components/genre-views/western-view.jsx",
-        lineNumber: 51
+        lineNumber: 56
     },
     __self: undefined,
     children: "Frontier Flix"
@@ -46446,20 +46513,21 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _frontOverlayViewScss = require("./front-overlay-view.scss");
 var _reactBootstrap = require("react-bootstrap");
+var _animateCss = require("animate.css");
 class FrontOverlay extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "myDiv",
             __source: {
                 fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
-                lineNumber: 8
+                lineNumber: 9
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                className: "front-title",
+                className: "animate__animated animate__swing animate__delay-0.5s title",
                 __source: {
                     fileName: "src/components/front-overlay-view/front-overlay-view.jsx",
-                    lineNumber: 9
+                    lineNumber: 10
                 },
                 __self: this,
                 children: "Tons of Movies to Explore Now!"
@@ -46473,7 +46541,7 @@ class FrontOverlay extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./front-overlay-view.scss":"4rWg9","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4rWg9":[function() {},{}],"3H13H":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./front-overlay-view.scss":"4rWg9","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animate.css":"k4q3D"}],"4rWg9":[function() {},{}],"k4q3D":[function() {},{}],"3H13H":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bdfa = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

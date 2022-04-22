@@ -24,8 +24,15 @@ export class FantasyView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Fantasy</h1>
-          <h2>Fantastical Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Fantasy
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">
+            Fantastical Flix
+          </h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

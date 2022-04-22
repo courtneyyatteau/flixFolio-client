@@ -25,17 +25,22 @@ export class AdventureView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-        <h1>Adventure</h1>
-        <h2>Feat Flix</h2>
-        <Container fluid>
-          <Row>
-            {filteredMovies.map((m) => (
-              <Col id="fav-movie" xs={6} md={4} lg={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Adventure
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Feat Flix</h2>
+          <Container fluid>
+            <Row>
+              {filteredMovies.map((m) => (
+                <Col id="fav-movie" xs={6} md={4} lg={3} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </div>
       </Container>
     );

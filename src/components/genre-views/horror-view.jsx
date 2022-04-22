@@ -24,8 +24,15 @@ export class HorrorView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Horror</h1>
-          <h2>Frightening Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Horror
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">
+            Frightening Flix
+          </h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

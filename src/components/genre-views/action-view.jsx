@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import VisibilityFilterInput from "../visibility-filter-input/visibility-filter-input";
 import { MovieCard } from "../movie-card/movie-card";
+import "animate.css";
 
 export class ActionView extends React.Component {
   render() {
@@ -24,8 +25,13 @@ export class ActionView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Action</h1>
-          <h2>Force Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Action
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Force Flix</h2>
           <Container fluid>
             <Row>
               {filteredMovies.map((m) => (

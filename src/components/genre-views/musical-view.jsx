@@ -21,20 +21,25 @@ export class MusicalView extends React.Component {
     return (
       <Container fluid>
         <div className="stuff">
-        <Row>
-          <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-        </Row>
-        <h1>Musical</h1>
-        <h2>Flowy Flix</h2>
-        <Container fluid>
-          <Row className="stuff">
-            {filteredMovies.map((m) => (
-              <Col id="fav-movie" xs={6} md={4} lg={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))}
+          <Row>
+            <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-        </Container>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Musical
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Flowy Flix</h2>
+          <Container fluid>
+            <Row className="stuff">
+              {filteredMovies.map((m) => (
+                <Col id="fav-movie" xs={6} md={4} lg={3} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </div>
       </Container>
     );

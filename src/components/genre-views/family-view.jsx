@@ -24,8 +24,13 @@ export class FamilyView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Family</h1>
-          <h2>Friendly Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Family
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">Friendly Flix</h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (

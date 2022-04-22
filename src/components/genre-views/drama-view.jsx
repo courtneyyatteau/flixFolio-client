@@ -24,8 +24,15 @@ export class DramaView extends React.Component {
           <Row>
             <VisibilityFilterInput visibilityFilter={visibilityFilter} />
           </Row>
-          <h1>Drama</h1>
-          <h2>Fascinating Flix</h2>
+          <h1
+            style={{ fontSize: "60px" }}
+            className="animate__animated animate__zoomIn"
+          >
+            Drama
+          </h1>
+          <h2 className="animate__animated animate__zoomIn">
+            Fascinating Flix
+          </h2>
           <Container fluid>
             <Row className="stuff">
               {filteredMovies.map((m) => (
