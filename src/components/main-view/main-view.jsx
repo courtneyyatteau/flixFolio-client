@@ -31,20 +31,15 @@ import RomanceView from "../genre-views/romance-view";
 import SciFiView from "../genre-views/scifi-view";
 import WesternView from "../genre-views/western-view";
 import { FrontOverlay } from "../front-overlay-view/front-overlay-view";
-import Loader from "../loader/loader";
-import FavoritesView from "../favorites-view/favorites-view";
 
 class MainView extends React.Component {
-  state = { loading: false };
   getMovies(token) {
-    this.setState({ loading: true });
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         // Assign the result to the state
-        this.setState({ loading: false });
         this.props.setMovies(response.data);
       })
       .catch(function (error) {
@@ -70,13 +65,10 @@ class MainView extends React.Component {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     this.props.setUser(null);
-    this.setState({ loading: false });
   }
 
   render() {
     let { movies, user } = this.props;
-    if (this.state.loading) return <Loader />;
-
     return (
       <div className="main-view">
         <Router>

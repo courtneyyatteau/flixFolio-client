@@ -4802,23 +4802,5 @@ p {
     font-size: 30px;
   }
 }
-.center {
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0px;
-}
-
-div.loader {
-  font-size: 300px;
-  color: #2565ae;
-}
-
-.loaded {
-  font-size: 18px;
-  font-weight: bold;
-}
 
 /*# sourceMappingURL=index.17d663fa.css.map */
