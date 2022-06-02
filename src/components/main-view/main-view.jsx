@@ -2,10 +2,8 @@ import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-
 import "./main-view.scss";
 import "animate.css";
-
 import { LoginView } from "../login-view/login-view";
 import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
@@ -31,15 +29,19 @@ import RomanceView from "../genre-views/romance-view";
 import SciFiView from "../genre-views/scifi-view";
 import WesternView from "../genre-views/western-view";
 import { FrontOverlay } from "../front-overlay-view/front-overlay-view";
-
+import Loader from "../loader/loader";
+import FavoritesView from "../favorites-view/favorites-view";
 class MainView extends React.Component {
+  state = { loading: false };
   getMovies(token) {
+    this.setState({ loading: true });
     axios
       .get("https://flixfolio.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         // Assign the result to the state
+        this.setState({ loading: false });
         this.props.setMovies(response.data);
       })
       .catch(function (error) {
@@ -53,11 +55,11 @@ class MainView extends React.Component {
       this.getMovies(accessToken);
     }
   }
-
   onLoggedIn(authData) {
     this.props.setUser(authData.user.Username);
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
+    this.setState({ loading: true });
     this.getMovies(authData.token);
   }
 
@@ -65,10 +67,11 @@ class MainView extends React.Component {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     this.props.setUser(null);
+    this.setState({ loading: false });
   }
-
   render() {
     let { movies, user } = this.props;
+    if (this.state.loading) return <Loader />;
     return (
       <div className="main-view">
         <Router>
@@ -80,7 +83,6 @@ class MainView extends React.Component {
                 if (!user) {
                   return <Redirect to="/login" />;
                 }
-
                 return (
                   <Container fluid>
                     <Row>
@@ -102,7 +104,6 @@ class MainView extends React.Component {
                 if (user) {
                   return <Redirect to="/" />;
                 }
-
                 return (
                   <LoginView
                     user={user}
@@ -117,7 +118,6 @@ class MainView extends React.Component {
                 if (user) {
                   return <Redirect to="/" />;
                 }
-
                 return (
                   <Col>
                     <RegistrationView />
@@ -384,12 +384,10 @@ class MainView extends React.Component {
     );
   }
 }
-
 let mapStateToProps = (state) => {
   return {
     movies: state.movies,
     user: state.user,
   };
 };
-
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);
